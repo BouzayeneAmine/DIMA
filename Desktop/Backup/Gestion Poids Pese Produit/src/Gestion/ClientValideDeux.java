@@ -1,0 +1,423 @@
+package Gestion;
+
+import BDD.DbConnection;
+import BDD.Parametre;
+import BDD.ResultSetTableModel;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JTable;
+import javax.swing.table.TableModel;
+
+public class ClientValideDeux extends javax.swing.JFrame {
+
+    ResultSet rs;
+    DbConnection db;
+    public static ClientValideDeux obj = null;
+
+    public ClientValideDeux() {
+        db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
+        initComponents();
+        this.setIconImage(new ImageIcon(getClass().getResource("/Images/Logo.png")).getImage());
+        table();
+    }
+
+    public static ClientValideDeux getObj() {
+        if (obj == null) {
+            obj = new ClientValideDeux();
+        }
+        return obj;
+    }
+
+    public void table() {
+        String a[] = {"Id", "Numero", "mouvement", "Code_client", "Nom_client", "Code_produit", "Designation_produit","Nfabrication","Nenroleur","Laize","Grammage", "Date", "Heure", "Pesage","tare"};
+        rs = db.querySelect(a, "client_valide_deux");
+        jTable1.setModel(new ResultSetTableModel(rs));
+        jTable1.getColumnModel().getColumn(0).setMinWidth(0);
+        jTable1.getColumnModel().getColumn(0).setMaxWidth(0);
+    }
+
+    public void toExcel(JTable table, File file) {
+        try {
+            TableModel model = table.getModel();
+            FileWriter excel = new FileWriter(file);
+            for (int i = 1; i < model.getColumnCount(); i++) {
+                excel.write(model.getColumnName(i) + "\t");
+            }
+            excel.write("\n");
+            for (int i = 0; i < model.getRowCount(); i++) {
+                for (int j = 1; j < model.getColumnCount(); j++) {
+                    excel.write(model.getValueAt(i, j).toString() + "\t");
+                }
+                excel.write("\n");
+            }
+            excel.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jComboBox3 = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        de = new com.toedter.calendar.JDateChooser();
+        jButton1 = new javax.swing.JButton();
+        a = new com.toedter.calendar.JDateChooser();
+        jButton4 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("LISTE DES CLIENTS VALIDES");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/export.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/print.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Code client", "Numero", "Code de produit", "Immatricule Camion", "Masse Nette" }));
+
+        jLabel1.setText("De");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Code client", "Numero", "Code de produit", "Immatricule Camion", "Masse Nette" }));
+
+        jLabel2.setText("A");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Entrant", "Sortant" }));
+
+        de.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        de.setDateFormatString("yyyy-MM-dd");
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search-engine.png"))); // NOI18N
+        jButton1.setText("Chercher");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        a.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        a.setDateFormatString("yyyy-MM-dd");
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/initialiser.png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setBackground(new java.awt.Color(0, 51, 102));
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Liste des clients valides");
+        jLabel13.setOpaque(true);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(de, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                    .addComponent(a, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, 174, Short.MAX_VALUE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                            .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addContainerGap(69, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jLabel13)
+                .addGap(2, 2, 2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(de, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jLabel2)))))
+                .addGap(2, 2, 2)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE))
+        );
+
+        setSize(new java.awt.Dimension(766, 656));
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JFileChooser fc = new JFileChooser();
+        int option = fc.showSaveDialog(ClientValideDeux.this);
+        if (option == JFileChooser.APPROVE_OPTION) {
+            String filename = fc.getSelectedFile().getName();
+            String path = fc.getSelectedFile().getParentFile().getPath();
+            int len = filename.length();
+            String ext = "";
+            String file = "";
+            if (len > 4) {
+                ext = filename.substring(len - 4, len);
+            }
+            if (ext.equals(".xls")) {
+                file = path + "\\" + filename;
+            } else {
+                file = path + "\\" + filename + ".xls";
+            }
+            toExcel(jTable1, new File(file));
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        MessageFormat header = new MessageFormat("Liste des clients valides");
+        MessageFormat footer = new MessageFormat("Page{0,number,integer}");
+        try {
+            jTable1.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+
+        } catch (java.awt.print.PrinterException e) {
+            System.err.format("Erreur d'impression ", e.getMessage());
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String text = "Date";
+        String text1 = "Numero";
+        String text2 = "Numero ";
+        String text3 = "mouvement";
+        String mouvement = jComboBox1.getSelectedItem().toString();
+        String deb = "";
+        String fin = "";
+        
+        if (de.getCalendar() == null || a.getCalendar() == null) {
+            deb = "2016-01-01";
+            fin = "2080-01-01";
+        } else {
+            SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd", Locale.getDefault());
+            deb = sdf.format(de.getDate());
+            SimpleDateFormat sd = new SimpleDateFormat("YYYY-MM-dd", Locale.getDefault());
+            fin = sd.format(a.getDate());
+        }
+
+        if (mouvement.equals(" ")) {
+
+            if (jTextField1.getText().equals("") && jTextField2.getText().equals("")) {
+                rs = db.querySearchAll("client_valide_deux", text, deb, fin);
+            } else {
+
+                if (jComboBox2.getSelectedItem().equals("Numero")) {
+                    text1 = "Numero";
+                } else if (jComboBox2.getSelectedItem().equals("Code client")) {
+                    text1 = "Code_client";
+                } else if (jComboBox2.getSelectedItem().equals("Code de produit")) {
+                    text1 = "Code_produit";
+                } else if (jComboBox2.getSelectedItem().equals("Masse Nette")) {
+                    text1 = "Pesage";
+                }
+
+                if (jComboBox3.getSelectedItem().equals("Numero")) {
+                    text2 = "Numero ";
+                } else if (jComboBox3.getSelectedItem().equals("Code client")) {
+                    text2 = "Code_client ";
+                } else if (jComboBox3.getSelectedItem().equals("Code de produit")) {
+                    text2 = "Code_produit ";
+                } else if (jComboBox3.getSelectedItem().equals("Masse Nette")) {
+                    text2 = "Pesage ";
+                }
+
+                rs = db.querySelectTwoALL("client_valide_deux", text1 + "='" + jTextField1.getText() + "'", text2 + "LIKE '%" + jTextField2.getText() + "%' ", text, deb, fin);
+            }
+        } else {
+
+            if (jTextField1.getText().equals("") && jTextField2.getText().equals("")) {
+                rs = db.querySelectTwoOne("client_valide_deux", text3 + "='" + mouvement + "'", text, deb, fin);
+            } else {
+
+                if (jComboBox2.getSelectedItem().equals("Numero")) {
+                    text1 = "Numero";
+                } else if (jComboBox2.getSelectedItem().equals("Code client")) {
+                    text1 = "Code_client";
+                } else if (jComboBox2.getSelectedItem().equals("Code de produit")) {
+                    text1 = "Code_produit";
+                } else if (jComboBox2.getSelectedItem().equals("Masse Nette")) {
+                    text1 = "Pesage";
+                }
+
+                if (jComboBox3.getSelectedItem().equals("Numero")) {
+                    text2 = "Numero ";
+                } else if (jComboBox3.getSelectedItem().equals("Code client")) {
+                    text2 = "Code_client ";
+                } else if (jComboBox3.getSelectedItem().equals("Code de produit")) {
+                    text2 = "Code_produit ";
+                } else if (jComboBox3.getSelectedItem().equals("Masse Nette")) {
+                    text2 = "Pesage ";
+                }
+
+                rs = db.querySelectThreeALL("client_valide_deux", text1 + "='" + jTextField1.getText() + "'", text3 + "='" + mouvement + "'", text2 + "LIKE '%" + jTextField2.getText() + "%' ", text, deb, fin);
+            }
+        }
+        jTable1.setModel(new ResultSetTableModel(rs));
+        jTable1.getColumnModel().getColumn(0).setMinWidth(0);
+        jTable1.getColumnModel().getColumn(0).setMaxWidth(0);
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        table();
+        jTextField1.setText("");
+        jTextField2.setText("");
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        table();
+        jTextField1.setText("");
+        jTextField2.setText("");
+    }//GEN-LAST:event_formWindowActivated
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ClientValideDeux.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ClientValideDeux.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ClientValideDeux.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ClientValideDeux.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ClientValideDeux().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser a;
+    private com.toedter.calendar.JDateChooser de;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    // End of variables declaration//GEN-END:variables
+}

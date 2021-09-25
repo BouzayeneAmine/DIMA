@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_2" pageWidth="298" pageHeight="420" columnWidth="258" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" uuid="db0d053c-4353-496e-b9d6-8c053c733349">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="ireport.zoom" value="2.5937424601000028"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     impression_bon_deux.`Id` AS impression_bon_deux_Id,
+     impression_bon_deux.`Numero` AS impression_bon_deux_Numero,
+     impression_bon_deux.`mouvement` AS impression_bon_deux_mouvement,
+     impression_bon_deux.`Type` AS impression_bon_deux_Type,
+     impression_bon_deux.`Code_type` AS impression_bon_deux_Code_type,
+     impression_bon_deux.`Nom_type` AS impression_bon_deux_Nom_type,
+     impression_bon_deux.`Adresse_type` AS impression_bon_deux_Adresse_type,
+     impression_bon_deux.`Code_produit` AS impression_bon_deux_Code_produit,
+     impression_bon_deux.`Designation_produit` AS impression_bon_deux_Designation_produit,
+     impression_bon_deux.`Lot_produit` AS impression_bon_deux_Lot_produit,
+     impression_bon_deux.`Prix_produit` AS impression_bon_deux_Prix_produit,
+     impression_bon_deux.`Coefficient_produit` AS impression_bon_deux_Coefficient_produit,
+     impression_bon_deux.`Date` AS impression_bon_deux_Date,
+     impression_bon_deux.`Heure` AS impression_bon_deux_Heure,
+     impression_bon_deux.`Pesage` AS impression_bon_deux_Pesage,
+     cordonee.`Id` AS cordonee_Id,
+     cordonee.`Societe` AS cordonee_Societe,
+     cordonee.`Adresse` AS cordonee_Adresse,
+     cordonee.`TEL` AS cordonee_TEL,
+     cordonee.`Fax` AS cordonee_Fax
+FROM
+     `impression_bon_deux` impression_bon_deux,
+     `cordonee` cordonee]]>
+	</queryString>
+	<field name="impression_bon_deux_Id" class="java.lang.String"/>
+	<field name="impression_bon_deux_Numero" class="java.lang.String"/>
+	<field name="impression_bon_deux_mouvement" class="java.lang.String"/>
+	<field name="impression_bon_deux_Type" class="java.lang.String"/>
+	<field name="impression_bon_deux_Code_type" class="java.lang.String"/>
+	<field name="impression_bon_deux_Nom_type" class="java.lang.String"/>
+	<field name="impression_bon_deux_Adresse_type" class="java.lang.String"/>
+	<field name="impression_bon_deux_Code_produit" class="java.lang.String"/>
+	<field name="impression_bon_deux_Designation_produit" class="java.lang.String"/>
+	<field name="impression_bon_deux_Lot_produit" class="java.lang.String"/>
+	<field name="impression_bon_deux_Prix_produit" class="java.lang.String"/>
+	<field name="impression_bon_deux_Coefficient_produit" class="java.lang.String"/>
+	<field name="impression_bon_deux_Heure" class="java.lang.String"/>
+	<field name="impression_bon_deux_Pesage" class="java.lang.String"/>
+	<field name="cordonee_Id" class="java.lang.String"/>
+	<field name="cordonee_Societe" class="java.lang.String"/>
+	<field name="cordonee_Adresse" class="java.lang.String"/>
+	<field name="cordonee_TEL" class="java.lang.String"/>
+	<field name="cordonee_Fax" class="java.lang.String"/>
+	<field name="impression_bon_deux_Date" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="180" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="10" width="129" height="20" uuid="faf1e60f-4261-4156-ba7d-7c1c8fdb3179"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Societe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="10" width="130" height="20" uuid="933a8c7e-e559-4434-861f-803e2b9ebaaf"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Adresse}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="35" width="32" height="16" forecolor="#000000" uuid="3c8c6247-14f6-44b4-9b01-59d353602259"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TEL :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="35" width="90" height="16" uuid="629e26ad-8155-4fea-90d0-d98e6e52ac89"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_TEL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="84" width="114" height="18" forecolor="#000000" uuid="543f2977-a646-4710-aaa1-3616caa0bdad"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bon de Pesage N :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="85" width="42" height="18" uuid="82c762d5-cd3a-4dc4-b580-9c8314bc7cfc"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_deux_Numero}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="103" width="68" height="36" forecolor="#000000" uuid="3343cdbb-942e-4025-a5e9-bf9c36024cdc"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Poids Net:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="88" y="112" width="100" height="30" uuid="37a83ccd-f5f3-41ed-99c6-6900ecb71b46"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_deux_Pesage}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="190" y="109" width="36" height="24" forecolor="#000000" uuid="135e2a31-6be3-4bc6-b940-4f6ad05c57c4"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="143" width="259" height="1" uuid="27ba0425-c833-4e7f-8a10-c585bab3d024"/>
+			</line>
+			<staticText>
+				<reportElement x="139" y="59" width="40" height="18" forecolor="#000000" uuid="6fb51be8-2758-45fe-8b85-413b9c6709a0"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Heure :]]></text>
+			</staticText>
+			<textField pattern="d/M/yyyy">
+				<reportElement x="180" y="36" width="68" height="16" forecolor="#000000" uuid="0d2859da-2a71-4e81-8ead-e2f1b1ec629b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="63" width="66" height="18" uuid="9c7a2963-19bc-4dca-8f2d-ece13a442b7b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="505cb7eb-9012-42ea-8e6a-ddbf21f9fa43"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_deux_Heure}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="258" y="143" width="1" height="37" uuid="77ec9849-faf7-4ae0-873a-d4ae7195d280"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="179" width="260" height="1" uuid="9a902210-b2c6-4ba8-8539-5ed2dcf7fae8"/>
+			</line>
+			<staticText>
+				<reportElement x="139" y="34" width="40" height="18" forecolor="#000000" uuid="d841acce-465a-4f73-93ae-c5d797602c38"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="148" width="70" height="20" forecolor="#000000" uuid="5098d9da-0e0c-4770-b8e7-8f0bdd039f3c"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Produit :]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="23" width="40" height="20" forecolor="#000000" uuid="aa6bfde0-cbe9-45e4-90db-a60b6cfa3f22"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="44" width="50" height="24" forecolor="#000000" uuid="e2669424-200d-4e4d-92a3-a2b83582bc18"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adresse :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="6" width="48" height="20" uuid="0dd6873b-ce66-4dcd-93d0-3368a7003803"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_deux_Type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="6" width="166" height="20" uuid="203c4e07-9af8-4fa4-87d2-6e8c3973a830"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_deux_Code_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="1" width="30" height="22" forecolor="#000000" uuid="8c2b0853-d82a-46fd-ad93-372999e431ff"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Code ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="87" y="26" width="169" height="18" uuid="33071d20-d2ed-4640-b77a-e4cff531584c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_deux_Nom_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="49" width="169" height="18" uuid="5b2b0dd7-991a-446d-b1f3-ce2164717619"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_deux_Adresse_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="-26" width="156" height="20" uuid="8dbd375a-3d5d-47cc-bff6-3b01eae0785c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_deux_mouvement}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-1" y="-36" width="1" height="36" uuid="42843140-8821-4afe-a4fb-406c21bba243"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="69" width="259" height="1" uuid="6a1d8729-769c-4331-97f9-de8776836207"/>
+			</line>
+			<line>
+				<reportElement x="258" y="0" width="1" height="69" uuid="9e0bd3ce-113b-4e1d-b45c-5067f7a9f657"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="0" width="1" height="69" uuid="ae9d23e7-9bf6-4f28-a88d-a4b7b447706c"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="10" width="69" height="18" forecolor="#000000" uuid="902e587c-3d03-4218-9c30-31b659d1dc91"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Code Produit :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="28" width="70" height="20" forecolor="#000000" uuid="34e1554b-0560-4977-b842-69e6751691d9"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Designation :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="47" width="40" height="18" forecolor="#000000" uuid="5b2eea87-cbfd-4b93-af92-8919753224ec"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lot :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="85" y="48" width="169" height="18" uuid="19fc13b4-9df2-4d13-85cb-f22fee42c67f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_deux_Lot_produit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="32" width="169" height="18" uuid="4bdac1f4-52f1-41b4-acd1-5b67f5dc3df5"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_deux_Designation_produit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="14" width="169" height="18" uuid="70de5bd3-3f26-43b0-8930-b59c23946df6"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_deux_Code_produit}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="258" y="-2" width="1" height="97" uuid="f59fb8ad-6cf5-4547-a8fc-eb8e950f7511"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="-1" width="1" height="97" uuid="f481446d-f6b5-4038-a224-88b4a5703da9"/>
+			</line>
+			<line>
+				<reportElement x="0" y="95" width="259" height="1" uuid="408ab880-9ad0-4e4d-917c-74fe7e6b5442"/>
+			</line>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

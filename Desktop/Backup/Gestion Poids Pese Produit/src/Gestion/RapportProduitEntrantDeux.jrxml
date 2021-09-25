@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="28188c88-3935-4a6f-9315-53a8febe4253">
+	<property name="ireport.zoom" value="1.2100000000000029"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[SELECT
+     cordonee.`Id` AS cordonee_Id,
+     cordonee.`Societe` AS cordonee_Societe,
+     cordonee.`Adresse` AS cordonee_Adresse,
+     cordonee.`TEL` AS cordonee_TEL,
+     cordonee.`Fax` AS cordonee_Fax,
+     rapport_produit_entrant_deux.`Id` AS rapport_produit_entrant_deux_Id,
+     rapport_produit_entrant_deux.`Type` AS rapport_produit_entrant_deux_Type,
+     rapport_produit_entrant_deux.`Code_Type` AS rapport_produit_entrant_deux_Code_Type,
+     rapport_produit_entrant_deux.`Nom_Type` AS rapport_produit_entrant_deux_Nom_Type,
+     rapport_produit_entrant_deux.`Adresse_Type` AS rapport_produit_entrant_deux_Adresse_Type,
+     rapport_produit_entrant_deux.`Code_Produit` AS rapport_produit_entrant_deux_Code_Produit,
+     rapport_produit_entrant_deux.`Designation_Produit` AS rapport_produit_entrant_deux_Designation_Produit,
+     rapport_produit_entrant_deux.`Totale` AS rapport_produit_entrant_deux_Totale,
+     rapport_produit_entrant_deux.`Date_debut` AS rapport_produit_entrant_deux_Date_debut,
+     rapport_produit_entrant_deux.`Date_fin` AS rapport_produit_entrant_deux_Date_fin
+FROM
+     `cordonee` cordonee,
+     `rapport_produit_entrant_deux` rapport_produit_entrant_deux]]>
+	</queryString>
+	<field name="cordonee_Id" class="java.lang.Integer"/>
+	<field name="cordonee_Societe" class="java.lang.String"/>
+	<field name="cordonee_Adresse" class="java.lang.String"/>
+	<field name="cordonee_TEL" class="java.lang.String"/>
+	<field name="cordonee_Fax" class="java.lang.String"/>
+	<field name="rapport_produit_entrant_deux_Id" class="java.lang.Integer"/>
+	<field name="rapport_produit_entrant_deux_Type" class="java.lang.String"/>
+	<field name="rapport_produit_entrant_deux_Code_Type" class="java.lang.String"/>
+	<field name="rapport_produit_entrant_deux_Nom_Type" class="java.lang.String"/>
+	<field name="rapport_produit_entrant_deux_Adresse_Type" class="java.lang.String"/>
+	<field name="rapport_produit_entrant_deux_Code_Produit" class="java.lang.String"/>
+	<field name="rapport_produit_entrant_deux_Designation_Produit" class="java.lang.String"/>
+	<field name="rapport_produit_entrant_deux_Totale" class="java.lang.String"/>
+	<field name="rapport_produit_entrant_deux_Date_debut" class="java.lang.String"/>
+	<field name="rapport_produit_entrant_deux_Date_fin" class="java.lang.String"/>
+	<background>
+		<band height="575" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="268" y="0" width="534" height="67" uuid="552b03d7-e5d3-415e-9046-d3acbb9d35b0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="50" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Rapport Produit Entrant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="232" y="67" width="95" height="37" uuid="6084a106-6de2-489c-8db7-72ed9e0c2cfd"/>
+				<textElement textAlignment="Right">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Du]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="327" y="67" width="100" height="37" uuid="41bad912-e2b6-4bf2-8500-fb550ec1c905"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rapport_produit_entrant_deux_Date_debut}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="SubTitle" x="455" y="67" width="95" height="37" uuid="4fe671ca-c34c-47f7-832d-83ec51b10ef8"/>
+				<textElement textAlignment="Right">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[AU]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="550" y="67" width="100" height="37" uuid="66907aed-c51d-4e94-9323-a50feff13529"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rapport_produit_entrant_deux_Date_fin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="72" width="31" height="24" forecolor="#000000" uuid="0292a740-40ea-4598-a51f-e6679acdcd2f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Fax:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="31" y="48" width="201" height="24" uuid="936d3d78-6593-46da-a887-9609cc860c5f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_TEL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="31" y="72" width="201" height="24" uuid="9f010fc2-28c8-4710-b2fc-16228e7a4941"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Fax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="268" height="24" uuid="9b25e388-de76-4d08-9f18-e4062941c213"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Societe}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="48" width="31" height="24" forecolor="#000000" uuid="81cd79e2-a036-47b6-912e-2d426e6e9d85"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TEL :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="0" y="24" width="268" height="24" uuid="86715ec1-7a18-43ec-ad06-28136feb71a5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Adresse}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="5" width="802" height="20" backcolor="#666666" uuid="8a4a5324-a735-4198-89bc-9e735516e844"/>
+				<staticText>
+					<reportElement style="Column header" x="650" y="0" width="152" height="20" uuid="6ad83274-5701-4fb8-8cc8-637c8b1381d7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Totale KG]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement style="Column header" x="0" y="5" width="98" height="20" uuid="543138bd-220f-4f71-8388-cf53c6c93f14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Code produit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="98" y="5" width="125" height="20" uuid="bf2d6be2-0b9d-4236-baff-72f8c77de284"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DesignationProduit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="304" y="5" width="81" height="20" uuid="c9080d85-473c-46c3-ad4e-3e55a7bef9bf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="223" y="5" width="81" height="20" uuid="5a8c84b4-577c-45b0-9a43-eb77082cf6ca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="536" y="5" width="114" height="20" uuid="2fd35a68-cd9e-4a1a-b938-bd200be62d55"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Adresse]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="385" y="5" width="151" height="20" uuid="18035b61-54d5-4d9f-b742-ef2bf60a4888"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nom]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="1" width="802" height="26" uuid="df98eaed-0672-4d93-8cb8-f347caa14a47"/>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="28" width="802" height="1" uuid="53ddbf60-2f84-42da-964a-8d2bc10b7d70"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="536" y="0" width="114" height="27" uuid="0a7c1712-1f3c-4462-ad60-88b548ade8d7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rapport_produit_entrant_deux_Adresse_Type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="650" y="0" width="152" height="27" uuid="751a5c64-edc7-4313-9e40-3ecb77fb9de3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rapport_produit_entrant_deux_Totale}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="385" y="0" width="151" height="26" uuid="d263ffce-4e6b-4b07-8882-ff1b46a7ff24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rapport_produit_entrant_deux_Nom_Type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="304" y="0" width="81" height="26" uuid="719439fb-7a0b-495f-8de6-5359b164f2f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rapport_produit_entrant_deux_Code_Type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="223" y="2" width="81" height="26" uuid="871cfb9b-d347-41de-be26-91ebbc019cbb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rapport_produit_entrant_deux_Type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="98" y="0" width="125" height="26" uuid="e2eb25a4-a085-4d91-ab9b-b6731086ab9f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rapport_produit_entrant_deux_Designation_Produit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="98" height="26" uuid="92758e12-eca9-4e7c-bd0e-5d855048a65d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rapport_produit_entrant_deux_Code_Produit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="42" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="671" y="0" width="131" height="20" forecolor="#000000" uuid="9c485841-14c7-4671-bda5-859b68e2da10"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="104" y="0" width="267" height="20" uuid="7ce8566d-34a0-4ffb-a42c-e220bcae874e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Rapport Produit Entrant]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
