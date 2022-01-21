@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="LunchCheck">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  
+<body>
+   
+     <h1>Lunch Checker</h1>
+
+         <div ng-controller="LunchController">
+           TextBox :
+          <input type="text" ng-model="textBox"> We do NOT consider an empty item, i.e., , , as an item towards to the count <br>
+          <div>
+                <button ng-click="lunchNumber()"> LunchCheck</button>
+                <br>
+          </div>
+                        {{myMessage}}
+
+         </div>
+   
+</body>
+</html>
