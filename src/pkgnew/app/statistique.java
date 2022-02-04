@@ -77,7 +77,8 @@ public final class statistique extends javax.swing.JFrame {
     public statistique(String username1) {
         db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
         dc = new ConnectComPort();
-        
+                db.connexionDatabase();
+
         intf.setMaximumFractionDigits(0);
         df.setMaximumFractionDigits(3);
         df.setMinimumFractionDigits(3);
@@ -1103,7 +1104,6 @@ public final class statistique extends javax.swing.JFrame {
             String[] actions = {"user", "type_action", "description", "Date", "Heure"};
             String[] inf3 = {user, action, Description, Date.getText(), Heure.getText()};
             System.out.println(db.queryInsert("action", actions, inf3));
-                    db.closeconnexion();
 
 
             //..................................
@@ -1122,6 +1122,8 @@ public final class statistique extends javax.swing.JFrame {
 
     private void usersbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usersbtnActionPerformed
         // TODO add your handling code here:
+                      db.closeconnexion();
+
         Utilisateurs a = new Utilisateurs(utilisateur.getText());
         a.setVisible(true);
         this.hide();
@@ -1129,6 +1131,8 @@ public final class statistique extends javax.swing.JFrame {
 
     private void salesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salesbtnActionPerformed
         // TODO add your handling code here:
+                       db.closeconnexion();
+
         Historique a = new Historique(utilisateur.getText());
         a.setVisible(true);
         this.hide();
@@ -1140,7 +1144,8 @@ public final class statistique extends javax.swing.JFrame {
         Inventory a = new Inventory(utilisateur.getText());
         a.setVisible(true);
         this.hide();
-        // this.dispose();
+               db.closeconnexion();
+
     }//GEN-LAST:event_inventorybtnActionPerformed
 
     private void stockbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockbtnActionPerformed

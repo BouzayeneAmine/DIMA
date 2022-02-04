@@ -30,6 +30,8 @@ public class Login extends javax.swing.JFrame {
 
     public Login() throws SQLException {
         db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
+        db.connexionDatabase();
+
         initComponents();
 
         correctAllNumbers();
@@ -47,19 +49,16 @@ public class Login extends javax.swing.JFrame {
                 + "                total_base = replace (total_base, ',', '.'),"
                 + "                total = replace (total, ',', '.')";
         db.exécutionUpdate(updateSQL);
-        db.closeconnexion();
 
         updateSQL = "UPDATE produit set "
                 + "Prix_vente = replace (Prix_vente, ',', '.'),"
                 + "Prix_base = replace (Prix_base, ',', '.')";
         db.exécutionUpdate(updateSQL);
-        db.closeconnexion();
 
         updateSQL = "UPDATE produit_stock set "
                 + "                Prix_vente = replace (Prix_vente, ',', '.'),"
                 + "                Prix_base = replace (Prix_base, ',', '.')";
         db.exécutionUpdate(updateSQL);
-        db.closeconnexion();
 
         System.out.println("correct all Numbers");
     }
@@ -104,7 +103,6 @@ public class Login extends javax.swing.JFrame {
             String indicateur = rs.getString("Login");
             txt_username.addItem(indicateur);
         }
-        db.closeconnexion();
     }
 
     @SuppressWarnings("unchecked")
@@ -396,12 +394,10 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Le nom utilisateur ou le mots de pass est incorrect");
         } else {
             if (hak.equals("directeur")) {
-                db.closeconnexion();
                 POS a = new POS(username1);
                 a.setVisible(true);
                 this.dispose();
             } else if (hak.equals("Utilisateur")) {
-                db.closeconnexion();
                 POS k = new POS(username1);
                 k.setVisible(true);
                 this.dispose();
@@ -411,7 +407,6 @@ public class Login extends javax.swing.JFrame {
             String[] colon = {"Login", "Type", "Date", "Heure", "Nom_PC"};
             String[] inf = {username1, hak, txDate, txHeure, hostName};
             System.out.println(db.queryInsert("connexion", colon, inf));
-            db.closeconnexion();
             // action logout
             String user = txt_username.getSelectedItem().toString();
             String action = "log in";
@@ -421,7 +416,6 @@ public class Login extends javax.swing.JFrame {
             String[] actions = {"user", "type_action", "description", "Date", "Heure"};
             String[] inf3 = {user, action, Description, txDate, txHeure};
             System.out.println(db.queryInsert("action", actions, inf3));
-            db.closeconnexion();
             //..................................
 
         }
@@ -454,12 +448,10 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Le nom utilisateur ou le mots de pass est incorrect");
             } else {
                 if (hak.equals("directeur")) {
-                    db.closeconnexion();
                     POS a = new POS(username1);
                     a.setVisible(true);
                     this.dispose();
                 } else if (hak.equals("Utilisateur")) {
-                    db.closeconnexion();
                     POS k = new POS(username1);
                     k.setVisible(true);
                     this.dispose();
@@ -475,7 +467,6 @@ public class Login extends javax.swing.JFrame {
                 String[] actions = {"user", "type_action", "description", "Date", "Heure"};
                 String[] inf3 = {user, action, Description, d, h};
                 System.out.println(db.queryInsert("action", actions, inf3));
-                db.closeconnexion();
                 //..................................
             }
         }

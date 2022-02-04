@@ -58,6 +58,7 @@ public class Historique extends javax.swing.JFrame {
     public Historique(String username1) {
         db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
         dc = new ConnectComPort();
+        db.connexionDatabase();
 
         Heure1 = new JLabel();
         Date1 = new JLabel();
@@ -115,7 +116,6 @@ public class Historique extends javax.swing.JFrame {
             String indicateur = rs.getString("Login");
             txt_username.addItem(indicateur);
         }
-        db.closeconnexion();
     }
 
     public void date() {
@@ -1017,6 +1017,7 @@ public class Historique extends javax.swing.JFrame {
     }//GEN-LAST:event_totalActionPerformed
 
     public void remplireVenduBrutNet() {
+        
         int qte = 0;
         Double brut = 0.000;
         Double net = 0.000;
@@ -1437,7 +1438,6 @@ db.closeconnexion();
         Login a;
         try {
             db.queryDelete("caisse");
-            db.closeconnexion();
             a = new Login();
 
             // action logout
@@ -1449,7 +1449,6 @@ db.closeconnexion();
             String[] actions = {"user", "type_action", "description", "Date", "Heure"};
             String[] inf3 = {user, action, Description, Date.getText(), Heure.getText()};
             System.out.println(db.queryInsert("action", actions, inf3));
-            db.closeconnexion();
 
             //..................................
             this.hide();
@@ -1503,7 +1502,6 @@ db.closeconnexion();
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-db.closeconnexion();
         if (username == null && password == null) {
             getToolkit().beep();
             errormsg.setText("Le login ou le mot de passe est incorrect");
@@ -1535,7 +1533,6 @@ db.closeconnexion();
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-db.closeconnexion();
         if (username == null && password == null) {
             getToolkit().beep();
             errormsg.setText("Le login ou le mot de passe est incorrect");
@@ -1563,7 +1560,6 @@ db.closeconnexion();
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-db.closeconnexion();
         if (username == null && password == null) {
             getToolkit().beep();
             errormsg.setText("Le login ou le mot de passe est incorrect");

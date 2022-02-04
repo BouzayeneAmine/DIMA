@@ -51,6 +51,9 @@ public class POS extends javax.swing.JFrame {
     private DefaultTableCellRenderer headerRenderer;
 
     public POS(String username) {
+        try {
+            
+        
         initComponents();
         this.setDefaultCloseOperation(0);
 
@@ -137,7 +140,10 @@ public class POS extends javax.swing.JFrame {
         MyKeyListener keyboard = new MyKeyListener();
         general_panel.addKeyListener(keyboard);
         general_panel.setFocusable(true);
-
+} catch (Exception e) {
+            System.err.println(e.toString());
+    db.queryDelete("caisse");
+        }
     }
 
     // tableau numero de ticket
@@ -222,8 +228,7 @@ public class POS extends javax.swing.JFrame {
                     prix_base.setText((String.valueOf(jTable2.getValueAt(0, 4))));
                     recherche_Barcode.setText((String.valueOf(jTable2.getValueAt(0, 1))));
                     recherche_Barcode.requestFocus();
-                    
-                    
+
                 }
             });
 
@@ -455,9 +460,6 @@ public class POS extends javax.swing.JFrame {
         Date1 = new javax.swing.JLabel();
         Heure1 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        confirmerBtn = new javax.swing.JButton();
-        supprimerBtn = new javax.swing.JButton();
-        annulerBtn = new javax.swing.JButton();
         general_panel = new javax.swing.JPanel();
         category_bar = new javax.swing.JPanel();
         CatfruitssecsPanel = new javax.swing.JLabel();
@@ -497,7 +499,7 @@ public class POS extends javax.swing.JFrame {
         NumPadX = new javax.swing.JButton();
         NumPadCE = new javax.swing.JButton();
         NumPadC = new javax.swing.JButton();
-        EnterBtn = new javax.swing.JButton();
+        annulerBtn = new javax.swing.JButton();
         totale = new javax.swing.JLabel();
         jPanel35 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -551,6 +553,9 @@ public class POS extends javax.swing.JFrame {
         Barsearch = new javax.swing.JTextField();
         searchbarbg = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        EnterBtn = new javax.swing.JButton();
+        supprimerBtn = new javax.swing.JButton();
+        confirmerBtn = new javax.swing.JButton();
         Background = new javax.swing.JPanel();
 
         Date.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -910,47 +915,6 @@ public class POS extends javax.swing.JFrame {
         jPanel1.add(jLabel10);
         jLabel10.setBounds(1250, 0, 170, 80);
 
-        confirmerBtn.setBackground(new java.awt.Color(0, 255, 51));
-        confirmerBtn.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
-        confirmerBtn.setForeground(new java.awt.Color(255, 255, 255));
-        confirmerBtn.setText("confirmer");
-        confirmerBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmerBtnActionPerformed(evt);
-            }
-        });
-        confirmerBtn.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                confirmerBtnKeyReleased(evt);
-            }
-        });
-        jPanel1.add(confirmerBtn);
-        confirmerBtn.setBounds(1070, 20, 140, 50);
-
-        supprimerBtn.setBackground(new java.awt.Color(254, 3, 48));
-        supprimerBtn.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
-        supprimerBtn.setForeground(new java.awt.Color(255, 255, 255));
-        supprimerBtn.setText("delete");
-        supprimerBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                supprimerBtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(supprimerBtn);
-        supprimerBtn.setBounds(920, 20, 140, 50);
-
-        annulerBtn.setBackground(new java.awt.Color(0, 0, 102));
-        annulerBtn.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
-        annulerBtn.setForeground(new java.awt.Color(255, 255, 255));
-        annulerBtn.setText("cancel");
-        annulerBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annulerBtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(annulerBtn);
-        annulerBtn.setBounds(740, 20, 140, 50);
-
         getContentPane().add(jPanel1);
         jPanel1.setBounds(50, 0, 2030, 80);
 
@@ -1283,16 +1247,17 @@ public class POS extends javax.swing.JFrame {
         CommandePanel.add(NumPadC);
         NumPadC.setBounds(440, 283, 45, 45);
 
-        EnterBtn.setBackground(new java.awt.Color(0, 0, 153));
-        EnterBtn.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        EnterBtn.setForeground(new java.awt.Color(255, 255, 255));
-        EnterBtn.addActionListener(new java.awt.event.ActionListener() {
+        annulerBtn.setBackground(new java.awt.Color(0, 0, 102));
+        annulerBtn.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        annulerBtn.setForeground(new java.awt.Color(255, 255, 255));
+        annulerBtn.setText("cancel");
+        annulerBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EnterBtnActionPerformed(evt);
+                annulerBtnActionPerformed(evt);
             }
         });
-        CommandePanel.add(EnterBtn);
-        EnterBtn.setBounds(380, 345, 105, 45);
+        CommandePanel.add(annulerBtn);
+        annulerBtn.setBounds(920, 850, 140, 50);
 
         totale.setBackground(new java.awt.Color(241, 241, 241));
         totale.setFont(new java.awt.Font("Roboto Black", 0, 48)); // NOI18N
@@ -1690,7 +1655,47 @@ public class POS extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/pos.png"))); // NOI18N
         general_panel.add(jLabel7);
-        jLabel7.setBounds(950, 840, 530, 70);
+        jLabel7.setBounds(910, 840, 530, 70);
+
+        EnterBtn.setBackground(new java.awt.Color(0, 0, 153));
+        EnterBtn.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        EnterBtn.setForeground(new java.awt.Color(255, 255, 255));
+        EnterBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnterBtnActionPerformed(evt);
+            }
+        });
+        general_panel.add(EnterBtn);
+        EnterBtn.setBounds(380, 345, 105, 45);
+
+        supprimerBtn.setBackground(new java.awt.Color(254, 3, 48));
+        supprimerBtn.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        supprimerBtn.setForeground(new java.awt.Color(255, 255, 255));
+        supprimerBtn.setText("delete");
+        supprimerBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supprimerBtnActionPerformed(evt);
+            }
+        });
+        general_panel.add(supprimerBtn);
+        supprimerBtn.setBounds(1100, 850, 140, 50);
+
+        confirmerBtn.setBackground(new java.awt.Color(0, 255, 51));
+        confirmerBtn.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        confirmerBtn.setForeground(new java.awt.Color(255, 255, 255));
+        confirmerBtn.setText("confirmer");
+        confirmerBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmerBtnActionPerformed(evt);
+            }
+        });
+        confirmerBtn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                confirmerBtnKeyReleased(evt);
+            }
+        });
+        general_panel.add(confirmerBtn);
+        confirmerBtn.setBounds(1280, 850, 140, 50);
 
         getContentPane().add(general_panel);
         general_panel.setBounds(0, 0, 2000, 2000);
@@ -1916,19 +1921,19 @@ public class POS extends javax.swing.JFrame {
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
         // TODO add your handling code here:
-        try{
-        txTest1.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 0)));
-        afficheur.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 3)));
-        prix_base.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 4)));
-        Nom.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 0)));
-        Prix_Vente.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 3)));
-        recherche_Barcode.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 1)));
-        recherche_Barcode.requestFocus();
-        }catch(Exception e){
+        try {
+            txTest1.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 0)));
+            afficheur.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 3)));
+            prix_base.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 4)));
+            Nom.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 0)));
+            Prix_Vente.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 3)));
+            recherche_Barcode.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 1)));
+            recherche_Barcode.requestFocus();
+        } catch (Exception e) {
             System.err.println(e.toString());
             JOptionPane.showMessageDialog(this, "opétation echoué ");
             actualiser();
-            
+
         }
     }//GEN-LAST:event_jTable2MouseClicked
 
@@ -1938,122 +1943,128 @@ public class POS extends javax.swing.JFrame {
 
     private void confirmerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmerBtnActionPerformed
         // TODO add your handling code here:
-        int R = 0;
-        String emptyStockNames = "";
-
-        int j = jTable1.getRowCount();
-        System.out.println("nombre de produits au tableau = " + j);
-
-        String nom;
-        String barcode;
-        String categorie;
-        String Quantity;
-        String Quantity_stock;
-        String total;
-        String total_base;
-        String a[] = {"id", "nom", "Prix_vente", "Quantite"};
-
-        boolean stockIsEmpty = false;
         try {
-            for (int i = 0; i < j; i++) {
 
-                nom = (String.valueOf(jTable1.getValueAt(i, 1)));
-                barcode = (String.valueOf(jTable1.getValueAt(i, 2)));
-                Quantity = (String.valueOf(jTable1.getValueAt(i, 4)));
-                System.out.println(nom + " " + Quantity + " " + barcode);
-                rs = db.fcSelectCommand(a, "produit_stock", "Barcode = '" + barcode + "' ");
-                jTable7.setModel(new ResultSetTableModel(rs));
-                Quantity_stock = (String.valueOf(jTable7.getValueAt(0, 3)));
+            int R = 0;
+            String emptyStockNames = "";
 
-                System.out.println("quantité " + Quantity);
-                System.out.println("quantité stock " + Quantity_stock);
+            int j = jTable1.getRowCount();
+            System.out.println("nombre de produits au tableau = " + j);
 
-                R = Integer.parseInt(Quantity_stock) - Integer.parseInt(Quantity);
+            String nom;
+            String barcode;
+            String categorie;
+            String Quantity;
+            String Quantity_stock;
+            String total;
+            String total_base;
+            String a[] = {"id", "nom", "Prix_vente", "Quantite"};
 
-                System.out.println("R = " + R);
-
-                if (R < 0) {
-                    stockIsEmpty = true;
-                    emptyStockNames = emptyStockNames + nom + " le stock est vide " + System.lineSeparator();
-                }
-            }
-
-            if (stockIsEmpty) {
-                JOptionPane.showMessageDialog(this, emptyStockNames);
-            } else {
-                j = jTable1.getRowCount();
-
-                System.out.println(" nombre d'article dans la commande = " + j);
-                // impression de entete
-                // numero de ticket
-                Numero.setText(String.valueOf(jTable13.getValueAt(0, 1)));
-                int nbr = Integer.parseInt(Numero.getText());
-                Numero.setText(String.valueOf(nbr + 1));
-
-                //
-                Ticket1 ticket1 = new Ticket1("MAGASIN_YASSINE", "RUE_FARHAT_HACHED_BOUHAJLA_KAIROUAN", Numero.getText(), totale.getText(), Date.getText(), Heure.getText());
-                ticket1.print();
-                ////////
-
+            boolean stockIsEmpty = false;
+            try {
                 for (int i = 0; i < j; i++) {
 
                     nom = (String.valueOf(jTable1.getValueAt(i, 1)));
-                    barcode = String.valueOf(jTable1.getValueAt(i, 2));
-                    categorie = (String.valueOf(jTable1.getValueAt(i, 3)));
+                    barcode = (String.valueOf(jTable1.getValueAt(i, 2)));
                     Quantity = (String.valueOf(jTable1.getValueAt(i, 4)));
-                    String Prix = (String.valueOf(jTable1.getValueAt(i, 5)));
-                    total = (String.valueOf(jTable1.getValueAt(i, 7)));
-                    total_base = (String.valueOf(jTable1.getValueAt(i, 6)));
-
+                    System.out.println(nom + " " + Quantity + " " + barcode);
                     rs = db.fcSelectCommand(a, "produit_stock", "Barcode = '" + barcode + "' ");
                     jTable7.setModel(new ResultSetTableModel(rs));
                     Quantity_stock = (String.valueOf(jTable7.getValueAt(0, 3)));
 
-                    System.out.println("quantite saisie=" + Quantity);
-
-                    System.out.println("quantite stock=" + Quantity_stock);
+                    System.out.println("quantité " + Quantity);
+                    System.out.println("quantité stock " + Quantity_stock);
 
                     R = Integer.parseInt(Quantity_stock) - Integer.parseInt(Quantity);
 
-                    String produit_stock[] = {"Quantite"};
-                    String inf[] = {String.valueOf(R)};
-                    db.queryUpdate("produit_stock", produit_stock, inf, "Barcode='" + barcode + "'");
+                    System.out.println("R = " + R);
 
-                    String[] historique = {"Nom", "Barcode", "Categorie", "Quantite", "Prix_Vente", "total_base", "total", "Date_Sortie", "Heure_Sortie", "user"};
-                    String[] inf2 = {nom, barcode, categorie, Quantity, Prix, total_base, total, Date.getText(), Heure.getText(), utilisateur.getText()};
-                    db.queryInsert("historique", historique, inf2);
-                    db.queryDelete("caisse", "Barcode ='" + barcode + "'");
-
-                    ///////////////////////////////////////////  
-                    try {
-                        Ticket ticket = new Ticket(nom, Prix, Quantity);
-                        ticket.print();
-                        //update numero de ticket
-                        String numero_bon[] = {"numero"};
-                        String inf4[] = {Numero.getText()};
-
-                        System.err.println(db.queryUpdate("nbon", numero_bon, inf4, "id='" + 0 + "'"));
-                        ///////
-
-                    } catch (Exception e) {
-                        System.err.println("ouups");
+                    if (R < 0) {
+                        stockIsEmpty = true;
+                        emptyStockNames = emptyStockNames + nom + " le stock est vide " + System.lineSeparator();
                     }
-
-                    //////////////////
                 }
-                Ticket2 ticket2 = new Ticket2();
-                ticket2.print();
-                //JOptionPane.showMessageDialog(this, "Le client est sorti avec succès ! \n Merci d imprimer le ticket de sortie.");
-                totale.setText("0.000");
-                table();
-                table2();
 
-                /////////////////////////////////
+                if (stockIsEmpty) {
+                    JOptionPane.showMessageDialog(this, emptyStockNames);
+                } else {
+                    j = jTable1.getRowCount();
+
+                    System.out.println(" nombre d'article dans la commande = " + j);
+                    // impression de entete
+                    // numero de ticket
+                    Numero.setText(String.valueOf(jTable13.getValueAt(0, 1)));
+                    int nbr = Integer.parseInt(Numero.getText());
+                    Numero.setText(String.valueOf(nbr + 1));
+
+                    //
+                    Ticket1 ticket1 = new Ticket1("MAGASIN_YASSINE", "RUE_FARHAT_HACHED_BOUHAJLA_KAIROUAN", Numero.getText(), totale.getText(), Date1.getText(), Heure1.getText());
+                    ticket1.print();
+                    ////////
+
+                    for (int i = 0; i < j; i++) {
+
+                        nom = (String.valueOf(jTable1.getValueAt(i, 1)));
+                        barcode = String.valueOf(jTable1.getValueAt(i, 2));
+                        categorie = (String.valueOf(jTable1.getValueAt(i, 3)));
+                        Quantity = (String.valueOf(jTable1.getValueAt(i, 4)));
+                        String Prix = (String.valueOf(jTable1.getValueAt(i, 5)));
+                        total = (String.valueOf(jTable1.getValueAt(i, 7)));
+                        total_base = (String.valueOf(jTable1.getValueAt(i, 6)));
+
+                        rs = db.fcSelectCommand(a, "produit_stock", "Barcode = '" + barcode + "' ");
+                        jTable7.setModel(new ResultSetTableModel(rs));
+                        Quantity_stock = (String.valueOf(jTable7.getValueAt(0, 3)));
+
+                        System.out.println("quantite saisie=" + Quantity);
+
+                        System.out.println("quantite stock=" + Quantity_stock);
+
+                        R = Integer.parseInt(Quantity_stock) - Integer.parseInt(Quantity);
+
+                        String produit_stock[] = {"Quantite"};
+                        String inf[] = {String.valueOf(R)};
+                        db.queryUpdate("produit_stock", produit_stock, inf, "Barcode='" + barcode + "'");
+
+                        String[] historique = {"Nom", "Barcode", "Categorie", "Quantite", "Prix_Vente", "total_base", "total", "Date_Sortie", "Heure_Sortie", "user"};
+                        String[] inf2 = {nom, barcode, categorie, Quantity, Prix, total_base, total, Date.getText(), Heure1.getText(), utilisateur.getText()};
+                        db.queryInsert("historique", historique, inf2);
+                        db.queryDelete("caisse", "Barcode ='" + barcode + "'");
+
+                        ///////////////////////////////////////////  
+                        try {
+                            Ticket ticket = new Ticket(nom, Prix, Quantity);
+                            ticket.print();
+                            //update numero de ticket
+                            String numero_bon[] = {"numero"};
+                            String inf4[] = {Numero.getText()};
+
+                            System.err.println(db.queryUpdate("nbon", numero_bon, inf4, "id='" + 0 + "'"));
+                            ///////
+
+                        } catch (Exception e) {
+                            System.err.println("ouups");
+                        }
+
+                        //////////////////
+                    }
+                    Ticket2 ticket2 = new Ticket2();
+                    ticket2.print();
+                    //JOptionPane.showMessageDialog(this, "Le client est sorti avec succès ! \n Merci d imprimer le ticket de sortie.");
+                    totale.setText("0.000");
+                    table();
+                    table2();
+
+                    /////////////////////////////////
+                }
+            } catch (Exception e) {
+                System.err.println("problem is " + e.toString());
             }
         } catch (Exception e) {
             System.err.println("problem is " + e.toString());
+            JOptionPane.showMessageDialog(this, "vous avez entrer un produit null");
+            db.queryDelete("caisse");
         }
-
         recherche_Barcode.requestFocus();
     }//GEN-LAST:event_confirmerBtnActionPerformed
 
@@ -2118,7 +2129,7 @@ public class POS extends javax.swing.JFrame {
                 recherche_Barcode.setText("");
             } else {
                 passerLeProduit();
-                
+
             }
         } else {
 
@@ -2145,10 +2156,10 @@ public class POS extends javax.swing.JFrame {
                 Prix_Vente.setText(String.valueOf(jTable2.getValueAt(0, 3)));
                 prix_base.setText((String.valueOf(jTable2.getValueAt(0, 4))));
             } catch (Exception e) {
-               JOptionPane.showMessageDialog(this, "vous devez entrer un produit existant !!!");
-               Barsearch.setText("");
-               Barsearch.requestFocus();
-               afficheur.setText("0");
+                JOptionPane.showMessageDialog(this, "vous devez entrer un produit existant !!!");
+                Barsearch.setText("");
+                Barsearch.requestFocus();
+                afficheur.setText("0");
             }
         }
 
@@ -2248,6 +2259,9 @@ public class POS extends javax.swing.JFrame {
 
     private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
         // TODO add your handling code here:
+        try {
+            
+        
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(3);
         df.setMinimumFractionDigits(3);
@@ -2357,6 +2371,9 @@ public class POS extends javax.swing.JFrame {
             Logger.getLogger(POS.class.getName()).log(Level.SEVERE, null, ex);
         }*/
         //}
+        }catch (Exception e) {
+            System.err.println(e.toString());
+        }
     }//GEN-LAST:event_LogoutBtnActionPerformed
 
     private void tabacBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabacBtnActionPerformed
@@ -2778,7 +2795,7 @@ public class POS extends javax.swing.JFrame {
                 recherche_Barcode.setFocusable(true);
             }
         } //////////// confirmer code ///////////
-        else if ((evt.getKeyCode() == KeyEvent.VK_ENTER)) {
+        else if ((evt.getKeyCode() == KeyEvent.VK_SPACE)) {
             if (recherche_Barcode.getText().equals(" ")) {
                 JOptionPane.showMessageDialog(this, "vous devez entrer un code a barre");
                 recherche_Barcode.setText("");
@@ -2948,7 +2965,6 @@ public class POS extends javax.swing.JFrame {
         @Override
         public void keyPressed(KeyEvent e) {
 
-            
         }
 
         @Override
