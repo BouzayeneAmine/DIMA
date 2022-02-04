@@ -67,7 +67,7 @@ public class stock extends javax.swing.JFrame {
         datecourante();
         
         utilisateur.setText(username);
-        //System.err.println(isUser(username));
+        ///System.err.println(isUser(username));
         
         if(isUser(username)){
             ReduceBtn.hide();

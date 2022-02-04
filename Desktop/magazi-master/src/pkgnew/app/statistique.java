@@ -234,7 +234,7 @@ public final class statistique extends javax.swing.JFrame {
 
         pieplot.setOutlineStroke(new BasicStroke(0));
         ChartPanel bestSellersChartPanel = new ChartPanel(bestsellersPie);
-        //bestSellersChartPanel.setBackground(new Color(255, 250, 240)); 
+        ///bestSellersChartPanel.setBackground(new Color(255, 250, 240)); 
 
         return bestSellersChartPanel;
     }

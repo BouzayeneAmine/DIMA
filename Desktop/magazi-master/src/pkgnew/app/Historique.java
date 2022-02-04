@@ -78,7 +78,7 @@ public class Historique extends javax.swing.JFrame {
         headerRenderer.setBackground(new Color(30, 130, 82));
         headerRenderer.setForeground(new Color(255, 250, 240));
 
-        // bouton bilan actif
+        /// bouton bilan actif
         bilan.show();
         stock.hide();
         action.hide();

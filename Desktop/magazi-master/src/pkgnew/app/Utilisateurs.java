@@ -33,7 +33,7 @@ public class Utilisateurs extends javax.swing.JFrame {
     ResultSet rs;
     DbConnection db;
     public static Utilisateurs obj = null;
-    //private String Date, Heure; 
+    ///private String Date, Heure; 
     private DefaultTableCellRenderer headerRenderer;
     private JLabel Heure = new JLabel();
     private JLabel Date = new JLabel();

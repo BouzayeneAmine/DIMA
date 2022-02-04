@@ -79,7 +79,7 @@ public class POS extends javax.swing.JFrame {
 
         recherche_Barcode.requestFocus();
 
-        //calcule total
+        ///calcule total
         float c = 0;
         for (int k = 0; k < jTable1.getRowCount(); k++) {
             String b = String.valueOf(jTable1.getValueAt(k, 7)).replace(',', '.');

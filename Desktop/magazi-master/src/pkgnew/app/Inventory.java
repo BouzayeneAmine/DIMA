@@ -89,7 +89,7 @@ public class Inventory extends javax.swing.JFrame {
         rs = db.exécutionQuery(q);
         try {
             rs.next();
-            //System.err.println(rs.getString(1));
+            ///System.err.println(rs.getString(1));
             if ((rs.getString(1).toLowerCase()).equals("utilisateur")) {
                 return true;
             }
