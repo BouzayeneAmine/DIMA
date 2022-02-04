@@ -57,6 +57,8 @@ public class Inventory extends javax.swing.JFrame {
 
         db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
         dc = new ConnectComPort();
+        db.connexionDatabase();
+
         date();
         datecourante();
         table();
@@ -76,10 +78,10 @@ public class Inventory extends javax.swing.JFrame {
             supprimerbtn.hide();
             supprimerbtnbg.hide();
         }
-        
+
         Barsearch.requestFocus();
-        selectedCat = ""; 
-        
+        selectedCat = "";
+
     }
 
     public boolean isUser(String username) {
@@ -94,7 +96,6 @@ public class Inventory extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(stock.class.getName()).log(Level.SEVERE, null, ex);
         }
-        db.closeconnexion();
         return false;
     }
 
@@ -689,7 +690,6 @@ public class Inventory extends javax.swing.JFrame {
             max = String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 6));
             min = String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 7));
             System.out.println(nom);
-            db.closeconnexion();
             EditProduct e = new EditProduct(utilisateur.getText());
 
             e.show();
@@ -740,7 +740,6 @@ public class Inventory extends javax.swing.JFrame {
         max = String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 6));
         min = String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 7));
         System.out.println(nom);
-        db.closeconnexion();
 
         AddProduct e = new AddProduct(utilisateur.getText());
         e.show();
@@ -762,133 +761,131 @@ public class Inventory extends javax.swing.JFrame {
                 + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
                 + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
                 + "OR Barcode LIKE '%" + Barsearch.getText() + "%' ";
-        
-        
-        switch(selectedCat){
+
+        switch (selectedCat) {
             case "eau":
                 q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
-                                                                                + "from produit "
-                                                                                + "where "
-                                                                                + "(nom LIKE '%" + Barsearch.getText() + "%'"
-                                                                                + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
-                                                                                + "AND Categorie LIKE '%" + selectedCat + "%' "
-                                                                                +"ORDER BY id DESC";
-                break; 
+                        + "from produit "
+                        + "where "
+                        + "(nom LIKE '%" + Barsearch.getText() + "%'"
+                        + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
+                        + "AND Categorie LIKE '%" + selectedCat + "%' "
+                        + "ORDER BY id DESC";
+                break;
             case "boisson":
-               q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
-                                                                                + "from produit "
-                                                                                + "where "
-                                                                                + "(nom LIKE '%" + Barsearch.getText() + "%'"
-                                                                                + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
-                                                                                + "AND Categorie LIKE '%" + selectedCat + "%' "
-                                                                                +"ORDER BY id DESC";
-                
+                q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
+                        + "from produit "
+                        + "where "
+                        + "(nom LIKE '%" + Barsearch.getText() + "%'"
+                        + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
+                        + "AND Categorie LIKE '%" + selectedCat + "%' "
+                        + "ORDER BY id DESC";
+
                 break;
             case "gouter":
                 q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
-                                                                                + "from produit "
-                                                                                + "where "
-                                                                                + "(nom LIKE '%" + Barsearch.getText() + "%'"
-                                                                                + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
-                                                                                + "AND Categorie LIKE '%" + selectedCat + "%' "
-                                                                                +"ORDER BY id DESC";
-                
+                        + "from produit "
+                        + "where "
+                        + "(nom LIKE '%" + Barsearch.getText() + "%'"
+                        + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
+                        + "AND Categorie LIKE '%" + selectedCat + "%' "
+                        + "ORDER BY id DESC";
+
                 break;
             case "tabac":
-               q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
-                                                                                + "from produit "
-                                                                                + "where "
-                                                                                + "(nom LIKE '%" + Barsearch.getText() + "%'"
-                                                                                + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
-                                                                                + "AND Categorie LIKE '%" + selectedCat + "%' "
-                                                                                +"ORDER BY id DESC";
-                
+                q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
+                        + "from produit "
+                        + "where "
+                        + "(nom LIKE '%" + Barsearch.getText() + "%'"
+                        + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
+                        + "AND Categorie LIKE '%" + selectedCat + "%' "
+                        + "ORDER BY id DESC";
+
                 break;
             case "cigarette":
                 q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
-                                                                                + "from produit "
-                                                                                + "where "
-                                                                                + "(nom LIKE '%" + Barsearch.getText() + "%'"
-                                                                                + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
-                                                                                + "AND nom LIKE '%" + selectedCat + "%' "
-                                                                                +"ORDER BY id DESC";
-                
+                        + "from produit "
+                        + "where "
+                        + "(nom LIKE '%" + Barsearch.getText() + "%'"
+                        + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
+                        + "AND nom LIKE '%" + selectedCat + "%' "
+                        + "ORDER BY id DESC";
+
                 break;
             case "recharge téléphonique":
                 q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
-                                                                                + "from produit "
-                                                                                + "where "
-                                                                                + "(nom LIKE '%" + Barsearch.getText() + "%'"
-                                                                                + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
-                                                                                + "AND Categorie LIKE '%" + selectedCat + "%' "
-                                                                                +"ORDER BY id DESC";
-                
+                        + "from produit "
+                        + "where "
+                        + "(nom LIKE '%" + Barsearch.getText() + "%'"
+                        + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
+                        + "AND Categorie LIKE '%" + selectedCat + "%' "
+                        + "ORDER BY id DESC";
+
                 break;
             case "accessoire":
                 q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
-                                                                                + "from produit "
-                                                                                + "where "
-                                                                                + "(nom LIKE '%" + Barsearch.getText() + "%'"
-                                                                                + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
-                                                                                + "AND Categorie LIKE '%" + selectedCat + "%' "
-                                                                                +"ORDER BY id DESC";
-                
+                        + "from produit "
+                        + "where "
+                        + "(nom LIKE '%" + Barsearch.getText() + "%'"
+                        + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
+                        + "AND Categorie LIKE '%" + selectedCat + "%' "
+                        + "ORDER BY id DESC";
+
                 break;
             case "pates":
                 q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
-                                                                                + "from produit "
-                                                                                + "where "
-                                                                                + "(nom LIKE '%" + Barsearch.getText() + "%'"
-                                                                                + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
-                                                                                + "AND Categorie LIKE '%" + selectedCat + "%' "
-                                                                                +"ORDER BY id DESC";
-                
+                        + "from produit "
+                        + "where "
+                        + "(nom LIKE '%" + Barsearch.getText() + "%'"
+                        + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
+                        + "AND Categorie LIKE '%" + selectedCat + "%' "
+                        + "ORDER BY id DESC";
+
                 break;
             case "conserve":
                 q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
-                                                                                + "from produit "
-                                                                                + "where "
-                                                                                + "(nom LIKE '%" + Barsearch.getText() + "%'"
-                                                                                + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
-                                                                                + "AND Categorie LIKE '%" + selectedCat + "%' "
-                                                                                +"ORDER BY id DESC";
-                
+                        + "from produit "
+                        + "where "
+                        + "(nom LIKE '%" + Barsearch.getText() + "%'"
+                        + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
+                        + "AND Categorie LIKE '%" + selectedCat + "%' "
+                        + "ORDER BY id DESC";
+
                 break;
             case "fruits secs":
                 q = "Select Id, nom, Barcode, Categorie, Prix_Base, Prix_Vente, Max, Min "
-                                                                                + "from produit "
-                                                                                + "where "
-                                                                                + "(nom LIKE '%" + Barsearch.getText() + "%'"
-                                                                                + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
-                                                                                + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
-                                                                                + "AND Categorie LIKE '%" + selectedCat + "%' "
-                                                                                +"ORDER BY id DESC";
-                
+                        + "from produit "
+                        + "where "
+                        + "(nom LIKE '%" + Barsearch.getText() + "%'"
+                        + "OR Prix_vente LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Categorie LIKE '%" + Barsearch.getText() + "%' "
+                        + "OR Barcode LIKE '%" + Barsearch.getText() + "%' )"
+                        + "AND Categorie LIKE '%" + selectedCat + "%' "
+                        + "ORDER BY id DESC";
+
                 break;
             default:
                 break;
         }
-        
-        
+
         rs = db.exécutionQuery(q);
         jTable1.setModel(new ResultSetTableModel(rs));
         jTable1.getColumnModel().getColumn(0).setMinWidth(0);
@@ -899,7 +896,7 @@ public class Inventory extends javax.swing.JFrame {
         for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
-         evt.consume();
+        evt.consume();
 
     }//GEN-LAST:event_BarsearchKeyReleased
 
@@ -932,8 +929,8 @@ public class Inventory extends javax.swing.JFrame {
         for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
-        
-        selectedCat = "accessoire"; 
+
+        selectedCat = "accessoire";
     }//GEN-LAST:event_AccBtnActionPerformed
 
     private void rechargeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechargeBtnActionPerformed
@@ -965,9 +962,9 @@ public class Inventory extends javax.swing.JFrame {
         for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
-        
-        selectedCat = "recharge téléphonique"; 
-        
+
+        selectedCat = "recharge téléphonique";
+
     }//GEN-LAST:event_rechargeBtnActionPerformed
 
     private void cigaretteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cigaretteBtnActionPerformed
@@ -999,8 +996,8 @@ public class Inventory extends javax.swing.JFrame {
         for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
-        
-        selectedCat = "cigarette"; 
+
+        selectedCat = "cigarette";
     }//GEN-LAST:event_cigaretteBtnActionPerformed
 
     private void tabacBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabacBtnActionPerformed
@@ -1032,8 +1029,8 @@ public class Inventory extends javax.swing.JFrame {
         for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
-        
-        selectedCat = "tabac"; 
+
+        selectedCat = "tabac";
     }//GEN-LAST:event_tabacBtnActionPerformed
 
     private void gouterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gouterBtnActionPerformed
@@ -1065,9 +1062,9 @@ public class Inventory extends javax.swing.JFrame {
         for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
-        
-        selectedCat = "gouter"; 
-        
+
+        selectedCat = "gouter";
+
     }//GEN-LAST:event_gouterBtnActionPerformed
 
     private void boissonBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boissonBtnActionPerformed
@@ -1099,8 +1096,8 @@ public class Inventory extends javax.swing.JFrame {
         for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
-        
-        selectedCat = "boisson"; 
+
+        selectedCat = "boisson";
     }//GEN-LAST:event_boissonBtnActionPerformed
 
     private void eauBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eauBtnActionPerformed
@@ -1117,7 +1114,7 @@ public class Inventory extends javax.swing.JFrame {
         CatpatesPanel.hide();
         CatconservesPanel.hide();
         CatfruitssecsPanel.hide();
-        
+
         //.........
         String a[] = {"Id", "nom", "Barcode", "Categorie", "Prix_Base", "Prix_Vente", "Max", "Min"};
         rs = db.fcSelectCommand(a, "produit", "Categorie LIKE '%" + "eau" + "%' ");
@@ -1131,8 +1128,8 @@ public class Inventory extends javax.swing.JFrame {
         for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
-        
-        selectedCat = "eau"; 
+
+        selectedCat = "eau";
     }//GEN-LAST:event_eauBtnActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -1163,12 +1160,9 @@ public class Inventory extends javax.swing.JFrame {
                 String[] actions = {"user", "type_action", "description", "Date", "Heure"};
                 String[] inf3 = {user, action, Description, d, h};
                 System.out.println(db.queryInsert("action", actions, inf3));
-                db.closeconnexion();
                 String id = String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 0));
                 db.queryDelete("produit", "nom='" + name + "'");
-                db.closeconnexion();
                 db.queryDelete("produit_stock", "nom='" + name + "'");
-                db.closeconnexion();
                 table();
                 JOptionPane.showMessageDialog(this, "Le produit a été suprimé avec succès");
             }
@@ -1179,7 +1173,6 @@ public class Inventory extends javax.swing.JFrame {
 
     private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
         // TODO add your handling code here:
-db.closeconnexion();
         Login a;
         try {
             db.queryDelete("caisse");
@@ -1195,7 +1188,6 @@ db.closeconnexion();
             String[] actions = {"user", "type_action", "description", "Date", "Heure"};
             String[] inf3 = {user, action, Description, d, h};
             System.out.println(db.queryInsert("action", actions, inf3));
-            db.closeconnexion();
 
             //..................................
             this.hide();
@@ -1224,7 +1216,7 @@ db.closeconnexion();
 
     private void salesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salesbtnActionPerformed
         // TODO add your handling code here:
-db.closeconnexion();
+        db.closeconnexion();
         Historique a = new Historique(utilisateur.getText());
         a.setVisible(true);
         this.hide();
@@ -1239,7 +1231,7 @@ db.closeconnexion();
 
     private void stockbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockbtnActionPerformed
         // TODO add your handling code here:
-db.closeconnexion();
+        db.closeconnexion();
         stock a = new stock(utilisateur.getText());
         a.setVisible(true);
         this.hide();
@@ -1255,7 +1247,7 @@ db.closeconnexion();
     }//GEN-LAST:event_registerbtnActionPerformed
 
     private void PatesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatesBtnActionPerformed
-        
+
         //change photo of the bar
         CatPanel.hide();
         CateauPanel.hide();
@@ -1268,7 +1260,7 @@ db.closeconnexion();
         CatpatesPanel.show();
         CatconservesPanel.hide();
         CatfruitssecsPanel.hide();
-        
+
         //.........
         String a[] = {"Id", "nom", "Barcode", "Categorie", "Prix_Base", "Prix_Vente", "Max", "Min"};
         rs = db.fcSelectCommand(a, "produit", "Categorie LIKE '%" + "pates" + "%' ");
@@ -1282,12 +1274,12 @@ db.closeconnexion();
         for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
-        
-        selectedCat = "pates"; 
+
+        selectedCat = "pates";
     }//GEN-LAST:event_PatesBtnActionPerformed
 
     private void ConserveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConserveBtnActionPerformed
-        
+
         //change photo of the bar
         CatPanel.hide();
         CateauPanel.hide();
@@ -1300,7 +1292,7 @@ db.closeconnexion();
         CatpatesPanel.hide();
         CatconservesPanel.show();
         CatfruitssecsPanel.hide();
-        
+
         //.........
         String a[] = {"Id", "nom", "Barcode", "Categorie", "Prix_Base", "Prix_Vente", "Max", "Min"};
         rs = db.fcSelectCommand(a, "produit", "Categorie LIKE '%" + "conserve" + "%' ");
@@ -1314,9 +1306,9 @@ db.closeconnexion();
         for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
-        
-        selectedCat = "conserve"; 
-        
+
+        selectedCat = "conserve";
+
     }//GEN-LAST:event_ConserveBtnActionPerformed
 
     private void FruitssecsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FruitssecsBtnActionPerformed
@@ -1332,7 +1324,7 @@ db.closeconnexion();
         CatpatesPanel.hide();
         CatconservesPanel.hide();
         CatfruitssecsPanel.show();
-        
+
         //.........
         String a[] = {"Id", "nom", "Barcode", "Categorie", "Prix_Base", "Prix_Vente", "Max", "Min"};
         rs = db.fcSelectCommand(a, "produit", "Categorie LIKE '%" + "fruits secs" + "%' ");
@@ -1346,9 +1338,9 @@ db.closeconnexion();
         for (int i = 0; i < jTable1.getModel().getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
-        
-        selectedCat = "fruits secs"; 
-        
+
+        selectedCat = "fruits secs";
+
     }//GEN-LAST:event_FruitssecsBtnActionPerformed
 
     /**

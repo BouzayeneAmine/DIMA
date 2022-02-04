@@ -61,7 +61,7 @@ public class stock extends javax.swing.JFrame {
        
         db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
         dc = new ConnectComPort();
-        
+        db.connexionDatabase();
         table();
         date();
         datecourante();
@@ -106,7 +106,6 @@ public class stock extends javax.swing.JFrame {
      } catch (SQLException ex) {
          Logger.getLogger(stock.class.getName()).log(Level.SEVERE, null, ex);
      }
-     db.closeconnexion();
      return false; 
     }
     
@@ -742,7 +741,6 @@ public void table() {
             String[] actions = {"user", "type_action", "description", "Date", "Heure"};
             String[] inf3 = {user , action, Description,d, h};
             System.out.println(db.queryInsert("action", actions, inf3));
-        db.closeconnexion();
         //..................................
            
         // ajouter au tableau stock_historique
@@ -756,7 +754,6 @@ public void table() {
             String[] s_h = {"User", "Barcode", "Nom", "Quantité_ajoutée","Quantité_precedente", "Quantité_totale", "Date_ajout","Heure_ajout"};
             String[] inf4 = {user , Barcode, nom,qty_ajoutee,qty_precedente, qty_totale, d ,h};
             System.out.println(db.queryInsert("stock_historique", s_h, inf4));
-        db.closeconnexion();
         //....................................
            
                 String[] colon = { "Quantite"};
@@ -789,10 +786,8 @@ public void table() {
                 } catch (SQLException ex) {
                     Logger.getLogger(stock.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                db.closeconnexion();
                 }else{
                     System.out.println(db.queryUpdate("produit_stock", colon, inf, "Id='" + id + "'"));
-                    db.closeconnexion();
                 }
                 
                
@@ -837,7 +832,6 @@ public void table() {
             String[] actions = {"user", "type_action", "description", "Date", "Heure"};
             String[] inf3 = {user , action, Description,d, h};
             System.out.println(db.queryInsert("action", actions, inf3));
-            db.closeconnexion();
         
             //..................................
            
@@ -853,7 +847,6 @@ public void table() {
             String[] s_h = {"User", "Barcode", "Nom", "Quantité_ajoutée","Quantité_precedente", "Quantité_totale", "Date_ajout","Heure_ajout"};
             String[] inf4 = {user , Barcode, nom,qty_ajoutee,qty_precedente, qty_totale, d ,h};
             System.out.println(db.queryInsert("stock_historique", s_h, inf4));
-            db.closeconnexion();
         
         //....................................
            
@@ -862,7 +855,6 @@ public void table() {
             String[] inf = {Quantity.getText()};
             String id = String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 0));
             System.out.println(db.queryUpdate("produit_stock", colon, inf, "Id='" + id + "'"));
-            db.closeconnexion();
             table();
             Quantity.setText("");
             
@@ -1342,7 +1334,6 @@ db.closeconnexion();
             String[] actions = {"user", "type_action", "description", "Date", "Heure"};
             String[] inf3 = {user, action, Description, d, h};
             System.out.println(db.queryInsert("action", actions, inf3));
-            db.closeconnexion();
 
             //..................................
             this.hide();

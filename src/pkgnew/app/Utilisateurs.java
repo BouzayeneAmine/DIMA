@@ -42,7 +42,7 @@ public class Utilisateurs extends javax.swing.JFrame {
     public Utilisateurs(String username) {
         
         db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
-        
+        db.connexionDatabase();
         Heure1 = new JLabel(); 
         Date1 = new JLabel(); 
         
@@ -681,6 +681,7 @@ public class Utilisateurs extends javax.swing.JFrame {
     private void statbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statbtnActionPerformed
         // TODO add your handling code here:
         //statistique.getObj().setVisible(true);
+        db.closeconnexion();
         statistique a = new statistique(utilisateur.getText());
         a.setVisible(true);
         this.hide();
@@ -693,6 +694,7 @@ public class Utilisateurs extends javax.swing.JFrame {
 
     private void salesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salesbtnActionPerformed
         // TODO add your handling code here:
+         db.closeconnexion();
         Historique a = new Historique(utilisateur.getText());
         a.setVisible(true);
         this.hide();
@@ -701,6 +703,7 @@ public class Utilisateurs extends javax.swing.JFrame {
 
     private void inventorybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventorybtnActionPerformed
         // TODO add your handling code here:
+         db.closeconnexion();
         Inventory a = new Inventory(utilisateur.getText());
         a.setVisible(true);
         this.hide();
@@ -709,7 +712,7 @@ public class Utilisateurs extends javax.swing.JFrame {
 
     private void stockbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockbtnActionPerformed
         // TODO add your handling code here:
-
+ db.closeconnexion();
         stock a = new stock(utilisateur.getText());
         a.setVisible(true);
         this.hide();
@@ -718,6 +721,7 @@ public class Utilisateurs extends javax.swing.JFrame {
 
     private void registerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerbtnActionPerformed
         // TODO add your handling code here:
+         db.closeconnexion();
         POS a = new POS(utilisateur.getText());
         a.setVisible(true);
         this.hide();

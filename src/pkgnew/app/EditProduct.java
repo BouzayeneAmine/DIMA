@@ -34,6 +34,8 @@ public class EditProduct extends javax.swing.JFrame {
         this.setDefaultCloseOperation(0);
         this.setExtendedState(EditProduct.MAXIMIZED_BOTH);
         db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
+               db.connexionDatabase();
+
         txBarcode.setText(Inventory.getBarcode());
         txName.setText(Inventory.getname());
         txVente_Prix.setText(Inventory.getPrix());
@@ -435,29 +437,29 @@ public class EditProduct extends javax.swing.JFrame {
                 String[] actions = {"user", "type_action", "description", "Date", "Heure"};
                 String[] inf3 = {user, action, Description, d, h};
                 System.out.println(db.queryInsert("action", actions, inf3));
-                db.closeconnexion();
+               
                 
                 DecimalFormat df = new DecimalFormat();
                 df.setMaximumFractionDigits(3);
                 df.setMinimumFractionDigits(3);
                 
-                String prixVente = df.format(Double.parseDouble(txVente_Prix.getText())); 
-                String prixBase = df.format(Double.parseDouble(txBase_Prix.getText())); 
+                String prixVente = df.format(Double.parseDouble(txVente_Prix.getText())).replaceAll(",", "."); 
+                String prixBase = df.format(Double.parseDouble(txBase_Prix.getText())).replaceAll(",", "."); 
                 
 
                 String[] colon = {"Nom", "Barcode", "Categorie", "Prix_Base", "Prix_Vente", "Max", "Min"};
                 String[] inf = {txName.getText(), txBarcode.getText(), jComboBox2.getSelectedItem().toString(), prixBase, prixVente, txMax.getText(), txMin.getText()};
                 String id = Inventory.getId();
                 System.out.println(db.queryUpdate("produit", colon, inf, "Id='" + id + "'"));
-                db.closeconnexion();
+                
                 String[] colon2 = {"nom", "Barcode", "Categorie", "Prix_Base", "Prix_Vente", "Max", "Min"};
                 String[] inf2 = {txName.getText(), txBarcode.getText(), jComboBox2.getSelectedItem().toString(), prixBase, prixVente, txMax.getText(), txMin.getText()};
                 System.out.println(db.queryUpdate("produit_stock", colon2, inf2, "nom='" + Inventory.getname() + "'"));
-                db.closeconnexion();
+                
                 actualiser();
 
                 this.hide();
-                db.closeconnexion();
+                
                 Inventory inv = new Inventory(utilisateur.getText());
                 inv.show();
 
@@ -465,7 +467,7 @@ public class EditProduct extends javax.swing.JFrame {
 
         } catch (Exception e) {
         }
-
+db.closeconnexion();
 
     }//GEN-LAST:event_modifierbtnActionPerformed
 

@@ -47,6 +47,7 @@ public class AddProduct extends javax.swing.JFrame {
         this.setDefaultCloseOperation(0);
         this.setExtendedState(this.MAXIMIZED_BOTH);
         db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
+        db.connexionDatabase();
         table();
         utilisateur.setText(username1);
         date();
@@ -152,7 +153,7 @@ public class AddProduct extends javax.swing.JFrame {
         jTable1.setModel(new ResultSetTableModel(rs));
         jTable1.getColumnModel().getColumn(0).setMinWidth(0);
         jTable1.getColumnModel().getColumn(0).setMaxWidth(0);
-        db.closeconnexion();
+
     }
 
     /**
@@ -220,6 +221,9 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        txBarcode1 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -495,7 +499,7 @@ public class AddProduct extends javax.swing.JFrame {
         CigaretteCheckBox.setForeground(new java.awt.Color(30, 130, 82));
         CigaretteCheckBox.setText("cigarettes");
         CigaretteCheckBox.setContentAreaFilled(false);
-        CigaretteCheckBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CigaretteCheckBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(CigaretteCheckBox);
         CigaretteCheckBox.setBounds(920, 320, 140, 33);
 
@@ -505,7 +509,7 @@ public class AddProduct extends javax.swing.JFrame {
         txVente_Prix1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         txVente_Prix1.setForeground(new java.awt.Color(5, 45, 26));
         txVente_Prix1.setBorder(null);
-        txVente_Prix1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txVente_Prix1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txVente_Prix1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txVente_Prix1KeyTyped(evt);
@@ -585,11 +589,32 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(30, 130, 82));
         jLabel7.setText("Prix Cig :");
 
+        txBarcode1.setBackground(new java.awt.Color(255, 250, 240));
+        txBarcode1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        txBarcode1.setForeground(new java.awt.Color(5, 45, 26));
+        txBarcode1.setBorder(null);
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
+
+        jLabel28.setBackground(new java.awt.Color(255, 250, 240));
+        jLabel28.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(30, 130, 82));
+        jLabel28.setText("Barcode :");
+
         javax.swing.GroupLayout CigarettePanelLayout = new javax.swing.GroupLayout(CigarettePanel);
         CigarettePanel.setLayout(CigarettePanelLayout);
         CigarettePanelLayout.setHorizontalGroup(
             CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGroup(CigarettePanelLayout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CigarettePanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(txBarcode1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(538, Short.MAX_VALUE))
             .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(CigarettePanelLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -637,7 +662,17 @@ public class AddProduct extends javax.swing.JFrame {
         );
         CigarettePanelLayout.setVerticalGroup(
             CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addGroup(CigarettePanelLayout.createSequentialGroup()
+                .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(CigarettePanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(txBarcode1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 180, Short.MAX_VALUE))
+            .addGroup(CigarettePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(CigarettePanelLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -676,7 +711,7 @@ public class AddProduct extends javax.swing.JFrame {
         );
 
         jPanel1.add(CigarettePanel);
-        CigarettePanel.setBounds(250, 570, 1000, 200);
+        CigarettePanel.setBounds(250, 550, 1000, 230);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -700,7 +735,6 @@ public class AddProduct extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             rs = db.querySelectAll("produit", "Barcode='" + txBarcode.getText() + "'");
-          
 
             if (txBarcode.getText().equals("") || txName.getText().equals("") || txMax.getText().equals("") || txMin.getText().equals("") || CategoryComboBox.getSelectedItem().equals("")
                     || txBase_Prix.getText().equals("") || txVente_Prix.getText().equals("")) {
@@ -712,12 +746,12 @@ public class AddProduct extends javax.swing.JFrame {
             } else if (Integer.parseInt(txMax.getText()) < Integer.parseInt(txMin.getText())) {
                 getToolkit().beep();
                 JOptionPane.showMessageDialog(this, "La quantité maximale doit etre superieure à la quantité minimale !", "Erreur", JOptionPane.ERROR_MESSAGE);
-            
+
             } else if (Double.parseDouble(txVente_Prix.getText()) < Double.parseDouble(txBase_Prix.getText())) {
                 getToolkit().beep();
                 JOptionPane.showMessageDialog(this, "Le prix de vente doit être superieur au prix de base!", "Erreur", JOptionPane.ERROR_MESSAGE);
             } else {
-                db.closeconnexion();
+
                 String user = utilisateur.getText();
                 String action = "ajouter";
                 String Description = txBarcode.getText();
@@ -727,20 +761,13 @@ public class AddProduct extends javax.swing.JFrame {
                 String[] actions = {"user", "type_action", "description", "Date", "Heure"};
                 String[] inf3 = {user, action, Description, d, h};
                 System.out.println(db.queryInsert("action", actions, inf3));
-                db.closeconnexion();
-                
-                
                 DecimalFormat df = new DecimalFormat();
                 df.setMaximumFractionDigits(3);
                 df.setMinimumFractionDigits(3);
-                
-                String prixVente = df.format(Double.parseDouble(txVente_Prix.getText())); 
-                String prixBase = df.format(Double.parseDouble(txBase_Prix.getText())); 
-                
+                String prixVente = df.format(Double.parseDouble(txVente_Prix.getText())).replaceAll(",", ".");
+                String prixBase = df.format(Double.parseDouble(txBase_Prix.getText())).replaceAll(",", ".");
+                System.out.println(prixVente + "  " + prixBase);
 
-                
-                System.out.println(prixVente+"  "+prixBase);
-                
                 //**************** add product to table produit *******************************
                 String[] colon = {"nom", "Barcode", "Categorie", "Prix_Base", "Prix_Vente", "Max", "Min"};
 
@@ -749,26 +776,24 @@ public class AddProduct extends javax.swing.JFrame {
                     {
                         String[] inf = {txName.getText() + " pqt", txBarcode.getText(), CategoryComboBox.getSelectedItem().toString(), prixBase, prixVente, txMax.getText(), txMin.getText()};
                         System.out.println(db.queryInsert("produit", colon, inf));
-                        db.closeconnexion();
 
                     }
 
                     if (CigaretteCheckBox.isSelected()) {
-                        
-                        String prixVenteCig = df.format(Double.parseDouble(txVente_Prix1.getText())); 
-                        String prixBaseCig = df.format(Double.parseDouble(txBase_Prix1.getText())); 
-                        
-                        System.out.println(prixVenteCig+"  "+prixBaseCig);
-                        
-                        String[] inf = {txName.getText() + " cigarette", txBarcode.getText(), CategoryComboBox.getSelectedItem().toString(), prixBaseCig, prixVenteCig, txMax1.getText(), txMin1.getText()};
+
+                        String prixVenteCig = df.format(Double.parseDouble(txVente_Prix1.getText())).replaceAll(",", ".");
+                        String prixBaseCig = df.format(Double.parseDouble(txBase_Prix1.getText())).replaceAll(",", ".");
+
+                        System.out.println(prixVenteCig + "  " + prixBaseCig);
+
+                        String[] inf = {txName.getText() + " cigarette", txBarcode1.getText(), CategoryComboBox.getSelectedItem().toString(), prixBaseCig, prixVenteCig, txMax1.getText(), txMin1.getText()};
                         System.out.println(db.queryInsert("produit", colon, inf));
-                        db.closeconnexion();
+
                     }
                 } else {
 
                     String[] inf = {txName.getText(), txBarcode.getText(), CategoryComboBox.getSelectedItem().toString(), prixBase, prixVente, txMax.getText(), txMin.getText()};
                     System.out.println(db.queryInsert("produit", colon, inf));
-                    db.closeconnexion();
 
                 }
 
@@ -784,29 +809,24 @@ public class AddProduct extends javax.swing.JFrame {
 
                         String[] inf = {txName.getText() + " pqt", txBarcode.getText(), CategoryComboBox.getSelectedItem().toString(), prixBase, prixVente, txMax.getText(), txMin.getText(), "0"};
                         System.out.println(db.queryInsert("produit_stock", colon2, inf));
-                                            db.closeconnexion();
 
                     }
 
                     if (CigaretteCheckBox.isSelected()) {
-                        
-                        String prixVenteCig = df.format(Double.parseDouble(txVente_Prix1.getText())); 
-                        String prixBaseCig = df.format(Double.parseDouble(txBase_Prix1.getText())); 
-                        
-                        System.out.println(prixVenteCig+"  "+prixBaseCig);
-                        
-                        
-                        String[] inf = {txName.getText() + " cigarette", txBarcode.getText(), CategoryComboBox.getSelectedItem().toString(), prixBaseCig, prixVenteCig, txMax1.getText(), txMin1.getText(), "0"};
+
+                        String prixVenteCig = df.format(Double.parseDouble(txVente_Prix1.getText())).replaceAll(",", ".");
+                        String prixBaseCig = df.format(Double.parseDouble(txBase_Prix1.getText())).replaceAll(",", ".");
+
+                        System.out.println(prixVenteCig + "  " + prixBaseCig);
+
+                        String[] inf = {txName.getText() + " cigarette", txBarcode1.getText(), CategoryComboBox.getSelectedItem().toString(), prixBaseCig, prixVenteCig, txMax1.getText(), txMin1.getText(), "0"};
                         System.out.println(db.queryInsert("produit_stock", colon2, inf));
-                                            db.closeconnexion();
 
                     }
                 } else {
 
                     String[] inf = {txName.getText(), txBarcode.getText(), CategoryComboBox.getSelectedItem().toString(), prixBase, prixVente, txMax.getText(), txMin.getText(), "0"};
                     System.out.println(db.queryInsert("produit_stock", colon2, inf));
-                                        db.closeconnexion();
-
 
                 }
 
@@ -1084,6 +1104,8 @@ public class AddProduct extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1099,6 +1121,7 @@ public class AddProduct extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JLabel modifierbg;
     private javax.swing.JTextField txBarcode;
+    private javax.swing.JTextField txBarcode1;
     private javax.swing.JTextField txBase_Prix;
     private javax.swing.JTextField txBase_Prix1;
     private javax.swing.JTextField txMax;

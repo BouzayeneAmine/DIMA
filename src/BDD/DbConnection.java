@@ -65,7 +65,7 @@ public class DbConnection {
     }
 
     public ResultSet exécutionQuery(String sql) {
-        connexionDatabase();
+      
         ResultSet resultSet = null;
         try {
             statement = connection.createStatement();
@@ -82,7 +82,7 @@ public class DbConnection {
 
     //exécuter update
     public String exécutionUpdate(String sql) {
-        connexionDatabase();
+       
         String result = "";
         try {
             statement = connection.createStatement();
@@ -98,7 +98,7 @@ public class DbConnection {
     //requete pour afficher tous 
     public ResultSet querySelectAll(String nomTable) {
 
-        connexionDatabase();
+       
         SQL = "SELECT * FROM " + nomTable;
         //System.out.println(SQL);
         return this.exécutionQuery(SQL);
@@ -108,7 +108,7 @@ public class DbConnection {
     // afficher tous avec de paramètre ("etat")
     public ResultSet querySelectAll(String nomTable, String état) {
 
-        connexionDatabase();
+        
         SQL = "SELECT * FROM " + nomTable + " WHERE " + état;
         return this.exécutionQuery(SQL);
 
@@ -116,7 +116,7 @@ public class DbConnection {
 
     public ResultSet querySearchAll(String nomTable, String état, String étatPremier, String étatSeconde) {
 
-        connexionDatabase();
+       
         SQL = "SELECT * FROM " + nomTable + " WHERE " + état + " BETWEEN '" + étatPremier + "' AND '" + étatSeconde + "' ";
         return this.exécutionQuery(SQL);
 
@@ -124,7 +124,7 @@ public class DbConnection {
 
     public ResultSet querySelectTwo(String nomTable, String état, String éta) {
 
-        connexionDatabase();
+       
         SQL = "SELECT * FROM " + nomTable + " WHERE " + état + " AND " + éta;
         return this.exécutionQuery(SQL);
 
@@ -132,7 +132,6 @@ public class DbConnection {
 
     public ResultSet querySelectThree(String nomTable, String état, String éta, String étaa) {
 
-        connexionDatabase();
         SQL = "SELECT * FROM " + nomTable + " WHERE " + état + " AND " + éta + " AND " + étaa;
         return this.exécutionQuery(SQL);
 
@@ -140,7 +139,6 @@ public class DbConnection {
 
     public ResultSet querySelectTwoOne(String nomTable, String état, String étatt, String étatPremie, String étatSecond) {
 
-        connexionDatabase();
         SQL = "SELECT * FROM " + nomTable + " WHERE " + état + " AND " + étatt + " BETWEEN '" + étatPremie + "' AND '" + étatSecond + "' ";
         return this.exécutionQuery(SQL);
 
@@ -148,7 +146,6 @@ public class DbConnection {
 
     public ResultSet querySelectTwoALL(String nomTable, String état, String éta, String étatt, String étatPremie, String étatSecond) {
 
-        connexionDatabase();
         SQL = "SELECT * FROM " + nomTable + " WHERE " + état + " AND " + éta + " AND " + étatt + " BETWEEN '" + étatPremie + "' AND '" + étatSecond + "' ";
         return this.exécutionQuery(SQL);
 
@@ -156,7 +153,6 @@ public class DbConnection {
 
     public ResultSet querySelectThreeALL(String nomTable, String état, String éta, String étaa, String étatt, String étatPremie, String étatSecond) {
 
-        connexionDatabase();
         SQL = "SELECT * FROM " + nomTable + " WHERE " + état + " AND " + éta + " AND " + étaa + " AND " + étatt + " BETWEEN '" + étatPremie + "' AND '" + étatSecond + "' ";
         return this.exécutionQuery(SQL);
 
@@ -165,7 +161,6 @@ public class DbConnection {
     //
     public ResultSet querySelect(String[] nomColonne, String nomTable) {
 
-        connexionDatabase();
         int i;
         SQL = "SELECT ";
 
@@ -181,7 +176,6 @@ public class DbConnection {
 
     public ResultSet querySelectIndex(String[] nomColonne, String nomTable, String index) {
 
-        connexionDatabase();
         int i;
         SQL = "SELECT " + index;
 
@@ -197,7 +191,6 @@ public class DbConnection {
 
     public ResultSet querySelectOrdre(String[] nomColonne, String nomTable, String ordre) {
 
-        connexionDatabase();
         int i;
         SQL = "SELECT ";
 
@@ -214,7 +207,6 @@ public class DbConnection {
     //
     public ResultSet fcSelectCommand(String[] nomColonne, String nomTable, String état) {
 
-        connexionDatabase();
         int i;
         SQL = "SELECT ";
         for (i = 0; i <= nomColonne.length - 1; i++) {
@@ -230,7 +222,6 @@ public class DbConnection {
     // entrée de donnée
     public String queryInsert(String nomTable, String[] contenuTableau) {
 
-        connexionDatabase();
         int i;
         SQL = "INSERT INTO " + nomTable + " VALUES(";
 
@@ -247,7 +238,6 @@ public class DbConnection {
     //
     public String queryInsert(String nomTable, String[] nomColonne, String[] contenuTableau) {
 
-        connexionDatabase();
         int i;
         SQL = "INSERT INTO " + nomTable + "(";
         for (i = 0; i <= nomColonne.length - 1; i++) {
@@ -272,7 +262,6 @@ public class DbConnection {
     //
     public String queryUpdate(String nomTable, String[] nomColonne, String[] contenuTableau, String état) {
 
-        connexionDatabase();
         int i;
         SQL = "UPDATE " + nomTable + " SET ";
 
@@ -290,7 +279,6 @@ public class DbConnection {
     // Supression sans parametre
     public String queryDelete(String nomtable) {
 
-        connexionDatabase();
         SQL = "DELETE FROM " + nomtable;
 
         return this.exécutionUpdate(SQL);
@@ -299,7 +287,6 @@ public class DbConnection {
     //suprimer avec paramètre
     public String queryDelete(String nomTable, String état) {
 
-        connexionDatabase();
         SQL = "DELETE FROM " + nomTable + " WHERE " + état;
         return this.exécutionUpdate(SQL);
     }

@@ -19,7 +19,7 @@ public class License {
         String code = String.valueOf(jTable.getValueAt(0, 1));
         Calendar expireDate = Calendar.getInstance();
         // January is 0 (y, m, d)
-        expireDate.set(2020, 11, 24);
+        expireDate.set(2050, 11, 24);
 
         // Get current date and compare
         if (Calendar.getInstance().after(expireDate) && !code.equals("HDL8-MSZ5-MMDZ-115A")) {
