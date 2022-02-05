@@ -48,101 +48,103 @@ public class POS extends javax.swing.JFrame {
     String prixVenteaise;
     String totalbaseaise;
     String totalaise;
+    String ClientCredit;
+    String NumeroCredit;
     private DefaultTableCellRenderer headerRenderer;
 
     public POS(String username) {
         try {
-            
-        
-        initComponents();
-        this.setDefaultCloseOperation(0);
 
-        headerRenderer = new DefaultTableCellRenderer();
-        headerRenderer.setBackground(new Color(30, 130, 82));
-        headerRenderer.setForeground(new Color(255, 250, 240));
+            initComponents();
+            this.setDefaultCloseOperation(0);
 
-        db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
-        dc = new ConnectComPort();
-        db.connexionDatabase();
-        //general_panel.hide();
-        date();
-        datecourante();
-        table();
-        table2();
-        tableBon();
-        table7();
+            headerRenderer = new DefaultTableCellRenderer();
+            headerRenderer.setBackground(new Color(30, 130, 82));
+            headerRenderer.setForeground(new Color(255, 250, 240));
 
-        l = new BDD.License();
-        utilisateur.setText(username);
-        this.setExtendedState(this.MAXIMIZED_BOTH);
-        produit();
+            db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
+            dc = new ConnectComPort();
+            db.connexionDatabase();
+            //credit panel hide 
+            credit_panel.hide();
+            date();
+            datecourante();
+            table();
+            table2();
+            tableBon();
+            table7();
 
-        recherche_Barcode.requestFocus();
+            l = new BDD.License();
+            utilisateur.setText(username);
+            this.setExtendedState(this.MAXIMIZED_BOTH);
+            produit();
 
-        ///calcule total
-        float c = 0;
-        for (int k = 0; k < jTable1.getRowCount(); k++) {
-            String b = String.valueOf(jTable1.getValueAt(k, 7)).replace(',', '.');
-            float d = Float.parseFloat(b);
-            c = c + d;
+            recherche_Barcode.requestFocus();
 
-        }
-
-        totale.setText(Float.toString(c));
-
-        CaissePanel.hide();
-
-        ///
-        {
-            CateauPanel.show();
-            CatboissonPanel.hide();
-            CatgouterPanel.hide();
-            CattabacPanel.hide();
-            CatcigarettePanel.hide();
-            CatrechargePanel.hide();
-            CataccPanel.hide();
-            CatpatesPanel.hide();
-            CatconservesPanel.hide();
-            CatfruitssecsPanel.hide();
-            //.........
-            String a[] = {"nom", "Prix_vente", "Prix_base"};
-            rs = db.fcSelectCommand(a, "produit", "Categorie LIKE '%" + "eau" + "%' ");
-
-            jTable8.setModel(new ResultSetTableModel(rs));
-            ArrayList l = new ArrayList();
-
-            for (int i = 0; i < jTable8.getRowCount(); i++) {
-                l.add(String.valueOf(jTable8.getValueAt(i, 0)));
+            ///calcule total
+            float c = 0;
+            for (int k = 0; k < jTable1.getRowCount(); k++) {
+                String b = String.valueOf(jTable1.getValueAt(k, 7)).replace(',', '.');
+                float d = Float.parseFloat(b);
+                c = c + d;
 
             }
-            System.out.println(l.size());
-            panel_product(l);
 
-        }
-        //this.setUndecorated(true);
+            totale.setText(Float.toString(c));
 
-        {
-            String q = "SELECT type from utilisateur WHERE Login =' " + utilisateur.getText() + "'";
+            CaissePanel.hide();
 
-        }
+            ///
+            {
+                CateauPanel.show();
+                CatboissonPanel.hide();
+                CatgouterPanel.hide();
+                CattabacPanel.hide();
+                CatcigarettePanel.hide();
+                CatrechargePanel.hide();
+                CataccPanel.hide();
+                CatpatesPanel.hide();
+                CatconservesPanel.hide();
+                CatfruitssecsPanel.hide();
+                //.........
+                String a[] = {"nom", "Prix_vente", "Prix_base"};
+                rs = db.fcSelectCommand(a, "produit", "Categorie LIKE '%" + "eau" + "%' ");
 
-        if (isUser(username)) {
+                jTable8.setModel(new ResultSetTableModel(rs));
+                ArrayList l = new ArrayList();
 
-            jLabel20.hide();
-            jLabel21.hide();
-            jLabel22.hide();
+                for (int i = 0; i < jTable8.getRowCount(); i++) {
+                    l.add(String.valueOf(jTable8.getValueAt(i, 0)));
 
-            salesbtn.hide();
-            usersbtn.hide();
-            statbtn.hide();
-        }
+                }
+                System.out.println(l.size());
+                panel_product(l);
 
-        MyKeyListener keyboard = new MyKeyListener();
-        general_panel.addKeyListener(keyboard);
-        general_panel.setFocusable(true);
-} catch (Exception e) {
+            }
+            //this.setUndecorated(true);
+
+            {
+                String q = "SELECT type from utilisateur WHERE Login =' " + utilisateur.getText() + "'";
+
+            }
+
+            if (isUser(username)) {
+
+                jLabel20.hide();
+                jLabel21.hide();
+                jLabel22.hide();
+
+                salesbtn.hide();
+                usersbtn.hide();
+                statbtn.hide();
+            }
+
+            MyKeyListener keyboard = new MyKeyListener();
+            general_panel.addKeyListener(keyboard);
+            general_panel.setFocusable(true);
+        } catch (Exception e) {
             System.err.println(e.toString());
-    db.queryDelete("caisse");
+            db.queryDelete("caisse");
         }
     }
 
@@ -182,6 +184,28 @@ public class POS extends javax.swing.JFrame {
         jTable8.setModel(new ResultSetTableModel(rs));
         jTable8.getColumnModel().getColumn(0).setMinWidth(0);
         jTable8.getColumnModel().getColumn(0).setMaxWidth(0);
+
+    }
+
+    public void client() {
+
+        String a[] = {"nom", "numero"};
+        rs = db.querySelect(a, "client");
+        client_table.setModel(new ResultSetTableModel(rs));
+        client_table.getTableHeader().setFont(new Font("Roboto Medium", Font.PLAIN, 16));
+        client_table.getTableHeader().setOpaque(false);
+        client_table.getTableHeader().setBackground(Color.BLACK);
+        client_table.getTableHeader().setForeground(new Color(19, 35, 132));
+
+        client_table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        client_table.setRowHeight(30);
+
+        jScrollPane9.getViewport().setBackground(new Color(255, 250, 240));
+        jScrollPane9.setBorder(BorderFactory.createLineBorder(new Color(255, 250, 240), 0));
+
+        for (int i = 0; i < client_table.getModel().getColumnCount(); i++) {
+            client_table.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
+        }
 
     }
 
@@ -386,6 +410,7 @@ public class POS extends javax.swing.JFrame {
         tableBon();
         recherche_Barcode.setText("");
         Barsearch.setText("");
+        credit_panel.hide();
 
     }
 
@@ -451,6 +476,7 @@ public class POS extends javax.swing.JFrame {
         inventorybtn = new javax.swing.JButton();
         stockbtn = new javax.swing.JButton();
         registerbtn = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         Session = new javax.swing.JPanel();
         utilisateur = new javax.swing.JLabel();
@@ -486,6 +512,7 @@ public class POS extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         CommandePanel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        EnterBtn = new javax.swing.JButton();
         NumPad1 = new javax.swing.JButton();
         NumPad2 = new javax.swing.JButton();
         NumPad3 = new javax.swing.JButton();
@@ -552,10 +579,23 @@ public class POS extends javax.swing.JFrame {
         Barsearch = new javax.swing.JTextField();
         searchbarbg = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        EnterBtn = new javax.swing.JButton();
         annulerBtn = new javax.swing.JButton();
         supprimerBtn = new javax.swing.JButton();
         confirmerBtn = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        credit_panel = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        client_table = new javax.swing.JTable();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        clientNumero = new javax.swing.JTextField();
+        clientNom = new javax.swing.JTextField();
+        ajout_client_button = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         Background = new javax.swing.JPanel();
 
         Date.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -851,6 +891,15 @@ public class POS extends javax.swing.JFrame {
         barpanel.add(registerbtn);
         registerbtn.setBounds(10, 180, 60, 50);
 
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        barpanel.add(jButton2);
+        jButton2.setBounds(0, 750, 73, 23);
+
         getContentPane().add(barpanel);
         barpanel.setBounds(2, 0, 80, 2000);
 
@@ -1077,6 +1126,17 @@ public class POS extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/numPad.png"))); // NOI18N
         CommandePanel.add(jLabel8);
         jLabel8.setBounds(250, 150, 240, 250);
+
+        EnterBtn.setBackground(new java.awt.Color(0, 0, 153));
+        EnterBtn.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        EnterBtn.setForeground(new java.awt.Color(255, 255, 255));
+        EnterBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnterBtnActionPerformed(evt);
+            }
+        });
+        CommandePanel.add(EnterBtn);
+        EnterBtn.setBounds(380, 340, 110, 50);
 
         NumPad1.setBackground(new java.awt.Color(0, 0, 153));
         NumPad1.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
@@ -1645,17 +1705,6 @@ public class POS extends javax.swing.JFrame {
         general_panel.add(jLabel7);
         jLabel7.setBounds(910, 840, 530, 70);
 
-        EnterBtn.setBackground(new java.awt.Color(0, 0, 153));
-        EnterBtn.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        EnterBtn.setForeground(new java.awt.Color(255, 255, 255));
-        EnterBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EnterBtnActionPerformed(evt);
-            }
-        });
-        general_panel.add(EnterBtn);
-        EnterBtn.setBounds(1280, 435, 110, 50);
-
         annulerBtn.setBackground(new java.awt.Color(0, 0, 102));
         annulerBtn.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         annulerBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -1696,6 +1745,104 @@ public class POS extends javax.swing.JFrame {
         });
         general_panel.add(confirmerBtn);
         confirmerBtn.setBounds(1280, 850, 140, 50);
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/creditbtn.png"))); // NOI18N
+        general_panel.add(jLabel28);
+        jLabel28.setBounds(1080, 900, 200, 100);
+
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        general_panel.add(jButton1);
+        jButton1.setBounds(1100, 930, 150, 40);
+
+        credit_panel.setBackground(new java.awt.Color(255, 250, 240));
+        credit_panel.setLayout(null);
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/commandebg.png"))); // NOI18N
+        jLabel27.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        credit_panel.add(jLabel27);
+        jLabel27.setBounds(20, 150, 540, 260);
+
+        client_table.setBackground(new java.awt.Color(255, 250, 240));
+        client_table.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        client_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        client_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                client_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane9.setViewportView(client_table);
+
+        credit_panel.add(jScrollPane9);
+        jScrollPane9.setBounds(30, 150, 500, 240);
+
+        jLabel24.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(30, 130, 82));
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/ajouterbtn.png"))); // NOI18N
+        credit_panel.add(jLabel24);
+        jLabel24.setBounds(190, 80, 220, 50);
+
+        jLabel25.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(30, 130, 82));
+        jLabel25.setText("client :");
+        credit_panel.add(jLabel25);
+        jLabel25.setBounds(10, 20, 90, 40);
+
+        clientNumero.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        clientNumero.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        clientNumero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 51)));
+        credit_panel.add(clientNumero);
+        clientNumero.setBounds(390, 20, 190, 40);
+
+        clientNom.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        clientNom.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        clientNom.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 51)));
+        credit_panel.add(clientNom);
+        clientNom.setBounds(100, 20, 190, 40);
+
+        ajout_client_button.setText("jButton3");
+        ajout_client_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ajout_client_buttonActionPerformed(evt);
+            }
+        });
+        credit_panel.add(ajout_client_button);
+        ajout_client_button.setBounds(200, 80, 180, 50);
+
+        jLabel26.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(30, 130, 82));
+        jLabel26.setText("Numero :");
+        credit_panel.add(jLabel26);
+        jLabel26.setBounds(300, 20, 90, 40);
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/confirmerbtn.png"))); // NOI18N
+        credit_panel.add(jLabel29);
+        jLabel29.setBounds(190, 410, 200, 70);
+
+        jButton3.setText("jButton1");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        credit_panel.add(jButton3);
+        jButton3.setBounds(190, 420, 200, 50);
+
+        general_panel.add(credit_panel);
+        credit_panel.setBounds(900, 80, 600, 490);
 
         getContentPane().add(general_panel);
         general_panel.setBounds(0, 0, 2000, 2000);
@@ -2260,118 +2407,93 @@ public class POS extends javax.swing.JFrame {
     private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
         // TODO add your handling code here:
         try {
-            
-        
-        DecimalFormat df = new DecimalFormat();
-        df.setMaximumFractionDigits(3);
-        df.setMinimumFractionDigits(3);
 
-        DecimalFormat intf = new DecimalFormat("00");
+            DecimalFormat df = new DecimalFormat();
+            df.setMaximumFractionDigits(3);
+            df.setMinimumFractionDigits(3);
 
-        Date s = new Date();
-        SimpleDateFormat d = new SimpleDateFormat("dd-MM-YYYY");
-        SimpleDateFormat h = new SimpleDateFormat("HH:mm");
-        String date = d.format(s);
-        String heure = h.format(s);
-        System.err.println(date);
-        System.err.println(heure);
+            DecimalFormat intf = new DecimalFormat("00");
 
-        String reqbrut = "";
-        String reqnet = "";
-        int i = Integer.parseInt(heure.substring(0, 2));
-        boolean b = i >= 5;
-        if (b) {
+            Date s = new Date();
+            SimpleDateFormat d = new SimpleDateFormat("dd-MM-YYYY");
+            SimpleDateFormat h = new SimpleDateFormat("HH:mm");
+            String date = d.format(s);
+            String heure = h.format(s);
+            System.err.println(date);
+            System.err.println(heure);
 
-            int joursuiv = Integer.parseInt(date.substring(0, 2));
-            joursuiv = joursuiv + 1;
-            String jourSuiv = intf.format(joursuiv);
-            String dateSuiv = jourSuiv + date.substring(2);
+            String reqbrut = "";
+            String reqnet = "";
+            int i = Integer.parseInt(heure.substring(0, 2));
+            boolean b = i >= 5;
+            if (b) {
 
-            reqbrut = "SELECT SUM( total ) "
-                    + "FROM `historique` "
-                    + "WHERE user ='" + utilisateur.getText() + "' "
-                    + "AND ((Date_Sortie = '" + date + "' AND Heure_Sortie >= '05:00') "
-                    + "OR (Date_Sortie = '" + dateSuiv + "' AND Heure_Sortie <= '03:00'))";
+                int joursuiv = Integer.parseInt(date.substring(0, 2));
+                joursuiv = joursuiv + 1;
+                String jourSuiv = intf.format(joursuiv);
+                String dateSuiv = jourSuiv + date.substring(2);
 
-            reqnet = "SELECT SUM( total ) - SUM(total_base) "
-                    + "FROM `historique` "
-                    + "WHERE user ='" + utilisateur.getText() + "' "
-                    + "AND ((Date_Sortie = '" + date + "' AND Heure_Sortie >= '05:00') "
-                    + "OR (Date_Sortie = '" + dateSuiv + "' AND Heure_Sortie <= '03:00'))";
+                reqbrut = "SELECT SUM( total ) "
+                        + "FROM `historique` "
+                        + "WHERE user ='" + utilisateur.getText() + "' "
+                        + "AND ((Date_Sortie = '" + date + "' AND Heure_Sortie >= '05:00') "
+                        + "OR (Date_Sortie = '" + dateSuiv + "' AND Heure_Sortie <= '03:00'))";
 
-        } else {
-            int jourprec = Integer.parseInt(date.substring(0, 2));
-            jourprec = jourprec - 1;
-            String jourPrec = intf.format(jourprec);
-            String datePrec = jourPrec + date.substring(2);
+                reqnet = "SELECT SUM( total ) - SUM(total_base) "
+                        + "FROM `historique` "
+                        + "WHERE user ='" + utilisateur.getText() + "' "
+                        + "AND ((Date_Sortie = '" + date + "' AND Heure_Sortie >= '05:00') "
+                        + "OR (Date_Sortie = '" + dateSuiv + "' AND Heure_Sortie <= '03:00'))";
 
-            reqbrut = "SELECT SUM( total ) "
-                    + "FROM `historique` "
-                    + "WHERE user ='" + utilisateur.getText() + "' "
-                    + "AND ((Date_Sortie = '" + datePrec + "' AND Heure_Sortie >= '05:00') "
-                    + "OR (Date_Sortie = '" + date + "' AND Heure_Sortie <= '03:00'))";
+            } else {
+                int jourprec = Integer.parseInt(date.substring(0, 2));
+                jourprec = jourprec - 1;
+                String jourPrec = intf.format(jourprec);
+                String datePrec = jourPrec + date.substring(2);
 
-            reqnet = "SELECT SUM( total ) - SUM(total_base) "
-                    + "FROM `historique` "
-                    + "WHERE user ='" + utilisateur.getText() + "' "
-                    + "AND ((Date_Sortie = '" + datePrec + "' AND Heure_Sortie >= '05:00') "
-                    + "OR (Date_Sortie = '" + date + "' AND Heure_Sortie <= '03:00'))";
+                reqbrut = "SELECT SUM( total ) "
+                        + "FROM `historique` "
+                        + "WHERE user ='" + utilisateur.getText() + "' "
+                        + "AND ((Date_Sortie = '" + datePrec + "' AND Heure_Sortie >= '05:00') "
+                        + "OR (Date_Sortie = '" + date + "' AND Heure_Sortie <= '03:00'))";
 
-        }
+                reqnet = "SELECT SUM( total ) - SUM(total_base) "
+                        + "FROM `historique` "
+                        + "WHERE user ='" + utilisateur.getText() + "' "
+                        + "AND ((Date_Sortie = '" + datePrec + "' AND Heure_Sortie >= '05:00') "
+                        + "OR (Date_Sortie = '" + date + "' AND Heure_Sortie <= '03:00'))";
 
-        rs = db.exécutionQuery(reqbrut);
-        String brut = "vide";
-        String net = "vide";
-        try {
-            rs.next();
-            System.out.println(rs.getString(1));
-            brut = df.format(Double.parseDouble(rs.getString(1)));
+            }
+
+            rs = db.exécutionQuery(reqbrut);
+            String brut = "vide";
+            String net = "vide";
+            try {
+                rs.next();
+                System.out.println(rs.getString(1));
+                brut = df.format(Double.parseDouble(rs.getString(1)));
+
+            } catch (Exception e) {
+                brut = "000.000";
+            }
+
+            rs = db.exécutionQuery(reqnet);
+
+            try {
+                rs.next();
+                System.out.println(rs.getString(1));
+                net = df.format(Double.parseDouble(rs.getString(1)));
+
+            } catch (Exception e) {
+                net = "000.000";
+            }
+
+            BrutLabel.setText(brut + "  DT");
+            NetLabel.setText(net + "  DT");
+            CaissePanel.show();
+            general_panel.hide();
 
         } catch (Exception e) {
-            brut = "000.000";
-        }
-
-        rs = db.exécutionQuery(reqnet);
-
-        try {
-            rs.next();
-            System.out.println(rs.getString(1));
-            net = df.format(Double.parseDouble(rs.getString(1)));
-
-        } catch (Exception e) {
-            net = "000.000";
-        }
-
-        BrutLabel.setText(brut + "  DT");
-        NetLabel.setText(net + "  DT");
-        CaissePanel.show();
-        general_panel.hide();
-
-        //String début = 
-        /*Login a;
-        try {
-            db.queryDelete("caisse");
-            a = new Login();
-
-            // action logout
-            String user = utilisateur.getText();
-            String action = "log out";
-
-            String Description = "";
-            String d = Date.getText();
-            String h = Heure.getText();
-            String[] actions = {"user", "type_action", "description", "Date", "Heure"};
-            String[] inf3 = {user, action, Description, d, h};
-            System.out.println(db.queryInsert("action", actions, inf3));
-
-            //..................................
-            this.hide();
-            a.setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(POS.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-        //}
-        }catch (Exception e) {
             System.err.println(e.toString());
         }
     }//GEN-LAST:event_LogoutBtnActionPerformed
@@ -2661,7 +2783,7 @@ public class POS extends javax.swing.JFrame {
         db.closeconnexion();
         statistique a = new statistique(utilisateur.getText());
         a.setVisible(true);
-                this.dispose();
+        this.dispose();
 
     }//GEN-LAST:event_statbtnActionPerformed
 
@@ -2670,7 +2792,7 @@ public class POS extends javax.swing.JFrame {
         db.closeconnexion();
         Utilisateurs a = new Utilisateurs(utilisateur.getText());
         a.setVisible(true);
-                this.dispose();
+        this.dispose();
 
     }//GEN-LAST:event_usersbtnActionPerformed
 
@@ -2679,7 +2801,7 @@ public class POS extends javax.swing.JFrame {
         db.closeconnexion();
         Historique a = new Historique(utilisateur.getText());
         a.setVisible(true);
-         this.dispose();
+        this.dispose();
     }//GEN-LAST:event_salesbtnActionPerformed
 
     private void inventorybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventorybtnActionPerformed
@@ -2687,7 +2809,7 @@ public class POS extends javax.swing.JFrame {
         db.closeconnexion();
         Inventory a = new Inventory(utilisateur.getText());
         a.setVisible(true);
-         this.dispose();
+        this.dispose();
     }//GEN-LAST:event_inventorybtnActionPerformed
 
     private void stockbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockbtnActionPerformed
@@ -2954,6 +3076,134 @@ public class POS extends javax.swing.JFrame {
         panel_product(l);
     }//GEN-LAST:event_FruitssecsBtnActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ////// generate client table //////
+        client();
+        ////// show client credit panel//////
+        CommandePanel.hide();
+        credit_panel.show();
+        
+        
+
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Credit a = new Credit(utilisateur.getText());
+        a.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void ajout_client_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajout_client_buttonActionPerformed
+        // TODO add your handling code here:
+        String[] colon = {"nom", "numero"};
+        String[] inf = {clientNom.getText(), clientNumero.getText()};
+        System.out.println(db.queryInsert("client", colon, inf));
+        client();
+        JOptionPane.showMessageDialog(this, "Votre client  a été ajouté avec succès");
+    }//GEN-LAST:event_ajout_client_buttonActionPerformed
+
+    private void client_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_client_tableMouseClicked
+        // TODO add your handling code here:
+        /// envoyer client nom et numero vers credit 
+        ClientCredit = String.valueOf(client_table.getValueAt(client_table.getSelectedRow(), 0));
+        NumeroCredit = String.valueOf(client_table.getValueAt(client_table.getSelectedRow(), 1));
+        
+    }//GEN-LAST:event_client_tableMouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         /////////// payer ///////
+        int R = 0;
+        String emptyStockNames = "";
+
+        int j = jTable1.getRowCount();
+        System.out.println("nombre de produits au tableau = " + j);
+
+        String nom;
+        String barcode;
+        String categorie;
+        String Quantity;
+        String Quantity_stock;
+        String total;
+        String total_base;
+        String a[] = {"id", "nom", "Prix_vente", "Quantite"};
+
+        boolean stockIsEmpty = false;
+        try {
+            for (int i = 0; i < j; i++) {
+
+                nom = (String.valueOf(jTable1.getValueAt(i, 1)));
+                barcode = (String.valueOf(jTable1.getValueAt(i, 2)));
+                Quantity = (String.valueOf(jTable1.getValueAt(i, 4)));
+                System.out.println(nom + " " + Quantity + " " + barcode);
+                rs = db.fcSelectCommand(a, "produit_stock", "Barcode = '" + barcode + "' ");
+                jTable7.setModel(new ResultSetTableModel(rs));
+
+                Quantity_stock = (String.valueOf(jTable7.getValueAt(0, 3)));
+
+                System.out.println("quantité " + Quantity);
+                System.out.println("quantité stock " + Quantity_stock);
+
+                R = Integer.parseInt(Quantity_stock) - Integer.parseInt(Quantity);
+
+                System.out.println("R = " + R);
+
+                if (R < 0) {
+                    stockIsEmpty = true;
+                    emptyStockNames = emptyStockNames + nom + " le stock est vide " + System.lineSeparator();
+                }
+            }
+
+            if (stockIsEmpty) {
+                JOptionPane.showMessageDialog(this, emptyStockNames);
+            } else {
+                j = jTable1.getRowCount();
+                System.out.println(" nombre d'article dans la commande = " + j);
+                for (int i = 0; i < j; i++) {
+
+                    nom = (String.valueOf(jTable1.getValueAt(i, 1)));
+                    barcode = String.valueOf(jTable1.getValueAt(i, 2));
+                    categorie = (String.valueOf(jTable1.getValueAt(i, 3)));
+                    Quantity = (String.valueOf(jTable1.getValueAt(i, 4)));
+                    String Prix = (String.valueOf(jTable1.getValueAt(i, 5)));
+                    total = (String.valueOf(jTable1.getValueAt(i, 7)));
+                    total_base = (String.valueOf(jTable1.getValueAt(i, 6)));
+
+                    rs = db.fcSelectCommand(a, "produit_stock", "Barcode = '" + barcode + "' ");
+                    jTable7.setModel(new ResultSetTableModel(rs));
+
+                    Quantity_stock = (String.valueOf(jTable7.getValueAt(0, 3)));
+
+                    System.out.println("quantite saisie=" + Quantity);
+
+                    System.out.println("quantite stock=" + Quantity_stock);
+
+                    R = Integer.parseInt(Quantity_stock) - Integer.parseInt(Quantity);
+
+                    String produit_stock[] = {"Quantite"};
+                    String inf[] = {String.valueOf(R)};
+                    db.queryUpdate("produit_stock", produit_stock, inf, "Barcode='" + barcode + "'");
+                    String[] historique = {"Client", "Numero", "Nom", "Barcode", "Categorie", "Quantite", "Prix_Vente", "total_base", "total", "Date_Sortie", "Heure_Sortie", "user", "acompte"};
+                    String[] inf2 = {ClientCredit, NumeroCredit, nom, barcode, categorie, Quantity, Prix, total_base, total, Date.getText(), Heure.getText(), utilisateur.getText(), "0"};
+                    db.queryInsert("credit", historique, inf2);
+                    db.queryDelete("caisse", "Barcode ='" + barcode + "'");
+
+                }
+                totale.setText("0.000");
+                table();
+                table2();
+                recherche_Barcode.requestFocus();
+                credit_panel.hide();
+                CommandePanel.show();
+            }
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     class MyKeyListener implements KeyListener {
 
         @Override
@@ -3155,6 +3405,7 @@ public class POS extends javax.swing.JFrame {
     private javax.swing.JTextField afficheur;
     private javax.swing.JLabel afficheurbg;
     private javax.swing.JLabel afficheurbg1;
+    private javax.swing.JButton ajout_client_button;
     private javax.swing.JButton annulerBtn;
     private javax.swing.JLabel backcalcule;
     private javax.swing.JPanel barpanel;
@@ -3162,11 +3413,18 @@ public class POS extends javax.swing.JFrame {
     private javax.swing.JLabel categorie2;
     private javax.swing.JPanel category_bar;
     private javax.swing.JButton cigaretteBtn;
+    private javax.swing.JTextField clientNom;
+    private javax.swing.JTextField clientNumero;
+    private javax.swing.JTable client_table;
     private javax.swing.JButton confirmerBtn;
+    private javax.swing.JPanel credit_panel;
     private javax.swing.JButton eauBtn;
     private javax.swing.JPanel general_panel;
     private javax.swing.JButton gouterBtn;
     private javax.swing.JButton inventorybtn;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton48;
     private javax.swing.JButton jButton49;
     private javax.swing.JButton jButton50;
@@ -3204,6 +3462,12 @@ public class POS extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
@@ -3230,6 +3494,7 @@ public class POS extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable13;
     private javax.swing.JTable jTable2;
