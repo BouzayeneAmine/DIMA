@@ -144,10 +144,10 @@ public class Credit extends javax.swing.JFrame {
         txTest1 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         barpanel = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
         Logo = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         statbtn = new javax.swing.JButton();
-        jLabel21 = new javax.swing.JLabel();
         usersbtn = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         salesbtn = new javax.swing.JButton();
@@ -156,8 +156,10 @@ public class Credit extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         stockbtn = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         registerbtn = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         credit = new javax.swing.JTextField();
@@ -219,6 +221,13 @@ public class Credit extends javax.swing.JFrame {
         barpanel.setPreferredSize(new java.awt.Dimension(100, 1080));
         barpanel.setLayout(null);
 
+        jLabel21.setBackground(new java.awt.Color(255, 250, 240));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/utilisateurs.png"))); // NOI18N
+        jLabel21.setOpaque(true);
+        barpanel.add(jLabel21);
+        jLabel21.setBounds(10, 580, 60, 50);
+
         Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/logoMAGAZI-04.png"))); // NOI18N
         barpanel.add(Logo);
@@ -240,13 +249,6 @@ public class Credit extends javax.swing.JFrame {
         });
         barpanel.add(statbtn);
         statbtn.setBounds(20, 680, 50, 50);
-
-        jLabel21.setBackground(new java.awt.Color(30, 130, 82));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/utilisateursLight.png"))); // NOI18N
-        jLabel21.setOpaque(true);
-        barpanel.add(jLabel21);
-        jLabel21.setBounds(10, 580, 60, 50);
 
         usersbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/Stock5.png"))); // NOI18N
         usersbtn.setPreferredSize(new java.awt.Dimension(80, 80));
@@ -315,10 +317,17 @@ public class Credit extends javax.swing.JFrame {
         barpanel.add(jLabel16);
         jLabel16.setBounds(10, 180, 60, 50);
 
+        jLabel30.setBackground(new java.awt.Color(255, 250, 240));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/credit.png"))); // NOI18N
+        jLabel30.setOpaque(true);
+        barpanel.add(jLabel30);
+        jLabel30.setBounds(14, 760, 50, 50);
+
         jLabel5.setBackground(new java.awt.Color(30, 130, 82));
         jLabel5.setOpaque(true);
         barpanel.add(jLabel5);
-        jLabel5.setBounds(0, 570, 80, 70);
+        jLabel5.setBounds(0, 750, 80, 70);
 
         registerbtn.setBackground(new java.awt.Color(255, 255, 255));
         registerbtn.setBorder(null);
@@ -332,6 +341,15 @@ public class Credit extends javax.swing.JFrame {
         });
         barpanel.add(registerbtn);
         registerbtn.setBounds(20, 180, 50, 50);
+
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        barpanel.add(jButton2);
+        jButton2.setBounds(10, 770, 60, 30);
 
         jPanel4.add(barpanel);
         barpanel.setBounds(2, 0, 80, 2000);
@@ -776,7 +794,7 @@ public class Credit extends javax.swing.JFrame {
             total_base = (String.valueOf(jTable3.getValueAt(0, 6)));
             String q = "delete  from credit"
                     + " where"
-                    + " Barcode='" + acompte.getText() + "'"
+                    + " Barcode='" + credit.getText() + "'"
                     + "AND"
                     + " Client='" + client.getText() + "'";
             try {
@@ -819,6 +837,13 @@ public class Credit extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_numeroKeyTyped
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Credit a = new Credit(utilisateur.getText());
+        a.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Date1;
@@ -834,6 +859,7 @@ public class Credit extends javax.swing.JFrame {
     private javax.swing.JButton confirmerBtn;
     private javax.swing.JTextField credit;
     private javax.swing.JButton inventorybtn;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -850,6 +876,7 @@ public class Credit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

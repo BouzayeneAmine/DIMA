@@ -164,6 +164,8 @@ public class Utilisateurs extends javax.swing.JFrame {
         inventorybtn = new javax.swing.JButton();
         stockbtn = new javax.swing.JButton();
         registerbtn = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         txPassword = new javax.swing.JTextField();
@@ -333,6 +335,22 @@ public class Utilisateurs extends javax.swing.JFrame {
         });
         barpanel.add(registerbtn);
         registerbtn.setBounds(10, 180, 60, 50);
+
+        jLabel30.setBackground(new java.awt.Color(255, 250, 240));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/credit.png"))); // NOI18N
+        jLabel30.setOpaque(true);
+        barpanel.add(jLabel30);
+        jLabel30.setBounds(10, 760, 60, 50);
+
+        jButton5.setText("jButton2");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        barpanel.add(jButton5);
+        jButton5.setBounds(10, 770, 60, 30);
 
         jPanel4.add(barpanel);
         barpanel.setBounds(2, 0, 80, 2000);
@@ -754,6 +772,13 @@ public class Utilisateurs extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_LogoutBtnActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Credit a = new Credit(utilisateur.getText());
+        a.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Date1;
@@ -768,6 +793,7 @@ public class Utilisateurs extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -782,6 +808,7 @@ public class Utilisateurs extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

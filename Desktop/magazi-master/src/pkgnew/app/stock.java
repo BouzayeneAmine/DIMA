@@ -240,6 +240,8 @@ public void table() {
         inventorybtn = new javax.swing.JButton();
         stockbtn = new javax.swing.JButton();
         registerbtn = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         Session = new javax.swing.JPanel();
         utilisateur = new javax.swing.JLabel();
@@ -637,6 +639,22 @@ public void table() {
         });
         barpanel.add(registerbtn);
         registerbtn.setBounds(10, 180, 60, 50);
+
+        jLabel30.setBackground(new java.awt.Color(255, 250, 240));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/credit.png"))); // NOI18N
+        jLabel30.setOpaque(true);
+        barpanel.add(jLabel30);
+        jLabel30.setBounds(10, 760, 60, 50);
+
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        barpanel.add(jButton2);
+        jButton2.setBounds(10, 770, 60, 30);
 
         General_Panel.add(barpanel);
         barpanel.setBounds(2, 0, 80, 2000);
@@ -1445,6 +1463,13 @@ db.closeconnexion();
         selectedCat = "fruits secs"; 
     }//GEN-LAST:event_FruitssecsBtnActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Credit a = new Credit(utilisateur.getText());
+        a.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1519,6 +1544,7 @@ db.closeconnexion();
     private javax.swing.JButton eauBtn;
     private javax.swing.JButton gouterBtn;
     private javax.swing.JButton inventorybtn;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel15;
@@ -1530,6 +1556,7 @@ db.closeconnexion();
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
