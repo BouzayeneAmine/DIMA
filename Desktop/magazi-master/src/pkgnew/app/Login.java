@@ -33,6 +33,7 @@ public class Login extends javax.swing.JFrame {
         db.connexionDatabase();
 
         initComponents();
+        txt_password.requestFocus();
 
         correctAllNumbers();
 
@@ -40,7 +41,6 @@ public class Login extends javax.swing.JFrame {
         datecourante();
         this.setUndecorated(true);
         NomUtilisateur();
-        // this.setIconImage(new ImageIcon(getClass().getResource("/Images/Logo.png")).getImage());
     }
 
     public void correctAllNumbers() {
@@ -175,7 +175,7 @@ public class Login extends javax.swing.JFrame {
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.setFocusPainted(false);
         jButton1.setOpaque(true);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -199,7 +199,7 @@ public class Login extends javax.swing.JFrame {
         txt_password.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txt_password.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         txt_password.setCaretColor(new java.awt.Color(30, 130, 82));
-        txt_password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txt_password.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txt_password.setMargin(new java.awt.Insets(2, 5, 2, 2));
         txt_password.setOpaque(false);
         txt_password.setSelectedTextColor(new java.awt.Color(30, 130, 82));
@@ -242,6 +242,7 @@ public class Login extends javax.swing.JFrame {
         txt_username.setBackground(new java.awt.Color(30, 130, 82));
         txt_username.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         txt_username.setForeground(new java.awt.Color(30, 130, 82));
+        txt_username.setFocusable(false);
         txt_username.setOpaque(false);
         getContentPane().add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 220, 40));
 
@@ -251,6 +252,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 560, 80));
 
         jLabel1.setBackground(new java.awt.Color(30, 130, 82));
+        jLabel1.setFocusable(false);
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -20, 590, 570));
 
