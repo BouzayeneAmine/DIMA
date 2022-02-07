@@ -130,6 +130,7 @@ public class Credit extends javax.swing.JFrame {
         credit.setText("");
         acompte.setText("");
         txTest1.setText("");
+        numero.setText("");
         table();
         
     }
@@ -526,7 +527,7 @@ public class Credit extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/creditbg.png"))); // NOI18N
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(110, 550, 1120, 400);
+        jLabel4.setBounds(107, 550, 1120, 470);
 
         jTable3.setBackground(new java.awt.Color(255, 250, 240));
         jTable3.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N

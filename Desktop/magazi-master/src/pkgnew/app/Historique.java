@@ -50,7 +50,7 @@ public class Historique extends javax.swing.JFrame {
     private JLabel Heure = new JLabel();
     private JLabel Date = new JLabel();
     private DefaultTableCellRenderer headerRenderer;
-
+    String Nom,id,Barcode,Categorie,Quantittie,Prix_Vente,total_base,total_product,Date_Sortie,Heure_Sortie,user;
     public Historique(String username1) {
         db = new DbConnection(new Parametre().HOST_DB, new Parametre().USERNAME_DB, new Parametre().PASSWORD_DB, new Parametre().IPHOST, new Parametre().PORT);
         dc = new ConnectComPort();
@@ -329,6 +329,8 @@ public class Historique extends javax.swing.JFrame {
         ViderBilanBtn = new javax.swing.JButton();
         ViderStockBtn = new javax.swing.JButton();
         ViderActionBtn = new javax.swing.JButton();
+        ViderBilan1 = new javax.swing.JLabel();
+        retour_product = new javax.swing.JButton();
         Background = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -652,6 +654,11 @@ public class Historique extends javax.swing.JFrame {
         jTable1.setSelectionBackground(new java.awt.Color(30, 130, 82));
         jTable1.setSelectionForeground(new java.awt.Color(255, 250, 240));
         jTable1.getTableHeader().setReorderingAllowed(false);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1);
@@ -956,6 +963,19 @@ public class Historique extends javax.swing.JFrame {
         });
         jPanel1.add(ViderActionBtn);
         ViderActionBtn.setBounds(1110, 790, 140, 50);
+
+        ViderBilan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/retour.png"))); // NOI18N
+        jPanel1.add(ViderBilan1);
+        ViderBilan1.setBounds(1080, 830, 200, 130);
+
+        retour_product.setText("jButton1");
+        retour_product.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retour_productActionPerformed(evt);
+            }
+        });
+        jPanel1.add(retour_product);
+        retour_product.setBounds(1083, 870, 190, 50);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 2000, 2000);
@@ -1609,6 +1629,28 @@ db.closeconnexion();
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void retour_productActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retour_productActionPerformed
+        // add quantitie to stock :
+        String q ="update produit_stock "
+                + "set Quantite = Quantite +'"+Quantittie+"'"
+                + "where Barcode ='"+Barcode +"'";
+        System.out.println( db.exécutionUpdate(q));
+        // supprimer commande de l historique 
+        db.queryDelete("Historique", "id=" + id);
+            actualiser();
+        
+        
+    }//GEN-LAST:event_retour_productActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        id = String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 0));
+        Barcode = String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 2));
+        Nom = String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 1));
+        Quantittie = String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 4));
+       
+    }//GEN-LAST:event_jTable1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1659,6 +1701,7 @@ db.closeconnexion();
     private javax.swing.JLabel ViderAction;
     private javax.swing.JButton ViderActionBtn;
     private javax.swing.JLabel ViderBilan;
+    private javax.swing.JLabel ViderBilan1;
     private javax.swing.JButton ViderBilanBtn;
     private javax.swing.JLabel ViderStock;
     private javax.swing.JButton ViderStockBtn;
@@ -1710,6 +1753,7 @@ db.closeconnexion();
     private javax.swing.JLabel labelVendus;
     private javax.swing.JTextField net;
     private javax.swing.JButton registerbtn;
+    private javax.swing.JButton retour_product;
     private javax.swing.JButton salesbtn;
     private javax.swing.JLabel searchbarbg;
     private javax.swing.JButton statbtn;

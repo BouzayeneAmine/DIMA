@@ -1,0 +1,3 @@
+installer magazi Plus .exe
++add client table [id,nom,numero]
++add  credit [Id,Client,Numero,Nom,Barcode,Categorie,Quantite,Prix_vente,total_base,total,Date_Sortie,Heure_Sortie,user,acompte]
