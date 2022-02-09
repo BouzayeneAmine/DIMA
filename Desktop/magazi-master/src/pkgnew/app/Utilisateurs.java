@@ -211,13 +211,16 @@ public class Utilisateurs extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1300, 760));
-        setMinimumSize(new java.awt.Dimension(1300, 760));
-        setPreferredSize(new java.awt.Dimension(1300, 760));
-        setSize(new java.awt.Dimension(1300, 760));
+        setMaximumSize(new java.awt.Dimension(1280, 800));
+        setMinimumSize(new java.awt.Dimension(1280, 800));
+        setPreferredSize(new java.awt.Dimension(1280, 800));
+        setSize(new java.awt.Dimension(1280, 800));
         getContentPane().setLayout(null);
 
         jPanel4.setBackground(new java.awt.Color(255, 250, 240));
+        jPanel4.setMaximumSize(new java.awt.Dimension(1280, 800));
+        jPanel4.setMinimumSize(new java.awt.Dimension(1280, 800));
+        jPanel4.setPreferredSize(new java.awt.Dimension(1280, 800));
         jPanel4.setLayout(null);
 
         barpanel.setBackground(new java.awt.Color(255, 250, 240));
@@ -236,47 +239,47 @@ public class Utilisateurs extends javax.swing.JFrame {
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/statistiques.png"))); // NOI18N
         jLabel22.setOpaque(true);
         barpanel.add(jLabel22);
-        jLabel22.setBounds(10, 680, 60, 50);
+        jLabel22.setBounds(10, 620, 60, 50);
 
         jLabel21.setBackground(new java.awt.Color(30, 130, 82));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/utilisateursLight.png"))); // NOI18N
         jLabel21.setOpaque(true);
         barpanel.add(jLabel21);
-        jLabel21.setBounds(10, 580, 60, 50);
+        jLabel21.setBounds(10, 510, 60, 50);
 
         jLabel20.setBackground(new java.awt.Color(255, 250, 240));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/historique.png"))); // NOI18N
         jLabel20.setOpaque(true);
         barpanel.add(jLabel20);
-        jLabel20.setBounds(10, 480, 60, 64);
+        jLabel20.setBounds(10, 400, 60, 64);
 
         jLabel19.setBackground(new java.awt.Color(255, 250, 240));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/inventory.png"))); // NOI18N
         jLabel19.setOpaque(true);
         barpanel.add(jLabel19);
-        jLabel19.setBounds(10, 380, 60, 50);
+        jLabel19.setBounds(10, 310, 60, 50);
 
         jLabel18.setBackground(new java.awt.Color(255, 250, 240));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/Stock.png"))); // NOI18N
         jLabel18.setOpaque(true);
         barpanel.add(jLabel18);
-        jLabel18.setBounds(10, 280, 60, 50);
+        jLabel18.setBounds(10, 220, 60, 50);
 
         jLabel16.setBackground(new java.awt.Color(255, 250, 240));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/cashregister.png"))); // NOI18N
         jLabel16.setOpaque(true);
         barpanel.add(jLabel16);
-        jLabel16.setBounds(10, 180, 60, 50);
+        jLabel16.setBounds(10, 130, 60, 50);
 
         jLabel5.setBackground(new java.awt.Color(30, 130, 82));
         jLabel5.setOpaque(true);
         barpanel.add(jLabel5);
-        jLabel5.setBounds(0, 570, 80, 70);
+        jLabel5.setBounds(0, 510, 80, 70);
 
         statbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         statbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -285,7 +288,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(statbtn);
-        statbtn.setBounds(10, 680, 60, 50);
+        statbtn.setBounds(10, 620, 60, 50);
 
         usersbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         usersbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -294,7 +297,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(usersbtn);
-        usersbtn.setBounds(10, 580, 60, 45);
+        usersbtn.setBounds(10, 520, 60, 45);
 
         salesbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         salesbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -303,7 +306,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(salesbtn);
-        salesbtn.setBounds(10, 490, 60, 50);
+        salesbtn.setBounds(10, 410, 60, 50);
 
         inventorybtn.setPreferredSize(new java.awt.Dimension(80, 80));
         inventorybtn.addActionListener(new java.awt.event.ActionListener() {
@@ -312,7 +315,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(inventorybtn);
-        inventorybtn.setBounds(10, 380, 60, 50);
+        inventorybtn.setBounds(10, 310, 60, 50);
 
         stockbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         stockbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -321,7 +324,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(stockbtn);
-        stockbtn.setBounds(10, 280, 60, 50);
+        stockbtn.setBounds(10, 220, 60, 50);
 
         registerbtn.setBackground(new java.awt.Color(255, 255, 255));
         registerbtn.setBorder(null);
@@ -334,14 +337,14 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(registerbtn);
-        registerbtn.setBounds(10, 180, 60, 50);
+        registerbtn.setBounds(10, 130, 60, 50);
 
         jLabel30.setBackground(new java.awt.Color(255, 250, 240));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/credit.png"))); // NOI18N
         jLabel30.setOpaque(true);
         barpanel.add(jLabel30);
-        jLabel30.setBounds(10, 760, 60, 50);
+        jLabel30.setBounds(10, 720, 60, 50);
 
         jButton5.setText("jButton2");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -350,10 +353,10 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(jButton5);
-        jButton5.setBounds(10, 770, 60, 30);
+        jButton5.setBounds(10, 730, 60, 30);
 
         jPanel4.add(barpanel);
-        barpanel.setBounds(2, 0, 80, 2000);
+        barpanel.setBounds(2, 0, 80, 800);
 
         jPanel1.setBackground(new java.awt.Color(255, 250, 240));
         jPanel1.setLayout(null);
@@ -428,7 +431,7 @@ public class Utilisateurs extends javax.swing.JFrame {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/annulerbtn.png"))); // NOI18N
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(850, 290, 230, 60);
+        jLabel11.setBounds(850, 290, 160, 60);
 
         jButton2.setText("annuler");
         jButton2.setBorder(null);
@@ -438,19 +441,19 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(860, 300, 180, 40);
+        jButton2.setBounds(850, 300, 140, 40);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/confirmerbtn.png"))); // NOI18N
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(130, 280, 230, 80);
+        jLabel9.setBounds(150, 280, 160, 80);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/modifierbtn.png"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(370, 280, 230, 80);
+        jLabel10.setBounds(370, 280, 150, 80);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/supprimerbtn.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/supprimerbtstockn.png"))); // NOI18N
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(610, 280, 230, 80);
+        jLabel8.setBounds(610, 280, 160, 80);
 
         jButton3.setText("supprimer");
         jButton3.setBorder(null);
@@ -460,7 +463,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(620, 300, 180, 40);
+        jButton3.setBounds(620, 300, 130, 40);
 
         jButton4.setText("modifier");
         jButton4.setBorder(null);
@@ -470,7 +473,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(380, 300, 180, 40);
+        jButton4.setBounds(380, 300, 130, 40);
 
         jButton1.setText("confirmer");
         jButton1.setBorder(null);
@@ -480,7 +483,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(140, 300, 180, 40);
+        jButton1.setBounds(150, 300, 150, 40);
 
         jPanel4.add(jPanel1);
         jPanel1.setBounds(120, 110, 1160, 370);
@@ -488,7 +491,7 @@ public class Utilisateurs extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/userbg.png"))); // NOI18N
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(310, 550, 800, 370);
+        jLabel4.setBounds(280, 490, 800, 380);
 
         jTable3.setBackground(new java.awt.Color(255, 250, 240));
         jTable3.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -522,7 +525,7 @@ public class Utilisateurs extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTable3);
 
         jPanel4.add(jScrollPane3);
-        jScrollPane3.setBounds(310, 550, 800, 340);
+        jScrollPane3.setBounds(280, 490, 800, 290);
 
         jPanel3.setBackground(new java.awt.Color(255, 250, 240));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -569,25 +572,25 @@ public class Utilisateurs extends javax.swing.JFrame {
         Date1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         Date1.setForeground(new java.awt.Color(5, 45, 26));
         jPanel3.add(Date1);
-        Date1.setBounds(640, 5, 100, 70);
+        Date1.setBounds(490, 10, 100, 70);
 
         Heure1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         Heure1.setForeground(new java.awt.Color(5, 45, 26));
         jPanel3.add(Heure1);
-        Heure1.setBounds(510, 5, 100, 70);
+        Heure1.setBounds(360, 10, 100, 70);
 
         jLabel13.setFont(new java.awt.Font("Roboto Black", 0, 48)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(30, 130, 82));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("UTILISATEURS");
         jPanel3.add(jLabel13);
-        jLabel13.setBounds(840, 0, 400, 80);
+        jLabel13.setBounds(760, 0, 330, 80);
 
         jPanel4.add(jPanel3);
-        jPanel3.setBounds(50, 0, 2030, 80);
+        jPanel3.setBounds(40, 0, 1230, 80);
 
         getContentPane().add(jPanel4);
-        jPanel4.setBounds(0, 0, 2060, 2000);
+        jPanel4.setBounds(0, 0, 1280, 800);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -241,19 +241,22 @@ public class Inventory extends javax.swing.JFrame {
         Heure.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1300, 760));
-        setSize(new java.awt.Dimension(1300, 760));
+        setMaximumSize(new java.awt.Dimension(1280, 800));
+        setMinimumSize(new java.awt.Dimension(1280, 800));
+        setPreferredSize(new java.awt.Dimension(1280, 800));
+        setSize(new java.awt.Dimension(1280, 800));
         getContentPane().setLayout(null);
 
         General_Panel.setBackground(new java.awt.Color(255, 250, 240));
-        General_Panel.setMaximumSize(new java.awt.Dimension(1010, 730));
-        General_Panel.setPreferredSize(new java.awt.Dimension(1010, 730));
+        General_Panel.setMaximumSize(new java.awt.Dimension(1280, 800));
+        General_Panel.setMinimumSize(new java.awt.Dimension(1280, 800));
+        General_Panel.setPreferredSize(new java.awt.Dimension(1280, 800));
         General_Panel.setLayout(null);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/stockbg.png"))); // NOI18N
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         General_Panel.add(jLabel2);
-        jLabel2.setBounds(140, 270, 780, 680);
+        jLabel2.setBounds(140, 270, 680, 570);
 
         jTable1.setBackground(new java.awt.Color(255, 250, 240));
         jTable1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -285,11 +288,11 @@ public class Inventory extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         General_Panel.add(jScrollPane1);
-        jScrollPane1.setBounds(140, 270, 780, 630);
+        jScrollPane1.setBounds(140, 270, 680, 510);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/modifierbtn.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/modifierInvtbtn.png"))); // NOI18N
         General_Panel.add(jLabel1);
-        jLabel1.setBounds(1030, 290, 230, 70);
+        jLabel1.setBounds(940, 300, 230, 70);
 
         modifierPrduitbtn.setBackground(new java.awt.Color(0, 0, 102));
         modifierPrduitbtn.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -301,11 +304,11 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         General_Panel.add(modifierPrduitbtn);
-        modifierPrduitbtn.setBounds(1040, 300, 180, 50);
+        modifierPrduitbtn.setBounds(950, 310, 180, 50);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/ajouterbtn.png"))); // NOI18N
         General_Panel.add(jLabel3);
-        jLabel3.setBounds(1030, 370, 230, 70);
+        jLabel3.setBounds(940, 380, 230, 70);
 
         ajouterProduitbtn.setBackground(new java.awt.Color(0, 0, 102));
         ajouterProduitbtn.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -317,11 +320,11 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         General_Panel.add(ajouterProduitbtn);
-        ajouterProduitbtn.setBounds(1040, 380, 180, 50);
+        ajouterProduitbtn.setBounds(950, 390, 180, 50);
 
         supprimerbtnbg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/supprimerbtn.png"))); // NOI18N
         General_Panel.add(supprimerbtnbg);
-        supprimerbtnbg.setBounds(1030, 450, 230, 70);
+        supprimerbtnbg.setBounds(940, 460, 230, 70);
 
         supprimerbtn.setText("jButton1");
         supprimerbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -330,7 +333,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         General_Panel.add(supprimerbtn);
-        supprimerbtn.setBounds(1040, 460, 180, 50);
+        supprimerbtn.setBounds(950, 470, 180, 50);
 
         Barsearch.setBackground(new java.awt.Color(235, 231, 224));
         Barsearch.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -363,47 +366,47 @@ public class Inventory extends javax.swing.JFrame {
 
         CatPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/CatPanel.png"))); // NOI18N
         category_bar.add(CatPanel);
-        CatPanel.setBounds(0, 0, 800, 60);
+        CatPanel.setBounds(0, 0, 500, 60);
 
         CatfruitssecsPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barfruitssecs.png"))); // NOI18N
         category_bar.add(CatfruitssecsPanel);
-        CatfruitssecsPanel.setBounds(0, 0, 800, 60);
+        CatfruitssecsPanel.setBounds(0, 0, 500, 60);
 
         CatconservesPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barconserve.png"))); // NOI18N
         category_bar.add(CatconservesPanel);
-        CatconservesPanel.setBounds(0, 0, 800, 60);
+        CatconservesPanel.setBounds(0, 0, 500, 60);
 
         CatpatesPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barpates.png"))); // NOI18N
         category_bar.add(CatpatesPanel);
-        CatpatesPanel.setBounds(0, 0, 800, 60);
+        CatpatesPanel.setBounds(0, 0, 500, 60);
 
         CataccPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/baraccessoires.png"))); // NOI18N
         category_bar.add(CataccPanel);
-        CataccPanel.setBounds(0, 0, 800, 60);
+        CataccPanel.setBounds(0, 0, 500, 60);
 
         CatrechargePanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barrecharge.png"))); // NOI18N
         category_bar.add(CatrechargePanel);
-        CatrechargePanel.setBounds(0, 0, 800, 60);
+        CatrechargePanel.setBounds(0, 0, 500, 60);
 
         CatcigarettePanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barcigarettes.png"))); // NOI18N
         category_bar.add(CatcigarettePanel);
-        CatcigarettePanel.setBounds(0, 0, 800, 60);
+        CatcigarettePanel.setBounds(0, 0, 500, 60);
 
         CattabacPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/bartabac.png"))); // NOI18N
         category_bar.add(CattabacPanel);
-        CattabacPanel.setBounds(0, 0, 800, 60);
+        CattabacPanel.setBounds(0, 0, 500, 60);
 
         CatgouterPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/bargouter.png"))); // NOI18N
         category_bar.add(CatgouterPanel);
-        CatgouterPanel.setBounds(0, 0, 800, 60);
+        CatgouterPanel.setBounds(0, 0, 500, 60);
 
         CatboissonPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barboisson.png"))); // NOI18N
         category_bar.add(CatboissonPanel);
-        CatboissonPanel.setBounds(0, 0, 800, 60);
+        CatboissonPanel.setBounds(0, 0, 500, 60);
 
         CateauPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/bareau.png"))); // NOI18N
         category_bar.add(CateauPanel);
-        CateauPanel.setBounds(0, 0, 800, 60);
+        CateauPanel.setBounds(0, 0, 500, 60);
 
         FruitssecsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -411,7 +414,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         category_bar.add(FruitssecsBtn);
-        FruitssecsBtn.setBounds(700, 10, 80, 35);
+        FruitssecsBtn.setBounds(440, 10, 50, 35);
 
         ConserveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -419,7 +422,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         category_bar.add(ConserveBtn);
-        ConserveBtn.setBounds(620, 10, 70, 35);
+        ConserveBtn.setBounds(380, 10, 60, 35);
 
         PatesBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -427,7 +430,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         category_bar.add(PatesBtn);
-        PatesBtn.setBounds(560, 10, 50, 35);
+        PatesBtn.setBounds(340, 10, 40, 35);
 
         AccBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -435,7 +438,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         category_bar.add(AccBtn);
-        AccBtn.setBounds(460, 10, 80, 35);
+        AccBtn.setBounds(280, 10, 60, 35);
 
         rechargeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -443,7 +446,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         category_bar.add(rechargeBtn);
-        rechargeBtn.setBounds(350, 10, 90, 35);
+        rechargeBtn.setBounds(220, 10, 60, 35);
 
         cigaretteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -451,7 +454,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         category_bar.add(cigaretteBtn);
-        cigaretteBtn.setBounds(270, 10, 70, 35);
+        cigaretteBtn.setBounds(160, 10, 60, 35);
 
         tabacBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -459,7 +462,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         category_bar.add(tabacBtn);
-        tabacBtn.setBounds(210, 10, 50, 35);
+        tabacBtn.setBounds(130, 10, 40, 35);
 
         gouterBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -467,7 +470,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         category_bar.add(gouterBtn);
-        gouterBtn.setBounds(140, 10, 60, 35);
+        gouterBtn.setBounds(90, 10, 40, 35);
 
         boissonBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -475,7 +478,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         category_bar.add(boissonBtn);
-        boissonBtn.setBounds(60, 10, 70, 35);
+        boissonBtn.setBounds(40, 10, 40, 35);
 
         eauBtn.setBackground(new java.awt.Color(255, 255, 255));
         eauBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -485,10 +488,10 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         category_bar.add(eauBtn);
-        eauBtn.setBounds(10, 10, 50, 35);
+        eauBtn.setBounds(5, 14, 35, 32);
 
         General_Panel.add(category_bar);
-        category_bar.setBounds(140, 175, 820, 70);
+        category_bar.setBounds(140, 175, 800, 70);
 
         barpanel.setBackground(new java.awt.Color(255, 250, 240));
         barpanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -506,47 +509,47 @@ public class Inventory extends javax.swing.JFrame {
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/statistiques.png"))); // NOI18N
         jLabel22.setOpaque(true);
         barpanel.add(jLabel22);
-        jLabel22.setBounds(10, 680, 60, 50);
+        jLabel22.setBounds(10, 630, 60, 50);
 
         jLabel21.setBackground(new java.awt.Color(255, 250, 240));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/utilisateurs.png"))); // NOI18N
         jLabel21.setOpaque(true);
         barpanel.add(jLabel21);
-        jLabel21.setBounds(10, 580, 60, 50);
+        jLabel21.setBounds(10, 540, 60, 50);
 
         jLabel20.setBackground(new java.awt.Color(255, 250, 240));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/historique.png"))); // NOI18N
         jLabel20.setOpaque(true);
         barpanel.add(jLabel20);
-        jLabel20.setBounds(10, 480, 60, 64);
+        jLabel20.setBounds(10, 430, 60, 64);
 
         jLabel19.setBackground(new java.awt.Color(30, 130, 82));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/inventoryLight.png"))); // NOI18N
         jLabel19.setOpaque(true);
         barpanel.add(jLabel19);
-        jLabel19.setBounds(10, 380, 60, 50);
+        jLabel19.setBounds(10, 320, 60, 50);
 
         jLabel18.setBackground(new java.awt.Color(255, 250, 240));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/Stock.png"))); // NOI18N
         jLabel18.setOpaque(true);
         barpanel.add(jLabel18);
-        jLabel18.setBounds(10, 280, 60, 50);
+        jLabel18.setBounds(10, 210, 60, 50);
 
         jLabel16.setBackground(new java.awt.Color(255, 250, 240));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/cashregister.png"))); // NOI18N
         jLabel16.setOpaque(true);
         barpanel.add(jLabel16);
-        jLabel16.setBounds(10, 180, 60, 50);
+        jLabel16.setBounds(10, 120, 60, 50);
 
         jLabel5.setBackground(new java.awt.Color(30, 130, 82));
         jLabel5.setOpaque(true);
         barpanel.add(jLabel5);
-        jLabel5.setBounds(0, 370, 80, 70);
+        jLabel5.setBounds(0, 310, 80, 70);
 
         statbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         statbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -555,7 +558,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(statbtn);
-        statbtn.setBounds(10, 680, 60, 50);
+        statbtn.setBounds(10, 630, 60, 50);
 
         usersbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         usersbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -564,7 +567,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(usersbtn);
-        usersbtn.setBounds(10, 580, 60, 45);
+        usersbtn.setBounds(10, 540, 60, 45);
 
         salesbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         salesbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -573,7 +576,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(salesbtn);
-        salesbtn.setBounds(10, 490, 60, 50);
+        salesbtn.setBounds(10, 430, 60, 50);
 
         inventorybtn.setPreferredSize(new java.awt.Dimension(80, 80));
         inventorybtn.addActionListener(new java.awt.event.ActionListener() {
@@ -582,7 +585,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(inventorybtn);
-        inventorybtn.setBounds(10, 380, 60, 50);
+        inventorybtn.setBounds(10, 320, 60, 50);
 
         stockbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         stockbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -591,7 +594,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(stockbtn);
-        stockbtn.setBounds(10, 280, 60, 50);
+        stockbtn.setBounds(10, 210, 60, 50);
 
         registerbtn.setBackground(new java.awt.Color(255, 255, 255));
         registerbtn.setBorder(null);
@@ -604,14 +607,14 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(registerbtn);
-        registerbtn.setBounds(10, 180, 60, 50);
+        registerbtn.setBounds(10, 120, 60, 50);
 
         jLabel30.setBackground(new java.awt.Color(255, 250, 240));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/credit.png"))); // NOI18N
         jLabel30.setOpaque(true);
         barpanel.add(jLabel30);
-        jLabel30.setBounds(10, 760, 60, 50);
+        jLabel30.setBounds(10, 720, 60, 50);
 
         jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -620,10 +623,10 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(jButton2);
-        jButton2.setBounds(10, 770, 60, 30);
+        jButton2.setBounds(10, 730, 60, 30);
 
         General_Panel.add(barpanel);
-        barpanel.setBounds(2, 0, 80, 2000);
+        barpanel.setBounds(2, 0, 80, 800);
 
         jPanel1.setBackground(new java.awt.Color(255, 250, 240));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -672,25 +675,25 @@ public class Inventory extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("INVENTAIRE");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(910, 0, 330, 80);
+        jLabel10.setBounds(820, 0, 330, 80);
 
         Heure1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         Heure1.setForeground(new java.awt.Color(5, 45, 26));
         Heure1.setText("22:10");
         jPanel1.add(Heure1);
-        Heure1.setBounds(510, 5, 100, 70);
+        Heure1.setBounds(380, 0, 100, 80);
 
         Date1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         Date1.setForeground(new java.awt.Color(5, 45, 26));
         Date1.setText("31-12-2019");
         jPanel1.add(Date1);
-        Date1.setBounds(640, 5, 100, 70);
+        Date1.setBounds(510, 0, 100, 80);
 
         General_Panel.add(jPanel1);
-        jPanel1.setBounds(50, 0, 2030, 80);
+        jPanel1.setBounds(50, 0, 1220, 80);
 
         getContentPane().add(General_Panel);
-        General_Panel.setBounds(0, 0, 2000, 2000);
+        General_Panel.setBounds(0, 0, 1280, 800);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

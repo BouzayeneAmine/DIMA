@@ -257,19 +257,20 @@ public void table() {
         Heure.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1300, 760));
-        setSize(new java.awt.Dimension(1300, 760));
+        setMaximumSize(new java.awt.Dimension(1280, 800));
+        setMinimumSize(new java.awt.Dimension(1280, 800));
+        setSize(new java.awt.Dimension(1280, 800));
         getContentPane().setLayout(null);
 
         General_Panel.setBackground(new java.awt.Color(255, 250, 240));
         General_Panel.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        General_Panel.setPreferredSize(new java.awt.Dimension(1230, 100));
+        General_Panel.setPreferredSize(new java.awt.Dimension(1280, 800));
         General_Panel.setLayout(null);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/stockbg.png"))); // NOI18N
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         General_Panel.add(jLabel2);
-        jLabel2.setBounds(140, 270, 780, 680);
+        jLabel2.setBounds(140, 240, 630, 540);
 
         jTable1.setBackground(new java.awt.Color(255, 250, 240));
         jTable1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -303,11 +304,11 @@ public void table() {
         jTable1.getAccessibleContext().setAccessibleName("");
 
         General_Panel.add(jScrollPane1);
-        jScrollPane1.setBounds(140, 270, 780, 630);
+        jScrollPane1.setBounds(140, 240, 630, 510);
 
         RefillBtnbg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/remplirstockbtn.png"))); // NOI18N
         General_Panel.add(RefillBtnbg);
-        RefillBtnbg.setBounds(1000, 290, 230, 70);
+        RefillBtnbg.setBounds(840, 310, 210, 70);
 
         RefillBtn.setBackground(new java.awt.Color(51, 51, 255));
         RefillBtn.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
@@ -320,11 +321,11 @@ public void table() {
             }
         });
         General_Panel.add(RefillBtn);
-        RefillBtn.setBounds(1010, 300, 180, 50);
+        RefillBtn.setBounds(850, 320, 190, 50);
 
         ReduceBtnbg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/reduirestockbtn.png"))); // NOI18N
         General_Panel.add(ReduceBtnbg);
-        ReduceBtnbg.setBounds(1000, 370, 230, 70);
+        ReduceBtnbg.setBounds(840, 390, 200, 70);
 
         ReduceBtn.setBackground(new java.awt.Color(255, 255, 255));
         ReduceBtn.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
@@ -337,7 +338,7 @@ public void table() {
             }
         });
         General_Panel.add(ReduceBtn);
-        ReduceBtn.setBounds(1010, 380, 180, 50);
+        ReduceBtn.setBounds(850, 400, 180, 50);
 
         Barsearch.setBackground(new java.awt.Color(235, 231, 224));
         Barsearch.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -377,13 +378,13 @@ public void table() {
             }
         });
         General_Panel.add(Quantity);
-        Quantity.setBounds(1010, 540, 180, 60);
+        Quantity.setBounds(860, 550, 180, 60);
 
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(5, 45, 26));
         jLabel1.setText("Quantity :");
         General_Panel.add(jLabel1);
-        jLabel1.setBounds(1000, 490, 110, 40);
+        jLabel1.setBounds(790, 490, 110, 40);
 
         category_bar.setBackground(new java.awt.Color(255, 255, 255));
         category_bar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -392,47 +393,47 @@ public void table() {
 
         CatPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/CatPanel.png"))); // NOI18N
         category_bar.add(CatPanel);
-        CatPanel.setBounds(0, 0, 820, 60);
+        CatPanel.setBounds(0, 0, 500, 60);
 
         CatfruitssecsPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barfruitssecs.png"))); // NOI18N
         category_bar.add(CatfruitssecsPanel);
-        CatfruitssecsPanel.setBounds(0, 0, 820, 60);
+        CatfruitssecsPanel.setBounds(0, 0, 520, 60);
 
         CatconservePanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barconserve.png"))); // NOI18N
         category_bar.add(CatconservePanel);
-        CatconservePanel.setBounds(0, 0, 820, 60);
+        CatconservePanel.setBounds(0, 0, 500, 60);
 
         CatpatesPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barpates.png"))); // NOI18N
         category_bar.add(CatpatesPanel);
-        CatpatesPanel.setBounds(0, 0, 820, 60);
+        CatpatesPanel.setBounds(0, 0, 500, 60);
 
         CataccPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/baraccessoires.png"))); // NOI18N
         category_bar.add(CataccPanel);
-        CataccPanel.setBounds(0, 0, 820, 60);
+        CataccPanel.setBounds(0, 0, 500, 60);
 
         CatrechargePanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barrecharge.png"))); // NOI18N
         category_bar.add(CatrechargePanel);
-        CatrechargePanel.setBounds(0, 0, 820, 60);
+        CatrechargePanel.setBounds(0, 0, 510, 60);
 
         CatcigarettePanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barcigarettes.png"))); // NOI18N
         category_bar.add(CatcigarettePanel);
-        CatcigarettePanel.setBounds(0, 0, 820, 60);
+        CatcigarettePanel.setBounds(0, 0, 510, 60);
 
         CattabacPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/bartabac.png"))); // NOI18N
         category_bar.add(CattabacPanel);
-        CattabacPanel.setBounds(0, 0, 820, 60);
+        CattabacPanel.setBounds(0, 0, 530, 60);
 
         CatgouterPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/bargouter.png"))); // NOI18N
         category_bar.add(CatgouterPanel);
-        CatgouterPanel.setBounds(0, 0, 820, 60);
+        CatgouterPanel.setBounds(0, 0, 510, 60);
 
         CatboissonPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/barboisson.png"))); // NOI18N
         category_bar.add(CatboissonPanel);
-        CatboissonPanel.setBounds(0, 0, 820, 60);
+        CatboissonPanel.setBounds(0, 0, 520, 60);
 
         CateauPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/bareau.png"))); // NOI18N
         category_bar.add(CateauPanel);
-        CateauPanel.setBounds(0, 0, 820, 60);
+        CateauPanel.setBounds(0, 0, 500, 60);
 
         FruitssecsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -440,7 +441,7 @@ public void table() {
             }
         });
         category_bar.add(FruitssecsBtn);
-        FruitssecsBtn.setBounds(700, 10, 80, 35);
+        FruitssecsBtn.setBounds(440, 10, 50, 35);
 
         ConserveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -448,7 +449,7 @@ public void table() {
             }
         });
         category_bar.add(ConserveBtn);
-        ConserveBtn.setBounds(620, 10, 70, 35);
+        ConserveBtn.setBounds(380, 10, 50, 35);
 
         PatesBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -456,7 +457,7 @@ public void table() {
             }
         });
         category_bar.add(PatesBtn);
-        PatesBtn.setBounds(560, 10, 50, 35);
+        PatesBtn.setBounds(340, 10, 40, 35);
 
         AccBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -464,7 +465,7 @@ public void table() {
             }
         });
         category_bar.add(AccBtn);
-        AccBtn.setBounds(450, 10, 100, 35);
+        AccBtn.setBounds(280, 15, 70, 30);
 
         rechargeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -472,7 +473,7 @@ public void table() {
             }
         });
         category_bar.add(rechargeBtn);
-        rechargeBtn.setBounds(355, 10, 90, 35);
+        rechargeBtn.setBounds(215, 10, 60, 35);
 
         cigaretteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -480,7 +481,7 @@ public void table() {
             }
         });
         category_bar.add(cigaretteBtn);
-        cigaretteBtn.setBounds(265, 10, 80, 35);
+        cigaretteBtn.setBounds(165, 10, 50, 35);
 
         tabacBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -488,7 +489,7 @@ public void table() {
             }
         });
         category_bar.add(tabacBtn);
-        tabacBtn.setBounds(210, 10, 40, 35);
+        tabacBtn.setBounds(120, 10, 40, 35);
 
         gouterBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -496,7 +497,7 @@ public void table() {
             }
         });
         category_bar.add(gouterBtn);
-        gouterBtn.setBounds(145, 10, 50, 35);
+        gouterBtn.setBounds(85, 10, 40, 35);
 
         boissonBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -504,7 +505,7 @@ public void table() {
             }
         });
         category_bar.add(boissonBtn);
-        boissonBtn.setBounds(70, 10, 60, 35);
+        boissonBtn.setBounds(40, 10, 40, 35);
 
         eauBtn.setBackground(new java.awt.Color(255, 255, 255));
         eauBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -514,15 +515,15 @@ public void table() {
             }
         });
         category_bar.add(eauBtn);
-        eauBtn.setBounds(10, 10, 50, 35);
+        eauBtn.setBounds(10, 10, 30, 35);
 
         General_Panel.add(category_bar);
-        category_bar.setBounds(140, 175, 850, 70);
+        category_bar.setBounds(190, 175, 550, 70);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/quantitebg.png"))); // NOI18N
         General_Panel.add(jLabel3);
-        jLabel3.setBounds(990, 530, 210, 80);
+        jLabel3.setBounds(840, 540, 220, 80);
 
         barpanel.setBackground(new java.awt.Color(255, 250, 240));
         barpanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -540,47 +541,47 @@ public void table() {
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/statistiques.png"))); // NOI18N
         jLabel22.setOpaque(true);
         barpanel.add(jLabel22);
-        jLabel22.setBounds(10, 680, 60, 50);
+        jLabel22.setBounds(10, 580, 60, 50);
 
         jLabel21.setBackground(new java.awt.Color(255, 250, 240));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/utilisateurs.png"))); // NOI18N
         jLabel21.setOpaque(true);
         barpanel.add(jLabel21);
-        jLabel21.setBounds(10, 580, 60, 50);
+        jLabel21.setBounds(10, 490, 60, 50);
 
         jLabel20.setBackground(new java.awt.Color(255, 250, 240));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/historique.png"))); // NOI18N
         jLabel20.setOpaque(true);
         barpanel.add(jLabel20);
-        jLabel20.setBounds(10, 480, 60, 64);
+        jLabel20.setBounds(10, 380, 60, 64);
 
         jLabel19.setBackground(new java.awt.Color(255, 250, 240));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/inventory.png"))); // NOI18N
         jLabel19.setOpaque(true);
         barpanel.add(jLabel19);
-        jLabel19.setBounds(10, 380, 60, 50);
+        jLabel19.setBounds(10, 300, 60, 50);
 
         jLabel18.setBackground(new java.awt.Color(30, 130, 82));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/stockLight.png"))); // NOI18N
         jLabel18.setOpaque(true);
         barpanel.add(jLabel18);
-        jLabel18.setBounds(10, 280, 60, 50);
+        jLabel18.setBounds(10, 200, 60, 50);
 
         jLabel16.setBackground(new java.awt.Color(255, 250, 240));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/cashregister.png"))); // NOI18N
         jLabel16.setOpaque(true);
         barpanel.add(jLabel16);
-        jLabel16.setBounds(10, 180, 60, 50);
+        jLabel16.setBounds(10, 120, 60, 50);
 
         jLabel5.setBackground(new java.awt.Color(30, 130, 82));
         jLabel5.setOpaque(true);
         barpanel.add(jLabel5);
-        jLabel5.setBounds(0, 270, 80, 70);
+        jLabel5.setBounds(0, 190, 80, 70);
 
         statbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         statbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -589,7 +590,7 @@ public void table() {
             }
         });
         barpanel.add(statbtn);
-        statbtn.setBounds(10, 680, 60, 50);
+        statbtn.setBounds(10, 580, 60, 50);
 
         usersbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         usersbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -598,7 +599,7 @@ public void table() {
             }
         });
         barpanel.add(usersbtn);
-        usersbtn.setBounds(10, 580, 60, 45);
+        usersbtn.setBounds(10, 490, 60, 45);
 
         salesbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         salesbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -607,7 +608,7 @@ public void table() {
             }
         });
         barpanel.add(salesbtn);
-        salesbtn.setBounds(10, 490, 60, 50);
+        salesbtn.setBounds(10, 390, 60, 50);
 
         inventorybtn.setPreferredSize(new java.awt.Dimension(80, 80));
         inventorybtn.addActionListener(new java.awt.event.ActionListener() {
@@ -616,7 +617,7 @@ public void table() {
             }
         });
         barpanel.add(inventorybtn);
-        inventorybtn.setBounds(10, 380, 60, 50);
+        inventorybtn.setBounds(10, 300, 60, 50);
 
         stockbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         stockbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -625,7 +626,7 @@ public void table() {
             }
         });
         barpanel.add(stockbtn);
-        stockbtn.setBounds(10, 280, 60, 50);
+        stockbtn.setBounds(10, 200, 60, 50);
 
         registerbtn.setBackground(new java.awt.Color(255, 255, 255));
         registerbtn.setBorder(null);
@@ -638,14 +639,14 @@ public void table() {
             }
         });
         barpanel.add(registerbtn);
-        registerbtn.setBounds(10, 180, 60, 50);
+        registerbtn.setBounds(10, 120, 60, 50);
 
         jLabel30.setBackground(new java.awt.Color(255, 250, 240));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/credit.png"))); // NOI18N
         jLabel30.setOpaque(true);
         barpanel.add(jLabel30);
-        jLabel30.setBounds(10, 760, 60, 50);
+        jLabel30.setBounds(10, 670, 60, 50);
 
         jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -654,10 +655,10 @@ public void table() {
             }
         });
         barpanel.add(jButton2);
-        jButton2.setBounds(10, 770, 60, 30);
+        jButton2.setBounds(10, 680, 60, 30);
 
         General_Panel.add(barpanel);
-        barpanel.setBounds(2, 0, 80, 2000);
+        barpanel.setBounds(2, 0, 80, 770);
 
         jPanel1.setBackground(new java.awt.Color(255, 250, 240));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -699,32 +700,32 @@ public void table() {
         jLabel15.setBounds(5, 0, 260, 60);
 
         jPanel1.add(Session);
-        Session.setBounds(90, 10, 270, 60);
+        Session.setBounds(40, 10, 270, 60);
 
         jLabel10.setFont(new java.awt.Font("Roboto Black", 0, 48)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(30, 130, 82));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("STOCK");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(950, 0, 290, 80);
+        jLabel10.setBounds(710, 0, 170, 80);
 
         Heure1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         Heure1.setForeground(new java.awt.Color(5, 45, 26));
         Heure1.setText("22:10");
         jPanel1.add(Heure1);
-        Heure1.setBounds(510, 5, 100, 70);
+        Heure1.setBounds(330, 0, 80, 80);
 
         Date1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         Date1.setForeground(new java.awt.Color(5, 45, 26));
         Date1.setText("31-12-2019");
         jPanel1.add(Date1);
-        Date1.setBounds(640, 5, 100, 70);
+        Date1.setBounds(430, 0, 100, 80);
 
         General_Panel.add(jPanel1);
-        jPanel1.setBounds(50, 0, 2030, 80);
+        jPanel1.setBounds(80, 0, 1220, 80);
 
         getContentPane().add(General_Panel);
-        General_Panel.setBounds(0, 0, 2000, 2000);
+        General_Panel.setBounds(0, 0, 1280, 800);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
