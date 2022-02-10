@@ -611,12 +611,12 @@
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/IMAGE POS/modifierbtn.png"/>
+                  <Image iconType="3" name="/IMAGE POS/modifierUtibtn.png"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="370" y="280" width="150" height="80"/>
+                  <AbsoluteConstraints x="370" y="290" width="160" height="60"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -908,7 +908,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="760" y="0" width="330" height="80"/>
+                  <AbsoluteConstraints x="780" y="0" width="330" height="80"/>
                 </Constraint>
               </Constraints>
             </Component>

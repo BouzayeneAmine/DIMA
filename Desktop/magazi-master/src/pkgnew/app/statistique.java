@@ -638,7 +638,7 @@ public final class statistique extends javax.swing.JFrame {
         Qte5.setText("Top 5 par quantité");
         Qte5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(Qte5);
-        Qte5.setBounds(580, 380, 120, 20);
+        Qte5.setBounds(660, 400, 120, 20);
 
         Qte4.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         Qte4.setForeground(new java.awt.Color(30, 130, 82));
@@ -646,7 +646,7 @@ public final class statistique extends javax.swing.JFrame {
         Qte4.setText("Top 5 par quantité");
         Qte4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(Qte4);
-        Qte4.setBounds(580, 340, 120, 30);
+        Qte4.setBounds(660, 360, 120, 30);
 
         Qte3.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         Qte3.setForeground(new java.awt.Color(30, 130, 82));
@@ -654,7 +654,7 @@ public final class statistique extends javax.swing.JFrame {
         Qte3.setText("Top 5 par quantité");
         Qte3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(Qte3);
-        Qte3.setBounds(580, 300, 120, 30);
+        Qte3.setBounds(660, 320, 120, 30);
 
         Qte2.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         Qte2.setForeground(new java.awt.Color(30, 130, 82));
@@ -662,7 +662,7 @@ public final class statistique extends javax.swing.JFrame {
         Qte2.setText("Top 5 par quantité");
         Qte2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(Qte2);
-        Qte2.setBounds(580, 260, 120, 30);
+        Qte2.setBounds(660, 280, 120, 30);
 
         Qte1.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         Qte1.setForeground(new java.awt.Color(30, 130, 82));
@@ -670,7 +670,7 @@ public final class statistique extends javax.swing.JFrame {
         Qte1.setText("Top 5 par quantité");
         Qte1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(Qte1);
-        Qte1.setBounds(580, 220, 120, 30);
+        Qte1.setBounds(660, 240, 120, 30);
 
         barpanel.setBackground(new java.awt.Color(255, 250, 240));
         barpanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -688,47 +688,47 @@ public final class statistique extends javax.swing.JFrame {
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/statistiquesLight.png"))); // NOI18N
         jLabel22.setOpaque(true);
         barpanel.add(jLabel22);
-        jLabel22.setBounds(10, 580, 60, 50);
+        jLabel22.setBounds(10, 640, 60, 50);
 
         jLabel21.setBackground(new java.awt.Color(255, 250, 240));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/utilisateurs.png"))); // NOI18N
         jLabel21.setOpaque(true);
         barpanel.add(jLabel21);
-        jLabel21.setBounds(10, 470, 60, 50);
+        jLabel21.setBounds(10, 540, 60, 50);
 
         jLabel20.setBackground(new java.awt.Color(255, 250, 240));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/historique.png"))); // NOI18N
         jLabel20.setOpaque(true);
         barpanel.add(jLabel20);
-        jLabel20.setBounds(10, 370, 60, 64);
+        jLabel20.setBounds(10, 440, 60, 64);
 
         jLabel19.setBackground(new java.awt.Color(255, 250, 240));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/inventory.png"))); // NOI18N
         jLabel19.setOpaque(true);
         barpanel.add(jLabel19);
-        jLabel19.setBounds(10, 280, 60, 50);
+        jLabel19.setBounds(10, 340, 60, 50);
 
         jLabel18.setBackground(new java.awt.Color(255, 250, 240));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/Stock.png"))); // NOI18N
         jLabel18.setOpaque(true);
         barpanel.add(jLabel18);
-        jLabel18.setBounds(10, 200, 60, 50);
+        jLabel18.setBounds(10, 240, 60, 50);
 
         jLabel16.setBackground(new java.awt.Color(255, 250, 240));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/cashregister.png"))); // NOI18N
         jLabel16.setOpaque(true);
         barpanel.add(jLabel16);
-        jLabel16.setBounds(10, 120, 60, 50);
+        jLabel16.setBounds(10, 140, 60, 50);
 
         jLabel5.setBackground(new java.awt.Color(30, 130, 82));
         jLabel5.setOpaque(true);
         barpanel.add(jLabel5);
-        jLabel5.setBounds(0, 570, 80, 70);
+        jLabel5.setBounds(0, 630, 80, 70);
 
         statbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         statbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -737,7 +737,7 @@ public final class statistique extends javax.swing.JFrame {
             }
         });
         barpanel.add(statbtn);
-        statbtn.setBounds(10, 580, 60, 50);
+        statbtn.setBounds(10, 640, 60, 50);
 
         usersbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         usersbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -746,7 +746,7 @@ public final class statistique extends javax.swing.JFrame {
             }
         });
         barpanel.add(usersbtn);
-        usersbtn.setBounds(10, 470, 60, 45);
+        usersbtn.setBounds(10, 540, 60, 45);
 
         salesbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         salesbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -755,7 +755,7 @@ public final class statistique extends javax.swing.JFrame {
             }
         });
         barpanel.add(salesbtn);
-        salesbtn.setBounds(10, 370, 60, 50);
+        salesbtn.setBounds(10, 440, 60, 50);
 
         inventorybtn.setPreferredSize(new java.awt.Dimension(80, 80));
         inventorybtn.addActionListener(new java.awt.event.ActionListener() {
@@ -764,7 +764,7 @@ public final class statistique extends javax.swing.JFrame {
             }
         });
         barpanel.add(inventorybtn);
-        inventorybtn.setBounds(10, 280, 60, 50);
+        inventorybtn.setBounds(10, 340, 60, 50);
 
         stockbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         stockbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -773,7 +773,7 @@ public final class statistique extends javax.swing.JFrame {
             }
         });
         barpanel.add(stockbtn);
-        stockbtn.setBounds(10, 200, 60, 50);
+        stockbtn.setBounds(10, 240, 60, 50);
 
         registerbtn.setBackground(new java.awt.Color(255, 255, 255));
         registerbtn.setBorder(null);
@@ -786,14 +786,14 @@ public final class statistique extends javax.swing.JFrame {
             }
         });
         barpanel.add(registerbtn);
-        registerbtn.setBounds(10, 120, 60, 50);
+        registerbtn.setBounds(10, 140, 60, 50);
 
         jLabel30.setBackground(new java.awt.Color(255, 250, 240));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/credit.png"))); // NOI18N
         jLabel30.setOpaque(true);
         barpanel.add(jLabel30);
-        jLabel30.setBounds(10, 690, 60, 50);
+        jLabel30.setBounds(10, 720, 60, 50);
 
         jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -802,10 +802,10 @@ public final class statistique extends javax.swing.JFrame {
             }
         });
         barpanel.add(jButton2);
-        jButton2.setBounds(10, 700, 60, 30);
+        jButton2.setBounds(10, 720, 60, 40);
 
         Statistiques_Panel.add(barpanel);
-        barpanel.setBounds(2, 0, 80, 760);
+        barpanel.setBounds(2, 0, 80, 800);
 
         jPanel2.setBackground(new java.awt.Color(255, 250, 240));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -864,10 +864,10 @@ public final class statistique extends javax.swing.JFrame {
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("STATISTIQUES");
         jPanel2.add(jLabel12);
-        jLabel12.setBounds(590, 0, 370, 80);
+        jLabel12.setBounds(780, 0, 370, 80);
 
         Statistiques_Panel.add(jPanel2);
-        jPanel2.setBounds(50, 0, 970, 80);
+        jPanel2.setBounds(80, 0, 1200, 80);
 
         PieChartPanelBft.setBackground(new java.awt.Color(255, 250, 240));
         PieChartPanelBft.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -876,15 +876,15 @@ public final class statistique extends javax.swing.JFrame {
         PieChartPanelBft.setLayout(PieChartPanelBftLayout);
         PieChartPanelBftLayout.setHorizontalGroup(
             PieChartPanelBftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
+            .addGap(0, 180, Short.MAX_VALUE)
         );
         PieChartPanelBftLayout.setVerticalGroup(
             PieChartPanelBftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
+            .addGap(0, 180, Short.MAX_VALUE)
         );
 
         Statistiques_Panel.add(PieChartPanelBft);
-        PieChartPanelBft.setBounds(130, 220, 160, 160);
+        PieChartPanelBft.setBounds(150, 240, 180, 180);
 
         PieChartPanelQte.setBackground(new java.awt.Color(255, 250, 240));
 
@@ -892,15 +892,15 @@ public final class statistique extends javax.swing.JFrame {
         PieChartPanelQte.setLayout(PieChartPanelQteLayout);
         PieChartPanelQteLayout.setHorizontalGroup(
             PieChartPanelQteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+            .addGap(0, 180, Short.MAX_VALUE)
         );
         PieChartPanelQteLayout.setVerticalGroup(
             PieChartPanelQteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+            .addGap(0, 180, Short.MAX_VALUE)
         );
 
         Statistiques_Panel.add(PieChartPanelQte);
-        PieChartPanelQte.setBounds(430, 240, 140, 140);
+        PieChartPanelQte.setBounds(470, 240, 180, 180);
 
         BarChartPanel.setBackground(new java.awt.Color(255, 250, 240));
 
@@ -908,15 +908,15 @@ public final class statistique extends javax.swing.JFrame {
         BarChartPanel.setLayout(BarChartPanelLayout);
         BarChartPanelLayout.setHorizontalGroup(
             BarChartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
+            .addGap(0, 570, Short.MAX_VALUE)
         );
         BarChartPanelLayout.setVerticalGroup(
             BarChartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 190, Short.MAX_VALUE)
+            .addGap(0, 220, Short.MAX_VALUE)
         );
 
         Statistiques_Panel.add(BarChartPanel);
-        BarChartPanel.setBounds(160, 440, 490, 190);
+        BarChartPanel.setBounds(190, 510, 570, 220);
 
         TOP_Profit.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         TOP_Profit.setForeground(new java.awt.Color(30, 130, 82));
@@ -924,14 +924,14 @@ public final class statistique extends javax.swing.JFrame {
         TOP_Profit.setText("Top 5 par profit");
         TOP_Profit.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(TOP_Profit);
-        TOP_Profit.setBounds(140, 190, 230, 30);
+        TOP_Profit.setBounds(170, 210, 230, 30);
 
         TOP_Qte2.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         TOP_Qte2.setForeground(new java.awt.Color(30, 130, 82));
         TOP_Qte2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         TOP_Qte2.setText("Top 5 par quantité");
         Statistiques_Panel.add(TOP_Qte2);
-        TOP_Qte2.setBounds(530, 180, 260, 30);
+        TOP_Qte2.setBounds(480, 200, 300, 30);
 
         Net5.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         Net5.setForeground(new java.awt.Color(30, 130, 82));
@@ -940,7 +940,7 @@ public final class statistique extends javax.swing.JFrame {
         Net5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Net5.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(Net5);
-        Net5.setBounds(300, 380, 100, 30);
+        Net5.setBounds(340, 400, 120, 30);
 
         Net4.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         Net4.setForeground(new java.awt.Color(30, 130, 82));
@@ -949,7 +949,7 @@ public final class statistique extends javax.swing.JFrame {
         Net4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Net4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(Net4);
-        Net4.setBounds(300, 340, 100, 30);
+        Net4.setBounds(340, 360, 120, 30);
 
         Net3.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         Net3.setForeground(new java.awt.Color(30, 130, 82));
@@ -958,7 +958,7 @@ public final class statistique extends javax.swing.JFrame {
         Net3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Net3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(Net3);
-        Net3.setBounds(300, 300, 100, 30);
+        Net3.setBounds(340, 320, 120, 30);
 
         Net2.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         Net2.setForeground(new java.awt.Color(30, 130, 82));
@@ -967,7 +967,7 @@ public final class statistique extends javax.swing.JFrame {
         Net2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Net2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(Net2);
-        Net2.setBounds(300, 260, 100, 30);
+        Net2.setBounds(340, 280, 120, 30);
 
         Net1.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         Net1.setForeground(new java.awt.Color(30, 130, 82));
@@ -976,63 +976,63 @@ public final class statistique extends javax.swing.JFrame {
         Net1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Net1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(Net1);
-        Net1.setBounds(300, 220, 100, 30);
+        Net1.setBounds(340, 240, 120, 30);
 
         StockVVNum.setFont(new java.awt.Font("Roboto Black", 0, 36)); // NOI18N
         StockVVNum.setForeground(new java.awt.Color(30, 130, 82));
         StockVVNum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         StockVVNum.setText("000.000");
         Statistiques_Panel.add(StockVVNum);
-        StockVVNum.setBounds(740, 230, 230, 50);
+        StockVVNum.setBounds(830, 240, 230, 50);
 
         StockVV.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         StockVV.setForeground(new java.awt.Color(5, 45, 26));
         StockVV.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         StockVV.setText("Valeur de Vente du Stock");
         Statistiques_Panel.add(StockVV);
-        StockVV.setBounds(740, 190, 230, 30);
+        StockVV.setBounds(830, 200, 230, 30);
 
         StockVANum.setFont(new java.awt.Font("Roboto Black", 0, 36)); // NOI18N
         StockVANum.setForeground(new java.awt.Color(30, 130, 82));
         StockVANum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         StockVANum.setText("000.000");
         Statistiques_Panel.add(StockVANum);
-        StockVANum.setBounds(740, 340, 230, 50);
+        StockVANum.setBounds(830, 350, 230, 50);
 
         StockVA.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         StockVA.setForeground(new java.awt.Color(5, 45, 26));
         StockVA.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         StockVA.setText("Valeur d'Achat du Stock");
         Statistiques_Panel.add(StockVA);
-        StockVA.setBounds(740, 300, 230, 30);
+        StockVA.setBounds(830, 310, 230, 30);
 
-        ChiffreDaffaire.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        ChiffreDaffaire.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         ChiffreDaffaire.setForeground(new java.awt.Color(5, 45, 26));
         ChiffreDaffaire.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ChiffreDaffaire.setText("Chiffre d'affaire:");
         Statistiques_Panel.add(ChiffreDaffaire);
-        ChiffreDaffaire.setBounds(720, 430, 150, 30);
+        ChiffreDaffaire.setBounds(830, 520, 200, 30);
 
         ChiffreDaffaireNum.setFont(new java.awt.Font("Roboto Black", 0, 36)); // NOI18N
         ChiffreDaffaireNum.setForeground(new java.awt.Color(30, 130, 82));
         ChiffreDaffaireNum.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ChiffreDaffaireNum.setText("000.000");
         Statistiques_Panel.add(ChiffreDaffaireNum);
-        ChiffreDaffaireNum.setBounds(720, 470, 160, 50);
+        ChiffreDaffaireNum.setBounds(830, 560, 160, 50);
 
         BeneficesNum.setFont(new java.awt.Font("Roboto Black", 0, 36)); // NOI18N
         BeneficesNum.setForeground(new java.awt.Color(30, 130, 82));
         BeneficesNum.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BeneficesNum.setText("000.000");
         Statistiques_Panel.add(BeneficesNum);
-        BeneficesNum.setBounds(720, 580, 160, 50);
+        BeneficesNum.setBounds(830, 670, 160, 50);
 
-        Benefices.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        Benefices.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         Benefices.setForeground(new java.awt.Color(5, 45, 26));
         Benefices.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Benefices.setText("Bénéfices:");
         Statistiques_Panel.add(Benefices);
-        Benefices.setBounds(724, 550, 130, 30);
+        Benefices.setBounds(830, 640, 180, 30);
 
         CemoisLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/cemois.png"))); // NOI18N
         Statistiques_Panel.add(CemoisLabel);
@@ -1064,17 +1064,17 @@ public final class statistique extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/frame2.png"))); // NOI18N
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(jLabel1);
-        jLabel1.setBounds(140, 430, 840, 240);
+        jLabel1.setBounds(170, 500, 910, 250);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/frame.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/frame4.png"))); // NOI18N
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(jLabel2);
-        jLabel2.setBounds(110, 170, 610, 260);
+        jLabel2.setBounds(140, 190, 660, 280);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/frame3.png"))); // NOI18N
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Statistiques_Panel.add(jLabel3);
-        jLabel3.setBounds(730, 180, 270, 260);
+        jLabel3.setBounds(810, 190, 340, 280);
 
         getContentPane().add(Statistiques_Panel);
         Statistiques_Panel.setBounds(0, 10, 1280, 800);

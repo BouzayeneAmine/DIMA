@@ -447,9 +447,9 @@ public class Utilisateurs extends javax.swing.JFrame {
         jPanel1.add(jLabel9);
         jLabel9.setBounds(150, 280, 160, 80);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/modifierbtn.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/modifierUtibtn.png"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(370, 280, 150, 80);
+        jLabel10.setBounds(370, 290, 160, 60);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/supprimerbtstockn.png"))); // NOI18N
         jPanel1.add(jLabel8);
@@ -584,7 +584,7 @@ public class Utilisateurs extends javax.swing.JFrame {
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("UTILISATEURS");
         jPanel3.add(jLabel13);
-        jLabel13.setBounds(760, 0, 330, 80);
+        jLabel13.setBounds(780, 0, 330, 80);
 
         jPanel4.add(jPanel3);
         jPanel3.setBounds(40, 0, 1230, 80);

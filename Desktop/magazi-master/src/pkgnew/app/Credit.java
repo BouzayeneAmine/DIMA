@@ -358,7 +358,7 @@ public class Credit extends javax.swing.JFrame {
         jButton2.setBounds(10, 770, 60, 30);
 
         jPanel4.add(barpanel);
-        barpanel.setBounds(2, 0, 80, 810);
+        barpanel.setBounds(2, 0, 80, 800);
 
         jPanel1.setBackground(new java.awt.Color(255, 250, 240));
         jPanel1.setLayout(null);
@@ -367,7 +367,7 @@ public class Credit extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(760, 120, 310, 50);
+        jLabel7.setBounds(760, 60, 310, 50);
 
         credit.setBackground(new java.awt.Color(255, 250, 240));
         credit.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -382,19 +382,19 @@ public class Credit extends javax.swing.JFrame {
             }
         });
         jPanel1.add(credit);
-        credit.setBounds(780, 130, 270, 30);
+        credit.setBounds(780, 70, 270, 30);
 
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(30, 130, 82));
         jLabel2.setText("Acompte:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(580, 200, 160, 29);
+        jLabel2.setBounds(580, 140, 160, 29);
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(210, 120, 330, 50);
+        jLabel1.setBounds(210, 60, 330, 50);
 
         client.setBackground(new java.awt.Color(255, 250, 240));
         client.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -409,17 +409,17 @@ public class Credit extends javax.swing.JFrame {
             }
         });
         jPanel1.add(client);
-        client.setBounds(230, 130, 270, 30);
+        client.setBounds(230, 70, 270, 30);
 
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(30, 130, 82));
         jLabel6.setText("Client ");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(120, 110, 80, 60);
+        jLabel6.setBounds(120, 50, 80, 60);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/annulerbtn.png"))); // NOI18N
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(850, 290, 160, 60);
+        jLabel11.setBounds(840, 220, 160, 60);
 
         annulerBtn.setText("annuler");
         annulerBtn.setBorder(null);
@@ -429,15 +429,15 @@ public class Credit extends javax.swing.JFrame {
             }
         });
         jPanel1.add(annulerBtn);
-        annulerBtn.setBounds(855, 304, 140, 30);
+        annulerBtn.setBounds(840, 230, 140, 30);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/confirmerbtn.png"))); // NOI18N
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(130, 280, 160, 80);
+        jLabel9.setBounds(240, 210, 160, 80);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/supprimerbtstockn.png"))); // NOI18N
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(610, 280, 160, 80);
+        jLabel8.setBounds(650, 210, 160, 80);
 
         supprimerBtn.setText("supprimer");
         supprimerBtn.setBorder(null);
@@ -447,11 +447,11 @@ public class Credit extends javax.swing.JFrame {
             }
         });
         jPanel1.add(supprimerBtn);
-        supprimerBtn.setBounds(620, 300, 130, 40);
+        supprimerBtn.setBounds(660, 230, 130, 40);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/acomptebtn.png"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(370, 280, 160, 80);
+        jLabel10.setBounds(450, 210, 160, 80);
 
         modifierBtn.setBorder(null);
         modifierBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -460,7 +460,7 @@ public class Credit extends javax.swing.JFrame {
             }
         });
         jPanel1.add(modifierBtn);
-        modifierBtn.setBounds(370, 307, 150, 30);
+        modifierBtn.setBounds(450, 240, 150, 30);
 
         confirmerBtn.setText("confirmer");
         confirmerBtn.setBorder(null);
@@ -470,13 +470,13 @@ public class Credit extends javax.swing.JFrame {
             }
         });
         jPanel1.add(confirmerBtn);
-        confirmerBtn.setBounds(140, 300, 130, 40);
+        confirmerBtn.setBounds(250, 230, 130, 40);
 
         jLabel12.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(760, 190, 310, 50);
+        jLabel12.setBounds(760, 130, 310, 50);
 
         acompte.setBackground(new java.awt.Color(255, 250, 240));
         acompte.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -491,25 +491,25 @@ public class Credit extends javax.swing.JFrame {
             }
         });
         jPanel1.add(acompte);
-        acompte.setBounds(780, 200, 270, 30);
+        acompte.setBounds(780, 140, 270, 30);
 
         jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(30, 130, 82));
         jLabel3.setText("Crédit :");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(580, 130, 190, 29);
+        jLabel3.setBounds(580, 70, 190, 29);
 
         jLabel14.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(30, 130, 82));
         jLabel14.setText("Numéro");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(120, 160, 100, 90);
+        jLabel14.setBounds(120, 100, 100, 90);
 
         jLabel17.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(51, 51, 51));
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
         jPanel1.add(jLabel17);
-        jLabel17.setBounds(210, 170, 330, 80);
+        jLabel17.setBounds(210, 110, 330, 80);
 
         numero.setBackground(new java.awt.Color(255, 250, 240));
         numero.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -524,15 +524,15 @@ public class Credit extends javax.swing.JFrame {
             }
         });
         jPanel1.add(numero);
-        numero.setBounds(230, 200, 270, 20);
+        numero.setBounds(230, 140, 270, 20);
 
         jPanel4.add(jPanel1);
-        jPanel1.setBounds(120, 110, 1160, 370);
+        jPanel1.setBounds(120, 110, 1160, 290);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/creditbg.png"))); // NOI18N
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(110, 490, 1140, 330);
+        jLabel4.setBounds(120, 420, 1140, 330);
 
         jTable3.setBackground(new java.awt.Color(255, 250, 240));
         jTable3.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -566,7 +566,7 @@ public class Credit extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTable3);
 
         jPanel4.add(jScrollPane3);
-        jScrollPane3.setBounds(110, 490, 1130, 300);
+        jScrollPane3.setBounds(120, 420, 1130, 300);
 
         jPanel3.setBackground(new java.awt.Color(255, 250, 240));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -625,13 +625,13 @@ public class Credit extends javax.swing.JFrame {
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("CREDIT");
         jPanel3.add(jLabel13);
-        jLabel13.setBounds(750, 0, 170, 80);
+        jLabel13.setBounds(910, 0, 170, 80);
 
         jPanel4.add(jPanel3);
         jPanel3.setBounds(50, 0, 1220, 80);
 
         getContentPane().add(jPanel4);
-        jPanel4.setBounds(0, 0, 1280, 820);
+        jPanel4.setBounds(0, 0, 1280, 810);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -673,7 +673,7 @@ public class Credit extends javax.swing.JFrame {
         //statistique.getObj().setVisible(true);
         statistique a = new statistique(utilisateur.getText());
         a.setVisible(true);
-        this.hide();
+         this.dispose();
     }//GEN-LAST:event_statbtnActionPerformed
 
     private void usersbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usersbtnActionPerformed
@@ -683,18 +683,16 @@ public class Credit extends javax.swing.JFrame {
 
     private void salesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salesbtnActionPerformed
         // TODO add your handling code here:
-        Historique a = new Historique(utilisateur.getText());
+        Utilisateurs a = new Utilisateurs(utilisateur.getText());
         a.setVisible(true);
-        this.hide();
-        // this.dispose();
+        this.dispose();
     }//GEN-LAST:event_salesbtnActionPerformed
 
     private void inventorybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventorybtnActionPerformed
         // TODO add your handling code here:
         Inventory a = new Inventory(utilisateur.getText());
         a.setVisible(true);
-        this.hide();
-        // this.dispose();
+         this.dispose();
     }//GEN-LAST:event_inventorybtnActionPerformed
 
     private void stockbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockbtnActionPerformed
@@ -702,15 +700,14 @@ public class Credit extends javax.swing.JFrame {
 
         stock a = new stock(utilisateur.getText());
         a.setVisible(true);
-        this.hide();
-        //this.dispose();
+        this.dispose();
     }//GEN-LAST:event_stockbtnActionPerformed
 
     private void registerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerbtnActionPerformed
         // TODO add your handling code here:
         POS a = new POS(utilisateur.getText());
         a.setVisible(true);
-        this.hide();
+        this.dispose();
     }//GEN-LAST:event_registerbtnActionPerformed
 
     private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
