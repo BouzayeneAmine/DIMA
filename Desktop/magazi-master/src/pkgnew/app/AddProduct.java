@@ -271,7 +271,6 @@ public class AddProduct extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         modifierbg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/confirmerbtn.png"))); // NOI18N
-        modifierbg.setText("jLabel11");
         jPanel1.add(modifierbg);
         modifierbg.setBounds(500, 110, 200, 52);
 
@@ -285,10 +284,9 @@ public class AddProduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(510, 110, 180, 50);
+        jButton1.setBounds(510, 120, 130, 30);
 
         annulerbg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/annulerbtn.png"))); // NOI18N
-        annulerbg.setText("jLabel11");
         jPanel1.add(annulerbg);
         annulerbg.setBounds(740, 110, 200, 52);
 
@@ -302,7 +300,7 @@ public class AddProduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(annulerbtn);
-        annulerbtn.setBounds(750, 110, 180, 50);
+        annulerbtn.setBounds(750, 120, 130, 30);
 
         txMin.setBackground(new java.awt.Color(255, 250, 240));
         txMin.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -320,7 +318,7 @@ public class AddProduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txMin);
-        txMin.setBounds(950, 510, 260, 30);
+        txMin.setBounds(950, 510, 230, 30);
 
         jLabel4.setBackground(new java.awt.Color(255, 250, 240));
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -340,7 +338,7 @@ public class AddProduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txMax);
-        txMax.setBounds(420, 500, 260, 30);
+        txMax.setBounds(420, 500, 230, 30);
 
         jLabel3.setBackground(new java.awt.Color(255, 250, 240));
         jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -353,7 +351,7 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(30, 130, 82));
         jLabel8.setText("DT");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(1170, 420, 40, 30);
+        jLabel8.setBounds(1160, 420, 40, 30);
 
         txBase_Prix.setBackground(new java.awt.Color(255, 250, 240));
         txBase_Prix.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -372,13 +370,13 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(30, 130, 82));
         jLabel5.setText("Prix de base :");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(760, 420, 220, 30);
+        jLabel5.setBounds(760, 420, 160, 30);
 
         jLabel9.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(30, 130, 82));
         jLabel9.setText("DT");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(640, 420, 50, 30);
+        jLabel9.setBounds(630, 420, 50, 30);
 
         txVente_Prix.setBackground(new java.awt.Color(255, 250, 240));
         txVente_Prix.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -404,7 +402,7 @@ public class AddProduct extends javax.swing.JFrame {
         txName.setForeground(new java.awt.Color(5, 45, 26));
         txName.setBorder(null);
         jPanel1.add(txName);
-        txName.setBounds(420, 340, 260, 30);
+        txName.setBounds(420, 340, 230, 30);
 
         jLabel6.setBackground(new java.awt.Color(255, 250, 240));
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -427,14 +425,14 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(30, 130, 82));
         jLabel1.setText("Catégorie :");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(770, 260, 190, 30);
+        jLabel1.setBounds(770, 260, 140, 30);
 
         txBarcode.setBackground(new java.awt.Color(255, 250, 240));
         txBarcode.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         txBarcode.setForeground(new java.awt.Color(5, 45, 26));
         txBarcode.setBorder(null);
         jPanel1.add(txBarcode);
-        txBarcode.setBounds(420, 260, 260, 30);
+        txBarcode.setBounds(420, 260, 230, 30);
 
         jLabel10.setBackground(new java.awt.Color(255, 250, 240));
         jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -504,6 +502,7 @@ public class AddProduct extends javax.swing.JFrame {
         CigaretteCheckBox.setBounds(920, 320, 140, 37);
 
         CigarettePanel.setOpaque(false);
+        CigarettePanel.setLayout(null);
 
         txVente_Prix1.setBackground(new java.awt.Color(255, 250, 240));
         txVente_Prix1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -515,17 +514,25 @@ public class AddProduct extends javax.swing.JFrame {
                 txVente_Prix1KeyTyped(evt);
             }
         });
+        CigarettePanel.add(txVente_Prix1);
+        txVente_Prix1.setBounds(165, 55, 210, 30);
 
         jLabel11.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(30, 130, 82));
         jLabel11.setText("DT");
+        CigarettePanel.add(jLabel11);
+        jLabel11.setBounds(376, 55, 41, 30);
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
+        CigarettePanel.add(jLabel18);
+        jLabel18.setBounds(145, 45, 320, 50);
 
         jLabel20.setBackground(new java.awt.Color(255, 250, 240));
         jLabel20.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(30, 130, 82));
         jLabel20.setText("Coût Cig :");
+        CigarettePanel.add(jLabel20);
+        jLabel20.setBounds(505, 55, 160, 30);
 
         txBase_Prix1.setBackground(new java.awt.Color(255, 250, 240));
         txBase_Prix1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -536,13 +543,19 @@ public class AddProduct extends javax.swing.JFrame {
                 txBase_Prix1KeyTyped(evt);
             }
         });
+        CigarettePanel.add(txBase_Prix1);
+        txBase_Prix1.setBounds(695, 55, 210, 30);
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
+        CigarettePanel.add(jLabel21);
+        jLabel21.setBounds(675, 45, 310, 50);
 
         jLabel22.setBackground(new java.awt.Color(255, 250, 240));
         jLabel22.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(30, 130, 82));
         jLabel22.setText("Max Cig :");
+        CigarettePanel.add(jLabel22);
+        jLabel22.setBounds(5, 135, 140, 30);
 
         txMax1.setBackground(new java.awt.Color(255, 250, 240));
         txMax1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -554,13 +567,19 @@ public class AddProduct extends javax.swing.JFrame {
                 txMax1KeyTyped(evt);
             }
         });
+        CigarettePanel.add(txMax1);
+        txMax1.setBounds(165, 135, 230, 30);
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
+        CigarettePanel.add(jLabel23);
+        jLabel23.setBounds(145, 125, 320, 50);
 
         jLabel24.setBackground(new java.awt.Color(255, 250, 240));
         jLabel24.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(30, 130, 82));
         jLabel24.setText("Min Cig :");
+        CigarettePanel.add(jLabel24);
+        jLabel24.setBounds(505, 135, 150, 30);
 
         txMin1.setBackground(new java.awt.Color(255, 250, 240));
         txMin1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -577,138 +596,43 @@ public class AddProduct extends javax.swing.JFrame {
                 txMin1KeyTyped(evt);
             }
         });
+        CigarettePanel.add(txMin1);
+        txMin1.setBounds(695, 135, 230, 30);
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
+        CigarettePanel.add(jLabel25);
+        jLabel25.setBounds(675, 125, 320, 50);
 
         jLabel26.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(30, 130, 82));
         jLabel26.setText("DT");
+        CigarettePanel.add(jLabel26);
+        jLabel26.setBounds(915, 55, 40, 30);
 
         jLabel7.setBackground(new java.awt.Color(255, 250, 240));
         jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(30, 130, 82));
         jLabel7.setText("Prix Cig :");
+        CigarettePanel.add(jLabel7);
+        jLabel7.setBounds(5, 55, 130, 30);
 
         txBarcode1.setBackground(new java.awt.Color(255, 250, 240));
         txBarcode1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         txBarcode1.setForeground(new java.awt.Color(5, 45, 26));
         txBarcode1.setBorder(null);
+        CigarettePanel.add(txBarcode1);
+        txBarcode1.setBounds(162, 10, 230, 30);
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
+        CigarettePanel.add(jLabel27);
+        jLabel27.setBounds(142, 0, 320, 50);
 
         jLabel28.setBackground(new java.awt.Color(255, 250, 240));
         jLabel28.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(30, 130, 82));
         jLabel28.setText("Barcode :");
-
-        javax.swing.GroupLayout CigarettePanelLayout = new javax.swing.GroupLayout(CigarettePanel);
-        CigarettePanel.setLayout(CigarettePanelLayout);
-        CigarettePanelLayout.setHorizontalGroup(
-            CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CigarettePanelLayout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CigarettePanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(txBarcode1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(538, Short.MAX_VALUE))
-            .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CigarettePanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(CigarettePanelLayout.createSequentialGroup()
-                            .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(CigarettePanelLayout.createSequentialGroup()
-                                    .addGap(380, 380, 380)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(CigarettePanelLayout.createSequentialGroup()
-                                    .addGap(140, 140, 140)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(CigarettePanelLayout.createSequentialGroup()
-                                    .addGap(160, 160, 160)
-                                    .addComponent(txVente_Prix1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(40, 40, 40)
-                            .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(CigarettePanelLayout.createSequentialGroup()
-                                    .addGap(170, 170, 170)
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(CigarettePanelLayout.createSequentialGroup()
-                                    .addGap(190, 190, 190)
-                                    .addComponent(txBase_Prix1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(CigarettePanelLayout.createSequentialGroup()
-                                    .addGap(410, 410, 410)
-                                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(CigarettePanelLayout.createSequentialGroup()
-                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(CigarettePanelLayout.createSequentialGroup()
-                                    .addGap(20, 20, 20)
-                                    .addComponent(txMax1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(40, 40, 40)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(20, 20, 20)
-                            .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(CigarettePanelLayout.createSequentialGroup()
-                                    .addGap(20, 20, 20)
-                                    .addComponent(txMin1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        CigarettePanelLayout.setVerticalGroup(
-            CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CigarettePanelLayout.createSequentialGroup()
-                .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(CigarettePanelLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(txBarcode1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 180, Short.MAX_VALUE))
-            .addGroup(CigarettePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CigarettePanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(CigarettePanelLayout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txVente_Prix1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txBase_Prix1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGap(30, 30, 30)
-                    .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(CigarettePanelLayout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(CigarettePanelLayout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(txMax1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(CigarettePanelLayout.createSequentialGroup()
-                            .addGap(20, 20, 20)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(CigarettePanelLayout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addGroup(CigarettePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(CigarettePanelLayout.createSequentialGroup()
-                                    .addGap(10, 10, 10)
-                                    .addComponent(txMin1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        CigarettePanel.add(jLabel28);
+        jLabel28.setBounds(4, 11, 120, 30);
 
         jPanel1.add(CigarettePanel);
         CigarettePanel.setBounds(250, 550, 1000, 230);

@@ -239,47 +239,47 @@ public class Utilisateurs extends javax.swing.JFrame {
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/statistiques.png"))); // NOI18N
         jLabel22.setOpaque(true);
         barpanel.add(jLabel22);
-        jLabel22.setBounds(10, 620, 60, 50);
+        jLabel22.setBounds(10, 570, 60, 50);
 
         jLabel21.setBackground(new java.awt.Color(30, 130, 82));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/utilisateursLight.png"))); // NOI18N
         jLabel21.setOpaque(true);
         barpanel.add(jLabel21);
-        jLabel21.setBounds(10, 510, 60, 50);
+        jLabel21.setBounds(10, 480, 60, 50);
 
         jLabel20.setBackground(new java.awt.Color(255, 250, 240));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/historique.png"))); // NOI18N
         jLabel20.setOpaque(true);
         barpanel.add(jLabel20);
-        jLabel20.setBounds(10, 400, 60, 64);
+        jLabel20.setBounds(10, 380, 60, 64);
 
         jLabel19.setBackground(new java.awt.Color(255, 250, 240));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/inventory.png"))); // NOI18N
         jLabel19.setOpaque(true);
         barpanel.add(jLabel19);
-        jLabel19.setBounds(10, 310, 60, 50);
+        jLabel19.setBounds(10, 290, 60, 50);
 
         jLabel18.setBackground(new java.awt.Color(255, 250, 240));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/Stock.png"))); // NOI18N
         jLabel18.setOpaque(true);
         barpanel.add(jLabel18);
-        jLabel18.setBounds(10, 220, 60, 50);
+        jLabel18.setBounds(10, 200, 60, 50);
 
         jLabel16.setBackground(new java.awt.Color(255, 250, 240));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/cashregister.png"))); // NOI18N
         jLabel16.setOpaque(true);
         barpanel.add(jLabel16);
-        jLabel16.setBounds(10, 130, 60, 50);
+        jLabel16.setBounds(10, 120, 60, 50);
 
         jLabel5.setBackground(new java.awt.Color(30, 130, 82));
         jLabel5.setOpaque(true);
         barpanel.add(jLabel5);
-        jLabel5.setBounds(0, 510, 80, 70);
+        jLabel5.setBounds(0, 470, 80, 70);
 
         statbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         statbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -288,7 +288,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(statbtn);
-        statbtn.setBounds(10, 620, 60, 50);
+        statbtn.setBounds(10, 570, 60, 50);
 
         usersbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         usersbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -297,7 +297,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(usersbtn);
-        usersbtn.setBounds(10, 520, 60, 45);
+        usersbtn.setBounds(10, 480, 60, 45);
 
         salesbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         salesbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -306,7 +306,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(salesbtn);
-        salesbtn.setBounds(10, 410, 60, 50);
+        salesbtn.setBounds(10, 390, 60, 50);
 
         inventorybtn.setPreferredSize(new java.awt.Dimension(80, 80));
         inventorybtn.addActionListener(new java.awt.event.ActionListener() {
@@ -315,7 +315,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(inventorybtn);
-        inventorybtn.setBounds(10, 310, 60, 50);
+        inventorybtn.setBounds(10, 290, 60, 50);
 
         stockbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         stockbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -324,7 +324,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(stockbtn);
-        stockbtn.setBounds(10, 220, 60, 50);
+        stockbtn.setBounds(10, 200, 60, 50);
 
         registerbtn.setBackground(new java.awt.Color(255, 255, 255));
         registerbtn.setBorder(null);
@@ -337,14 +337,14 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(registerbtn);
-        registerbtn.setBounds(10, 130, 60, 50);
+        registerbtn.setBounds(10, 120, 60, 50);
 
         jLabel30.setBackground(new java.awt.Color(255, 250, 240));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/credit.png"))); // NOI18N
         jLabel30.setOpaque(true);
         barpanel.add(jLabel30);
-        jLabel30.setBounds(10, 720, 60, 50);
+        jLabel30.setBounds(10, 660, 60, 50);
 
         jButton5.setText("jButton2");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -353,10 +353,10 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         barpanel.add(jButton5);
-        jButton5.setBounds(10, 730, 60, 30);
+        jButton5.setBounds(10, 660, 60, 50);
 
         jPanel4.add(barpanel);
-        barpanel.setBounds(2, 0, 80, 800);
+        barpanel.setBounds(2, 0, 80, 2000);
 
         jPanel1.setBackground(new java.awt.Color(255, 250, 240));
         jPanel1.setLayout(null);
@@ -365,7 +365,7 @@ public class Utilisateurs extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(760, 120, 310, 50);
+        jLabel7.setBounds(630, 50, 270, 50);
 
         txPassword.setBackground(new java.awt.Color(255, 250, 240));
         txPassword.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -380,19 +380,19 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txPassword);
-        txPassword.setBounds(780, 130, 270, 30);
+        txPassword.setBounds(640, 60, 240, 30);
 
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(30, 130, 82));
         jLabel2.setText("Mot de passe :");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(580, 130, 190, 29);
+        jLabel2.setBounds(450, 60, 190, 29);
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/fieldbg.png"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(210, 120, 330, 50);
+        jLabel1.setBounds(120, 50, 280, 50);
 
         txLogin.setBackground(new java.awt.Color(255, 250, 240));
         txLogin.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -407,19 +407,19 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txLogin);
-        txLogin.setBounds(230, 130, 270, 30);
+        txLogin.setBounds(140, 60, 230, 30);
 
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(30, 130, 82));
         jLabel6.setText("Login :");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(120, 110, 80, 60);
+        jLabel6.setBounds(30, 40, 80, 60);
 
         jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(30, 130, 82));
         jLabel3.setText("Rôle :");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(120, 200, 80, 29);
+        jLabel3.setBounds(30, 130, 80, 29);
 
         jComboBox1.setBackground(new java.awt.Color(5, 45, 26));
         jComboBox1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -427,11 +427,11 @@ public class Utilisateurs extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "directeur", "Utilisateur" }));
         jComboBox1.setBorder(null);
         jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(210, 190, 300, 50);
+        jComboBox1.setBounds(120, 120, 300, 50);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/annulerbtn.png"))); // NOI18N
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(850, 290, 160, 60);
+        jLabel11.setBounds(670, 210, 160, 60);
 
         jButton2.setText("annuler");
         jButton2.setBorder(null);
@@ -441,19 +441,19 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(850, 300, 140, 40);
+        jButton2.setBounds(670, 220, 140, 40);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/confirmerbtn.png"))); // NOI18N
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(150, 280, 160, 80);
+        jLabel9.setBounds(120, 200, 160, 80);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/modifierUtibtn.png"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(370, 290, 160, 60);
+        jLabel10.setBounds(310, 210, 160, 60);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/supprimerbtstockn.png"))); // NOI18N
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(610, 280, 160, 80);
+        jLabel8.setBounds(490, 200, 160, 80);
 
         jButton3.setText("supprimer");
         jButton3.setBorder(null);
@@ -463,7 +463,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(620, 300, 130, 40);
+        jButton3.setBounds(500, 220, 130, 40);
 
         jButton4.setText("modifier");
         jButton4.setBorder(null);
@@ -473,7 +473,7 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(380, 300, 130, 40);
+        jButton4.setBounds(320, 220, 130, 40);
 
         jButton1.setText("confirmer");
         jButton1.setBorder(null);
@@ -483,15 +483,15 @@ public class Utilisateurs extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(150, 300, 150, 40);
+        jButton1.setBounds(120, 220, 150, 40);
 
         jPanel4.add(jPanel1);
-        jPanel1.setBounds(120, 110, 1160, 370);
+        jPanel1.setBounds(90, 110, 920, 300);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/userbg.png"))); // NOI18N
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(280, 490, 800, 380);
+        jLabel4.setBounds(160, 420, 800, 280);
 
         jTable3.setBackground(new java.awt.Color(255, 250, 240));
         jTable3.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -525,7 +525,7 @@ public class Utilisateurs extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTable3);
 
         jPanel4.add(jScrollPane3);
-        jScrollPane3.setBounds(280, 490, 800, 290);
+        jScrollPane3.setBounds(160, 420, 800, 270);
 
         jPanel3.setBackground(new java.awt.Color(255, 250, 240));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -584,13 +584,13 @@ public class Utilisateurs extends javax.swing.JFrame {
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("UTILISATEURS");
         jPanel3.add(jLabel13);
-        jLabel13.setBounds(780, 0, 330, 80);
+        jLabel13.setBounds(600, 0, 350, 80);
 
         jPanel4.add(jPanel3);
-        jPanel3.setBounds(40, 0, 1230, 80);
+        jPanel3.setBounds(40, 0, 2000, 80);
 
         getContentPane().add(jPanel4);
-        jPanel4.setBounds(0, 0, 1280, 800);
+        jPanel4.setBounds(0, 0, 2000, 2000);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

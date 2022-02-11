@@ -183,7 +183,6 @@ public class EditProduct extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         annulerbg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/annulerbtn.png"))); // NOI18N
-        annulerbg.setText("jLabel11");
         jPanel1.add(annulerbg);
         annulerbg.setBounds(810, 120, 200, 52);
 
@@ -197,12 +196,11 @@ public class EditProduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(annulerbtn);
-        annulerbtn.setBounds(820, 120, 180, 50);
+        annulerbtn.setBounds(820, 130, 130, 30);
 
-        modifierbg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/modifierbtn.png"))); // NOI18N
-        modifierbg.setText("jLabel11");
+        modifierbg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/modifierUtibtn.png"))); // NOI18N
         jPanel1.add(modifierbg);
-        modifierbg.setBounds(570, 120, 200, 52);
+        modifierbg.setBounds(570, 120, 170, 52);
 
         modifierbtn.setBackground(new java.awt.Color(0, 0, 204));
         modifierbtn.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -214,7 +212,7 @@ public class EditProduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(modifierbtn);
-        modifierbtn.setBounds(580, 120, 180, 50);
+        modifierbtn.setBounds(580, 130, 130, 30);
 
         txMin.setBackground(new java.awt.Color(255, 250, 240));
         txMin.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -232,7 +230,7 @@ public class EditProduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txMin);
-        txMin.setBounds(950, 510, 260, 30);
+        txMin.setBounds(950, 510, 230, 30);
 
         jLabel4.setBackground(new java.awt.Color(255, 250, 240));
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -252,7 +250,7 @@ public class EditProduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txMax);
-        txMax.setBounds(420, 500, 260, 30);
+        txMax.setBounds(420, 500, 230, 30);
 
         jLabel3.setBackground(new java.awt.Color(255, 250, 240));
         jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -265,7 +263,7 @@ public class EditProduct extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(30, 130, 82));
         jLabel8.setText("DT");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(1170, 420, 40, 30);
+        jLabel8.setBounds(1160, 420, 40, 30);
 
         txBase_Prix.setBackground(new java.awt.Color(255, 250, 240));
         txBase_Prix.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -277,7 +275,7 @@ public class EditProduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txBase_Prix);
-        txBase_Prix.setBounds(950, 420, 210, 30);
+        txBase_Prix.setBounds(950, 420, 200, 30);
 
         jLabel5.setBackground(new java.awt.Color(255, 250, 240));
         jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -290,7 +288,7 @@ public class EditProduct extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(30, 130, 82));
         jLabel9.setText("DT");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(640, 420, 50, 30);
+        jLabel9.setBounds(630, 420, 50, 30);
 
         txVente_Prix.setBackground(new java.awt.Color(255, 250, 240));
         txVente_Prix.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -302,7 +300,7 @@ public class EditProduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txVente_Prix);
-        txVente_Prix.setBounds(420, 420, 210, 30);
+        txVente_Prix.setBounds(420, 420, 200, 30);
 
         jLabel2.setBackground(new java.awt.Color(255, 250, 240));
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -316,7 +314,7 @@ public class EditProduct extends javax.swing.JFrame {
         txName.setForeground(new java.awt.Color(5, 45, 26));
         txName.setBorder(null);
         jPanel1.add(txName);
-        txName.setBounds(420, 340, 260, 30);
+        txName.setBounds(420, 340, 230, 30);
 
         jLabel6.setBackground(new java.awt.Color(255, 250, 240));
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
@@ -346,7 +344,7 @@ public class EditProduct extends javax.swing.JFrame {
         txBarcode.setForeground(new java.awt.Color(5, 45, 26));
         txBarcode.setBorder(null);
         jPanel1.add(txBarcode);
-        txBarcode.setBounds(420, 260, 260, 30);
+        txBarcode.setBounds(420, 260, 230, 30);
 
         jLabel10.setBackground(new java.awt.Color(255, 250, 240));
         jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N

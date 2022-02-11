@@ -356,47 +356,47 @@ public class Historique extends javax.swing.JFrame {
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/statistiques.png"))); // NOI18N
         jLabel22.setOpaque(true);
         barpanel.add(jLabel22);
-        jLabel22.setBounds(10, 640, 60, 50);
+        jLabel22.setBounds(10, 570, 60, 50);
 
         jLabel21.setBackground(new java.awt.Color(255, 250, 240));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/utilisateurs.png"))); // NOI18N
         jLabel21.setOpaque(true);
         barpanel.add(jLabel21);
-        jLabel21.setBounds(10, 540, 60, 50);
+        jLabel21.setBounds(10, 480, 60, 50);
 
         jLabel20.setBackground(new java.awt.Color(30, 130, 82));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/historiqueLight.png"))); // NOI18N
         jLabel20.setOpaque(true);
         barpanel.add(jLabel20);
-        jLabel20.setBounds(10, 440, 60, 64);
+        jLabel20.setBounds(10, 380, 60, 64);
 
         jLabel5.setBackground(new java.awt.Color(30, 130, 82));
         jLabel5.setOpaque(true);
         barpanel.add(jLabel5);
-        jLabel5.setBounds(0, 440, 80, 70);
+        jLabel5.setBounds(0, 380, 80, 70);
 
         jLabel19.setBackground(new java.awt.Color(255, 250, 240));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/inventory.png"))); // NOI18N
         jLabel19.setOpaque(true);
         barpanel.add(jLabel19);
-        jLabel19.setBounds(10, 340, 60, 50);
+        jLabel19.setBounds(10, 290, 60, 50);
 
         jLabel18.setBackground(new java.awt.Color(255, 250, 240));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/Stock.png"))); // NOI18N
         jLabel18.setOpaque(true);
         barpanel.add(jLabel18);
-        jLabel18.setBounds(10, 240, 60, 50);
+        jLabel18.setBounds(10, 200, 60, 50);
 
         jLabel16.setBackground(new java.awt.Color(255, 250, 240));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/cashregister.png"))); // NOI18N
         jLabel16.setOpaque(true);
         barpanel.add(jLabel16);
-        jLabel16.setBounds(10, 140, 60, 50);
+        jLabel16.setBounds(10, 120, 60, 50);
 
         statbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         statbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -405,7 +405,7 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         barpanel.add(statbtn);
-        statbtn.setBounds(20, 640, 50, 50);
+        statbtn.setBounds(20, 570, 50, 50);
 
         usersbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         usersbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -414,7 +414,7 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         barpanel.add(usersbtn);
-        usersbtn.setBounds(20, 540, 50, 45);
+        usersbtn.setBounds(20, 480, 50, 45);
 
         salesbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         salesbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -423,7 +423,7 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         barpanel.add(salesbtn);
-        salesbtn.setBounds(20, 440, 50, 50);
+        salesbtn.setBounds(20, 390, 50, 50);
 
         inventorybtn.setPreferredSize(new java.awt.Dimension(80, 80));
         inventorybtn.addActionListener(new java.awt.event.ActionListener() {
@@ -432,7 +432,7 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         barpanel.add(inventorybtn);
-        inventorybtn.setBounds(20, 340, 50, 50);
+        inventorybtn.setBounds(20, 290, 50, 50);
 
         stockbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         stockbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -441,7 +441,7 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         barpanel.add(stockbtn);
-        stockbtn.setBounds(20, 240, 50, 50);
+        stockbtn.setBounds(20, 200, 50, 50);
 
         registerbtn.setBackground(new java.awt.Color(255, 255, 255));
         registerbtn.setBorder(null);
@@ -454,14 +454,14 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         barpanel.add(registerbtn);
-        registerbtn.setBounds(20, 140, 50, 50);
+        registerbtn.setBounds(20, 120, 50, 50);
 
         jLabel30.setBackground(new java.awt.Color(255, 250, 240));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/credit.png"))); // NOI18N
         jLabel30.setOpaque(true);
         barpanel.add(jLabel30);
-        jLabel30.setBounds(10, 720, 60, 50);
+        jLabel30.setBounds(10, 660, 60, 50);
 
         jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -470,10 +470,10 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         barpanel.add(jButton2);
-        jButton2.setBounds(10, 720, 60, 50);
+        jButton2.setBounds(10, 660, 60, 50);
 
         getContentPane().add(barpanel);
-        barpanel.setBounds(2, 0, 80, 800);
+        barpanel.setBounds(2, 0, 80, 2000);
 
         jPanel2.setBackground(new java.awt.Color(255, 250, 240));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -515,27 +515,27 @@ public class Historique extends javax.swing.JFrame {
         jLabel15.setBounds(5, 0, 260, 60);
 
         jPanel2.add(Session);
-        Session.setBounds(90, 10, 270, 60);
+        Session.setBounds(90, 3, 270, 60);
 
         jLabel12.setFont(new java.awt.Font("Roboto Black", 0, 48)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(30, 130, 82));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("HISTORIQUE");
         jPanel2.add(jLabel12);
-        jLabel12.setBounds(780, 0, 290, 80);
+        jLabel12.setBounds(750, 0, 320, 80);
 
         Heure1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         Heure1.setForeground(new java.awt.Color(5, 45, 26));
         jPanel2.add(Heure1);
-        Heure1.setBounds(370, 0, 100, 80);
+        Heure1.setBounds(370, 0, 100, 60);
 
         Date1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         Date1.setForeground(new java.awt.Color(5, 45, 26));
         jPanel2.add(Date1);
-        Date1.setBounds(500, 0, 100, 80);
+        Date1.setBounds(500, 0, 100, 60);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(50, 0, 1200, 80);
+        jPanel2.setBounds(50, 0, 2000, 70);
 
         AuthPanel.setBackground(new java.awt.Color(30, 130, 82));
         AuthPanel.setForeground(new java.awt.Color(255, 250, 240));
@@ -636,7 +636,7 @@ public class Historique extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/historiquebg.png"))); // NOI18N
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(140, 390, 840, 420);
+        jLabel2.setBounds(90, 360, 800, 340);
 
         jTable1.setBackground(new java.awt.Color(255, 250, 240));
         jTable1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -664,11 +664,11 @@ public class Historique extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(140, 390, 810, 400);
+        jScrollPane1.setBounds(90, 360, 790, 330);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/imprimerbtn.png"))); // NOI18N
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(1010, 110, 230, 70);
+        jLabel7.setBounds(910, 100, 210, 70);
 
         imprimer.setBackground(new java.awt.Color(0, 0, 153));
         imprimer.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -680,11 +680,11 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(imprimer);
-        imprimer.setBounds(1020, 120, 180, 50);
+        imprimer.setBounds(920, 110, 180, 50);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/exporterbtn.png"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(1010, 190, 230, 70);
+        jLabel10.setBounds(910, 180, 210, 70);
 
         export.setBackground(new java.awt.Color(0, 0, 153));
         export.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -696,11 +696,11 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(export);
-        export.setBounds(1020, 200, 180, 50);
+        export.setBounds(920, 190, 180, 50);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/recherchebtn.png"))); // NOI18N
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(810, 285, 200, 70);
+        jLabel11.setBounds(700, 285, 200, 70);
 
         actionrech.setBackground(new java.awt.Color(0, 0, 153));
         actionrech.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -714,7 +714,7 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(actionrech);
-        actionrech.setBounds(820, 300, 180, 40);
+        actionrech.setBounds(710, 300, 180, 40);
 
         stockrech.setBackground(new java.awt.Color(0, 0, 153));
         stockrech.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -728,7 +728,7 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(stockrech);
-        stockrech.setBounds(820, 300, 180, 40);
+        stockrech.setBounds(710, 300, 180, 40);
 
         total.setBackground(new java.awt.Color(0, 0, 153));
         total.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -742,7 +742,7 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(total);
-        total.setBounds(820, 300, 180, 40);
+        total.setBounds(710, 300, 180, 40);
 
         de.setBackground(new java.awt.Color(255, 255, 255));
         de.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -775,11 +775,11 @@ public class Historique extends javax.swing.JFrame {
         labelVendus.setForeground(new java.awt.Color(30, 130, 82));
         labelVendus.setText("Vendus ");
         jPanel1.add(labelVendus);
-        labelVendus.setBounds(1020, 350, 110, 29);
+        labelVendus.setBounds(930, 260, 110, 29);
 
         labelVedus2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/textfieldbg.png"))); // NOI18N
         jPanel1.add(labelVedus2);
-        labelVedus2.setBounds(1020, 380, 200, 60);
+        labelVedus2.setBounds(930, 290, 200, 60);
 
         txVendus.setEditable(false);
         txVendus.setBackground(new java.awt.Color(255, 250, 240));
@@ -796,17 +796,17 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txVendus);
-        txVendus.setBounds(1030, 390, 180, 40);
+        txVendus.setBounds(940, 300, 180, 40);
 
         labelBrut.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         labelBrut.setForeground(new java.awt.Color(30, 130, 82));
         labelBrut.setText("Brut ");
         jPanel1.add(labelBrut);
-        labelBrut.setBounds(1020, 450, 150, 30);
+        labelBrut.setBounds(930, 360, 150, 30);
 
         labelBrut2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/textfieldbg.png"))); // NOI18N
         jPanel1.add(labelBrut2);
-        labelBrut2.setBounds(1020, 480, 200, 60);
+        labelBrut2.setBounds(930, 390, 200, 60);
 
         txTotal.setEditable(false);
         txTotal.setBackground(new java.awt.Color(255, 250, 240));
@@ -827,17 +827,17 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txTotal);
-        txTotal.setBounds(1030, 490, 180, 40);
+        txTotal.setBounds(940, 400, 180, 40);
 
         labelNet.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         labelNet.setForeground(new java.awt.Color(30, 130, 82));
         labelNet.setText("Net ");
         jPanel1.add(labelNet);
-        labelNet.setBounds(1020, 550, 150, 30);
+        labelNet.setBounds(930, 460, 150, 30);
 
         labelNet2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/textfieldbg.png"))); // NOI18N
         jPanel1.add(labelNet2);
-        labelNet2.setBounds(1020, 580, 200, 60);
+        labelNet2.setBounds(930, 490, 200, 60);
 
         net.setEditable(false);
         net.setBackground(new java.awt.Color(255, 250, 240));
@@ -858,7 +858,7 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(net);
-        net.setBounds(1030, 590, 190, 40);
+        net.setBounds(940, 500, 190, 40);
 
         a.setBackground(new java.awt.Color(255, 255, 255));
         a.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -929,15 +929,15 @@ public class Historique extends javax.swing.JFrame {
 
         ViderBilan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/ViderBilanBtn.png"))); // NOI18N
         jPanel1.add(ViderBilan);
-        ViderBilan.setBounds(1020, 650, 200, 70);
+        ViderBilan.setBounds(930, 560, 200, 70);
 
         ViderStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/ViderStockBtn.png"))); // NOI18N
         jPanel1.add(ViderStock);
-        ViderStock.setBounds(1020, 650, 200, 70);
+        ViderStock.setBounds(930, 560, 200, 70);
 
         ViderAction.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/ViderActionBtn.png"))); // NOI18N
         jPanel1.add(ViderAction);
-        ViderAction.setBounds(1020, 650, 200, 70);
+        ViderAction.setBounds(930, 560, 200, 70);
 
         ViderBilanBtn.setText("vider bilan");
         ViderBilanBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -946,7 +946,7 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ViderBilanBtn);
-        ViderBilanBtn.setBounds(1080, 660, 140, 50);
+        ViderBilanBtn.setBounds(990, 570, 140, 50);
 
         ViderStockBtn.setText("vider stock");
         ViderStockBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -955,7 +955,7 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ViderStockBtn);
-        ViderStockBtn.setBounds(1040, 660, 140, 50);
+        ViderStockBtn.setBounds(950, 570, 140, 50);
 
         ViderActionBtn.setText("vider action");
         ViderActionBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -964,11 +964,11 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ViderActionBtn);
-        ViderActionBtn.setBounds(1040, 660, 140, 50);
+        ViderActionBtn.setBounds(950, 570, 140, 50);
 
         ViderBilan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/retour.png"))); // NOI18N
         jPanel1.add(ViderBilan1);
-        ViderBilan1.setBounds(1020, 730, 200, 70);
+        ViderBilan1.setBounds(930, 640, 200, 70);
 
         retour_product.setText("jButton1");
         retour_product.addActionListener(new java.awt.event.ActionListener() {
@@ -977,15 +977,15 @@ public class Historique extends javax.swing.JFrame {
             }
         });
         jPanel1.add(retour_product);
-        retour_product.setBounds(1020, 740, 190, 50);
+        retour_product.setBounds(930, 650, 190, 50);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1280, 810);
+        jPanel1.setBounds(0, 0, 2000, 2000);
 
         Background.setBackground(new java.awt.Color(255, 250, 240));
         Background.setForeground(new java.awt.Color(255, 250, 240));
         getContentPane().add(Background);
-        Background.setBounds(0, 0, 1280, 800);
+        Background.setBounds(0, 0, 2000, 2000);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

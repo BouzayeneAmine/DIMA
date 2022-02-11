@@ -256,7 +256,7 @@ public class Inventory extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/stockbg.png"))); // NOI18N
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         General_Panel.add(jLabel2);
-        jLabel2.setBounds(140, 270, 680, 570);
+        jLabel2.setBounds(90, 240, 680, 460);
 
         jTable1.setBackground(new java.awt.Color(255, 250, 240));
         jTable1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -288,11 +288,11 @@ public class Inventory extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         General_Panel.add(jScrollPane1);
-        jScrollPane1.setBounds(140, 270, 680, 510);
+        jScrollPane1.setBounds(90, 240, 680, 450);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/modifierbtn.png"))); // NOI18N
         General_Panel.add(jLabel1);
-        jLabel1.setBounds(980, 320, 230, 70);
+        jLabel1.setBounds(800, 300, 230, 70);
 
         modifierPrduitbtn.setBackground(new java.awt.Color(0, 0, 102));
         modifierPrduitbtn.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -304,11 +304,11 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         General_Panel.add(modifierPrduitbtn);
-        modifierPrduitbtn.setBounds(990, 330, 180, 50);
+        modifierPrduitbtn.setBounds(810, 310, 180, 50);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/ajouterbtn.png"))); // NOI18N
         General_Panel.add(jLabel3);
-        jLabel3.setBounds(980, 400, 230, 70);
+        jLabel3.setBounds(800, 380, 230, 70);
 
         ajouterProduitbtn.setBackground(new java.awt.Color(0, 0, 102));
         ajouterProduitbtn.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -320,11 +320,11 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         General_Panel.add(ajouterProduitbtn);
-        ajouterProduitbtn.setBounds(990, 410, 180, 50);
+        ajouterProduitbtn.setBounds(810, 390, 180, 50);
 
         supprimerbtnbg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/supprimerbtn.png"))); // NOI18N
         General_Panel.add(supprimerbtnbg);
-        supprimerbtnbg.setBounds(980, 480, 230, 70);
+        supprimerbtnbg.setBounds(800, 460, 230, 70);
 
         supprimerbtn.setText("jButton1");
         supprimerbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -333,7 +333,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         General_Panel.add(supprimerbtn);
-        supprimerbtn.setBounds(990, 490, 180, 50);
+        supprimerbtn.setBounds(810, 470, 180, 50);
 
         Barsearch.setBackground(new java.awt.Color(235, 231, 224));
         Barsearch.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
@@ -353,11 +353,11 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         General_Panel.add(Barsearch);
-        Barsearch.setBounds(160, 110, 470, 30);
+        Barsearch.setBounds(150, 100, 440, 40);
 
         searchbarbg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/searchbarbg.png"))); // NOI18N
         General_Panel.add(searchbarbg);
-        searchbarbg.setBounds(140, 95, 560, 60);
+        searchbarbg.setBounds(130, 90, 560, 60);
 
         category_bar.setBackground(new java.awt.Color(255, 255, 255));
         category_bar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -491,7 +491,7 @@ public class Inventory extends javax.swing.JFrame {
         eauBtn.setBounds(5, 14, 35, 32);
 
         General_Panel.add(category_bar);
-        category_bar.setBounds(140, 175, 800, 70);
+        category_bar.setBounds(150, 155, 570, 60);
 
         barpanel.setBackground(new java.awt.Color(255, 250, 240));
         barpanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -509,47 +509,47 @@ public class Inventory extends javax.swing.JFrame {
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/statistiques.png"))); // NOI18N
         jLabel22.setOpaque(true);
         barpanel.add(jLabel22);
-        jLabel22.setBounds(10, 640, 60, 50);
+        jLabel22.setBounds(10, 570, 60, 50);
 
         jLabel21.setBackground(new java.awt.Color(255, 250, 240));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/utilisateurs.png"))); // NOI18N
         jLabel21.setOpaque(true);
         barpanel.add(jLabel21);
-        jLabel21.setBounds(10, 540, 60, 50);
+        jLabel21.setBounds(10, 480, 60, 50);
 
         jLabel20.setBackground(new java.awt.Color(255, 250, 240));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/historique.png"))); // NOI18N
         jLabel20.setOpaque(true);
         barpanel.add(jLabel20);
-        jLabel20.setBounds(10, 440, 60, 64);
+        jLabel20.setBounds(10, 390, 60, 64);
 
         jLabel19.setBackground(new java.awt.Color(30, 130, 82));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/inventoryLight.png"))); // NOI18N
         jLabel19.setOpaque(true);
         barpanel.add(jLabel19);
-        jLabel19.setBounds(10, 340, 60, 50);
+        jLabel19.setBounds(10, 290, 60, 50);
 
         jLabel18.setBackground(new java.awt.Color(255, 250, 240));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/Stock.png"))); // NOI18N
         jLabel18.setOpaque(true);
         barpanel.add(jLabel18);
-        jLabel18.setBounds(10, 240, 60, 50);
+        jLabel18.setBounds(10, 200, 60, 50);
 
         jLabel16.setBackground(new java.awt.Color(255, 250, 240));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/cashregister.png"))); // NOI18N
         jLabel16.setOpaque(true);
         barpanel.add(jLabel16);
-        jLabel16.setBounds(10, 140, 60, 50);
+        jLabel16.setBounds(10, 120, 60, 50);
 
         jLabel5.setBackground(new java.awt.Color(30, 130, 82));
         jLabel5.setOpaque(true);
         barpanel.add(jLabel5);
-        jLabel5.setBounds(0, 330, 80, 70);
+        jLabel5.setBounds(0, 280, 80, 70);
 
         statbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         statbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -558,7 +558,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(statbtn);
-        statbtn.setBounds(10, 640, 60, 50);
+        statbtn.setBounds(10, 570, 60, 50);
 
         usersbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         usersbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -567,7 +567,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(usersbtn);
-        usersbtn.setBounds(10, 540, 60, 45);
+        usersbtn.setBounds(10, 480, 60, 45);
 
         salesbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         salesbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -576,7 +576,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(salesbtn);
-        salesbtn.setBounds(10, 440, 60, 50);
+        salesbtn.setBounds(10, 400, 60, 50);
 
         inventorybtn.setPreferredSize(new java.awt.Dimension(80, 80));
         inventorybtn.addActionListener(new java.awt.event.ActionListener() {
@@ -585,7 +585,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(inventorybtn);
-        inventorybtn.setBounds(10, 340, 60, 50);
+        inventorybtn.setBounds(10, 290, 60, 50);
 
         stockbtn.setPreferredSize(new java.awt.Dimension(80, 80));
         stockbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -594,7 +594,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(stockbtn);
-        stockbtn.setBounds(10, 240, 60, 50);
+        stockbtn.setBounds(10, 200, 60, 50);
 
         registerbtn.setBackground(new java.awt.Color(255, 255, 255));
         registerbtn.setBorder(null);
@@ -607,14 +607,14 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(registerbtn);
-        registerbtn.setBounds(10, 140, 60, 50);
+        registerbtn.setBounds(10, 120, 60, 50);
 
         jLabel30.setBackground(new java.awt.Color(255, 250, 240));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE POS/credit.png"))); // NOI18N
         jLabel30.setOpaque(true);
         barpanel.add(jLabel30);
-        jLabel30.setBounds(10, 720, 60, 50);
+        jLabel30.setBounds(10, 660, 60, 50);
 
         jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -623,10 +623,10 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
         barpanel.add(jButton2);
-        jButton2.setBounds(10, 730, 60, 30);
+        jButton2.setBounds(10, 660, 60, 50);
 
         General_Panel.add(barpanel);
-        barpanel.setBounds(2, 0, 80, 800);
+        barpanel.setBounds(2, 0, 80, 2000);
 
         jPanel1.setBackground(new java.awt.Color(255, 250, 240));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 130, 82), 2));
@@ -668,32 +668,32 @@ public class Inventory extends javax.swing.JFrame {
         jLabel15.setBounds(5, 0, 260, 60);
 
         jPanel1.add(Session);
-        Session.setBounds(90, 10, 270, 60);
+        Session.setBounds(10, 10, 280, 60);
 
         jLabel10.setFont(new java.awt.Font("Roboto Black", 0, 48)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(30, 130, 82));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("INVENTAIRE");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(780, 0, 330, 80);
+        jLabel10.setBounds(640, 0, 320, 80);
 
         Heure1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         Heure1.setForeground(new java.awt.Color(5, 45, 26));
         Heure1.setText("22:10");
         jPanel1.add(Heure1);
-        Heure1.setBounds(380, 0, 100, 80);
+        Heure1.setBounds(330, 0, 100, 80);
 
         Date1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         Date1.setForeground(new java.awt.Color(5, 45, 26));
         Date1.setText("31-12-2019");
         jPanel1.add(Date1);
-        Date1.setBounds(510, 0, 100, 80);
+        Date1.setBounds(460, 0, 100, 80);
 
         General_Panel.add(jPanel1);
-        jPanel1.setBounds(50, 0, 1220, 80);
+        jPanel1.setBounds(80, 0, 1970, 80);
 
         getContentPane().add(General_Panel);
-        General_Panel.setBounds(0, 0, 1280, 800);
+        General_Panel.setBounds(0, 0, 2000, 2000);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
