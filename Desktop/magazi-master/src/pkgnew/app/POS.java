@@ -50,6 +50,8 @@ public class POS extends javax.swing.JFrame {
     String totalaise;
     String ClientCredit;
     String NumeroCredit;
+    Boolean balance_product = false;
+    String balance_product_masse, balance_total_price;
     private DefaultTableCellRenderer headerRenderer;
 
     public POS(String username) {
@@ -411,6 +413,21 @@ public class POS extends javax.swing.JFrame {
         recherche_Barcode.setText("");
         Barsearch.setText("");
         credit_panel.hide();
+
+    }
+
+    public void balanceProduct(StringBuilder barcode) {
+
+        barcode = new StringBuilder(recherche_Barcode.getText());
+        String code_Article = barcode.substring(0, 2);
+        System.out.println("ammmmmmmmmmmmmmiiin" + code_Article);
+
+        if (code_Article.equals("00")) {
+            balance_product = true;
+            balance_product_masse = barcode.substring(5, 9);
+            balance_total_price = barcode.substring(9, 13);
+
+        }
 
     }
 
@@ -1882,8 +1899,11 @@ public class POS extends javax.swing.JFrame {
             jTable2.show();
             produits.show();
             //....
-
-            if (secondafficheur.getText().equals("")) {
+            if (balance_product) {
+                totale.setText(balance_total_price);
+                total_base.setText(prix_base.getText());
+                Quantite.setText(balance_product_masse);
+            } else if (secondafficheur.getText().equals("")) {
                 totale.setText(afficheur.getText());
                 System.out.println("total =" + totale.getText());
                 total_base.setText(prix_base.getText());
@@ -2938,28 +2958,59 @@ public class POS extends javax.swing.JFrame {
             } else {
                 passerLeProduit();
             }
+
         } else {
-            String a[] = {"nom", "Barcode", "Categorie", "Prix_vente", "Prix_base"};
-            rs = db.fcSelectCommand(a, "produit", "Barcode = '" + recherche_Barcode.getText() + "'");
+            balanceProduct(new StringBuilder(recherche_Barcode.getText()));
 
-            jTable2.setModel(new ResultSetTableModel(rs));
-            jTable2.getColumnModel().getColumn(1).setMinWidth(0);
-            jTable2.getColumnModel().getColumn(1).setMaxWidth(0);
+            if (balance_product) {
 
-            jTable2.getColumnModel().getColumn(2).setMinWidth(0);
-            jTable2.getColumnModel().getColumn(2).setMaxWidth(0);
+                String balance_barcode = recherche_Barcode.getText().substring(0, 5);
+                System.out.println("barcode=" + balance_barcode+"  total=" + balance_total_price  +"  Masse=="+balance_product_masse);
 
-            jTable2.getColumnModel().getColumn(4).setMinWidth(0);
-            jTable2.getColumnModel().getColumn(4).setMaxWidth(0);
+                String a[] = {"nom", "Barcode", "Categorie", "Prix_vente", "Prix_base"};
+                rs = db.fcSelectCommand(a, "produit", "Barcode = '" + balance_barcode + "'");
 
-            jTable2.selectAll();
-            afficheur.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 3)));
-            prix_base.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 4)));
-            Nom.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 0)));
-            Prix_Vente.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 3)));
-            String Barcode = String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 1));
-            String Categorie = String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 2));
-            System.out.println(afficheur.getText());
+                jTable2.setModel(new ResultSetTableModel(rs));
+                jTable2.getColumnModel().getColumn(1).setMinWidth(0);
+                jTable2.getColumnModel().getColumn(1).setMaxWidth(0);
+
+                jTable2.getColumnModel().getColumn(2).setMinWidth(0);
+                jTable2.getColumnModel().getColumn(2).setMaxWidth(0);
+
+                jTable2.getColumnModel().getColumn(4).setMinWidth(0);
+                jTable2.getColumnModel().getColumn(4).setMaxWidth(0);
+
+                jTable2.selectAll();
+                afficheur.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 3)));
+                prix_base.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 4)));
+                Nom.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 0)));
+                Prix_Vente.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 3)));
+                String Barcode = String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 1));
+                String Categorie = String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 2));
+                System.out.println(afficheur.getText());
+            } else {
+                String a[] = {"nom", "Barcode", "Categorie", "Prix_vente", "Prix_base"};
+                rs = db.fcSelectCommand(a, "produit", "Barcode = '" + recherche_Barcode.getText() + "'");
+
+                jTable2.setModel(new ResultSetTableModel(rs));
+                jTable2.getColumnModel().getColumn(1).setMinWidth(0);
+                jTable2.getColumnModel().getColumn(1).setMaxWidth(0);
+
+                jTable2.getColumnModel().getColumn(2).setMinWidth(0);
+                jTable2.getColumnModel().getColumn(2).setMaxWidth(0);
+
+                jTable2.getColumnModel().getColumn(4).setMinWidth(0);
+                jTable2.getColumnModel().getColumn(4).setMaxWidth(0);
+
+                jTable2.selectAll();
+                afficheur.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 3)));
+                prix_base.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 4)));
+                Nom.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 0)));
+                Prix_Vente.setText(String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 3)));
+                String Barcode = String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 1));
+                String Categorie = String.valueOf(jTable2.getValueAt(jTable2.getSelectedRow(), 2));
+                System.out.println(afficheur.getText());
+            }
         }
         if (afficheur.getText().equals("null")) {
             afficheur.setText("0");
@@ -3095,10 +3146,8 @@ public class POS extends javax.swing.JFrame {
         ////// show client credit panel//////
         CommandePanel.hide();
         credit_panel.show();
-        
-        
 
-       
+
     }//GEN-LAST:event_creditBtnActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -3122,12 +3171,12 @@ public class POS extends javax.swing.JFrame {
         /// envoyer client nom et numero vers credit 
         ClientCredit = String.valueOf(client_table.getValueAt(client_table.getSelectedRow(), 0));
         NumeroCredit = String.valueOf(client_table.getValueAt(client_table.getSelectedRow(), 1));
-        
+
     }//GEN-LAST:event_client_tableMouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-         /////////// payer ///////
+        /////////// payer ///////
         int R = 0;
         String emptyStockNames = "";
 

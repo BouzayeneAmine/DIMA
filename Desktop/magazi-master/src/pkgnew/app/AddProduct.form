@@ -459,7 +459,7 @@
             </Property>
             <Property name="maximumRowCount" type="int" value="10"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="9">
+              <StringArray count="10">
                 <StringItem index="0" value="eau"/>
                 <StringItem index="1" value="boisson"/>
                 <StringItem index="2" value="gouter"/>
@@ -469,6 +469,7 @@
                 <StringItem index="6" value="recharge t&#xe9;l&#xe9;phonique"/>
                 <StringItem index="7" value="fruits secs"/>
                 <StringItem index="8" value="conserve"/>
+                <StringItem index="9" value="balance"/>
               </StringArray>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

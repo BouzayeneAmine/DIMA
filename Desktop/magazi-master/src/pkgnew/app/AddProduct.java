@@ -415,7 +415,7 @@ public class AddProduct extends javax.swing.JFrame {
         CategoryComboBox.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         CategoryComboBox.setForeground(new java.awt.Color(5, 45, 26));
         CategoryComboBox.setMaximumRowCount(10);
-        CategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "eau", "boisson", "gouter", "tabac", "accessoire", "pates", "recharge téléphonique", "fruits secs", "conserve" }));
+        CategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "eau", "boisson", "gouter", "tabac", "accessoire", "pates", "recharge téléphonique", "fruits secs", "conserve", "balance" }));
         CategoryComboBox.setBorder(null);
         jPanel1.add(CategoryComboBox);
         CategoryComboBox.setBounds(920, 250, 270, 50);
