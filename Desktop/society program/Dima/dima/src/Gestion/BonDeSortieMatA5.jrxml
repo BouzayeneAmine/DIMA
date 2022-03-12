@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="421" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="20" uuid="cbfc1bd8-39b5-46f4-8b04-0c3dc2db7327">
+	<property name="ireport.zoom" value="1.3310000000000237"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="29"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="New Dataset 2" uuid="6b84f024-2fd5-40bb-a0ce-71b6472cee09">
+		<queryString language="SQL">
+			<![CDATA[select * from facture_client]]>
+		</queryString>
+		<field name="nom_client" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="code_client" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="piece" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="poids_facture" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Date" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT
+     impression_bon.`Id` AS impression_bon_Id,
+     impression_bon.`Type` AS impression_bon_Type,
+     impression_bon.`Code_type` AS impression_bon_Code_type,
+     impression_bon.`Nom_type` AS impression_bon_Nom_type,
+     impression_bon.`Adresse_type` AS impression_bon_Adresse_type,
+     impression_bon.`Code_produit` AS impression_bon_Code_produit,
+     impression_bon.`Designation_produit` AS impression_bon_Designation_produit,
+     impression_bon.`Lot_produit` AS impression_bon_Lot_produit,
+     impression_bon.`Prix_produit` AS impression_bon_Prix_produit,
+     impression_bon.`transporteur` AS impression_bon_transporteur,
+     impression_bon.`Camion_Immatricule` AS impression_bon_Camion_Immatricule,
+     impression_bon.`Camion_type` AS impression_bon_Camion_type,
+     impression_bon.`Camion_tare` AS impression_bon_Camion_tare,
+     impression_bon.`Premier_pesage` AS impression_bon_Premier_pesage,
+     impression_bon.`Premier_date` AS impression_bon_Premier_date,
+     impression_bon.`Premier_Heure` AS impression_bon_Premier_Heure,
+     impression_bon.`Deuxieme_pesage` AS impression_bon_Deuxieme_pesage,
+     impression_bon.`Deuxieme_date` AS impression_bon_Deuxieme_date,
+     impression_bon.`Deuxieme_heure` AS impression_bon_Deuxieme_heure,
+     impression_bon.`Masse_nette` AS impression_bon_Masse_nette,
+     impression_bon.`chauffeur` AS impression_bon_chauffeur,
+     impression_bon.`convayeur` AS impression_bon_convayeur,
+     impression_bon.`Numero` AS impression_bon_Numero,
+     cordonee.`Id` AS cordonee_Id,
+     cordonee.`Societe` AS cordonee_Societe,
+     cordonee.`Adresse` AS cordonee_Adresse,
+     cordonee.`TEL` AS cordonee_TEL,
+     cordonee.`Fax` AS cordonee_Fax,
+     facture_client.`nom_client` AS facture_nom_client,
+     facture_client.`code_client` AS facture_code_client,
+     facture_client.`piece` AS facture_piece,
+     facture_client.`poids_facture` AS facture_poids_facture
+
+FROM
+     `impression_bon` impression_bon,
+     `cordonee` cordonee,
+     `facture_client` facture_client]]>
+	</queryString>
+	<field name="impression_bon_Id" class="java.lang.Integer"/>
+	<field name="impression_bon_Type" class="java.lang.String"/>
+	<field name="impression_bon_Code_type" class="java.lang.String"/>
+	<field name="impression_bon_Nom_type" class="java.lang.String"/>
+	<field name="impression_bon_Adresse_type" class="java.lang.String"/>
+	<field name="impression_bon_Code_produit" class="java.lang.String"/>
+	<field name="impression_bon_Designation_produit" class="java.lang.String"/>
+	<field name="impression_bon_Lot_produit" class="java.lang.String"/>
+	<field name="impression_bon_Prix_produit" class="java.lang.String"/>
+	<field name="impression_bon_transporteur" class="java.lang.String"/>
+	<field name="impression_bon_Camion_Immatricule" class="java.lang.String"/>
+	<field name="impression_bon_Camion_type" class="java.lang.String"/>
+	<field name="impression_bon_Camion_tare" class="java.lang.String"/>
+	<field name="impression_bon_Premier_pesage" class="java.lang.String"/>
+	<field name="impression_bon_Premier_date" class="java.lang.String"/>
+	<field name="impression_bon_Premier_Heure" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_pesage" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_date" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_heure" class="java.lang.String"/>
+	<field name="impression_bon_Masse_nette" class="java.lang.String"/>
+	<field name="impression_bon_chauffeur" class="java.lang.String"/>
+	<field name="impression_bon_convayeur" class="java.lang.String"/>
+	<field name="impression_bon_Numero" class="java.lang.String"/>
+	<field name="cordonee_Id" class="java.lang.Integer"/>
+	<field name="cordonee_Societe" class="java.lang.String"/>
+	<field name="cordonee_Adresse" class="java.lang.String"/>
+	<field name="cordonee_TEL" class="java.lang.String"/>
+	<field name="cordonee_Fax" class="java.lang.String"/>
+	<field name="facture_nom_client" class="java.lang.String"/>
+	<field name="facture_code_client" class="java.lang.String"/>
+	<field name="facture_piece" class="java.lang.String"/>
+	<field name="facture_poids_facture" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="555" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="4" y="135" width="406" height="284" uuid="bb6979d6-af2c-4d57-88ed-ac747281652b"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="New Dataset 2" uuid="90a87f21-58f6-45dd-bc27-e23dc9184a4a">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="04d8504f-b338-4907-8e0e-df86748e5bb2">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="1878701d-5f65-4d49-8f36-b5a650e9d3e0"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[Facture]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="57" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="57" uuid="dcb729d3-dd38-4489-9623-4ea8d758dc36"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{piece}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="65" uuid="93d58b22-a367-4811-b23c-0036d03aaf00">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="65" height="30" uuid="5676e38a-1f43-4a7e-8e23-e1483f7c5e57"/>
+								<textElement textAlignment="Center">
+									<font size="12"/>
+								</textElement>
+								<text><![CDATA[Code]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="57" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="65" height="57" uuid="055af69d-8a4f-4b1a-bd1a-3d7aecb9b2aa"/>
+								<textElement textAlignment="Center">
+									<font size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{code_client}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="b0a7e226-91e4-4881-acc1-9bcec6325957">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="65909605-8fcd-4da1-8c80-648f9f459e9e"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[Client]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="57" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="57" uuid="1e34e797-bf19-4432-b363-b0f041756269"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{nom_client}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="7424d152-480f-42a2-a9b7-74e5d5cfb495">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="5b105356-a4cd-42fb-b017-15f9fe7b2cc9"/>
+								<textElement textAlignment="Center">
+									<font size="12"/>
+								</textElement>
+								<text><![CDATA[Quantitté]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="57" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="57" uuid="154b1007-4640-4528-86b5-9d19fba2cfa5"/>
+								<textElement textAlignment="Center">
+									<font size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{poids_facture}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="57445d44-2d3b-42e7-bce1-715feeb23a00">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="78" height="30" uuid="27a61667-fae8-4f6f-9bb2-855fa2f82063"/>
+								<textElement textAlignment="Center">
+									<font size="12"/>
+								</textElement>
+								<text><![CDATA[Date]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="57" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="78" height="57" uuid="917ecb09-84ec-4366-94f5-12503474d242"/>
+								<textElement textAlignment="Center">
+									<font size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="4" y="0" width="406" height="28" uuid="efad88e0-4c1c-4784-9c33-0bd49e82c2b1"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Bon de sortie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="28" width="64" height="49" uuid="0e2bc243-c28b-476c-be55-69e14345cede"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Camion :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="147" y="28" width="168" height="49" uuid="f13bb664-c8f5-45e8-98af-77bce60d89e8"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Camion_Immatricule}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="79" width="100" height="20" uuid="ca42746c-749b-47bb-9047-1c5c5ce7b01e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date entrée :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="99" width="100" height="20" uuid="01915b58-02b5-46bc-ba54-509627288f1c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date sortie :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="99" width="84" height="20" uuid="ac659117-f8cc-4846-b31d-eacca3fa787e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Convayeur :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="79" width="84" height="20" uuid="ca267907-a6f4-4bbf-868a-4825d226cc9e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Chauffeur :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="310" y="79" width="100" height="20" uuid="2716be00-8c2b-42ed-a0cf-3e1dba9f7932"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_chauffeur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="99" width="100" height="20" uuid="08288ef5-c6c2-4a1e-b9b0-dfb0b6fd293f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_convayeur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="106" y="79" width="55" height="20" uuid="76968e5e-a028-4b9c-a04a-e3311671052d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="79" width="66" height="20" uuid="b4cbc08d-d969-47bc-b3bf-435e620047da"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_Heure}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="106" y="99" width="55" height="20" uuid="36fe6e69-f6c5-4f17-a8e4-715fb9f3e928"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="99" width="66" height="20" uuid="654f96fd-1c3f-49e8-8b75-efbd0c6720f6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_heure}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="174" y="434" width="100" height="31" uuid="a994b3cf-daa6-4fbd-99fc-1194bf0dede1"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Poids entrée :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="174" y="465" width="100" height="26" uuid="95ba211f-4d60-42f0-95f0-4491d3744874"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Poids sortie :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="174" y="492" width="100" height="30" uuid="e61b9ebf-8de1-400b-93aa-a51a98f28393"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Net :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="434" width="136" height="31" uuid="0ef5cf98-345f-4794-9c71-7860c19af228"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_pesage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="465" width="136" height="27" uuid="5c1689a1-90d8-4e0c-bd08-1a9c62d4771e"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_pesage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="492" width="136" height="30" uuid="e4e5ccee-5ac3-4dba-afae-0f2ec30ab000"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Masse_nette}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

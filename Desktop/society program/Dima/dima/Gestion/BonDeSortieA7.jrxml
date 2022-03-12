@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="210" pageHeight="297" columnWidth="170" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bb057398-2f92-428b-865b-572135d317af">
+	<property name="ireport.zoom" value="2.5937424601000023"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+        <style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">*
+            conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT
+     impression_bon.`Id` AS impression_bon_Id,
+     impression_bon.`Type` AS impression_bon_Type,
+     impression_bon.`Code_type` AS impression_bon_Code_type,
+     impression_bon.`Nom_type` AS impression_bon_Nom_type,
+     impression_bon.`Adresse_type` AS impression_bon_Adresse_type,
+     impression_bon.`Code_produit` AS impression_bon_Code_produit,
+     impression_bon.`Designation_produit` AS impression_bon_Designation_produit,
+     impression_bon.`Lot_produit` AS impression_bon_Lot_produit,
+     impression_bon.`Prix_produit` AS impression_bon_Prix_produit,
+     impression_bon.`Coefficient_produit` AS impression_bon_Coefficient_produit,
+     impression_bon.`Camion_Immatricule` AS impression_bon_Camion_Immatricule,
+     impression_bon.`Camion_type` AS impression_bon_Camion_type,
+     impression_bon.`Camion_tare` AS impression_bon_Camion_tare,
+     impression_bon.`Premier_pesage` AS impression_bon_Premier_pesage,
+     impression_bon.`Deuxieme_pesage` AS impression_bon_Deuxieme_pesage,
+     impression_bon.`Deuxieme_date` AS impression_bon_Deuxieme_date,
+     impression_bon.`Deuxieme_heure` AS impression_bon_Deuxieme_heure,
+     impression_bon.`Masse_nette` AS impression_bon_Masse_nette,
+     impression_bon.`Numero` AS impression_bon_Numero,
+     cordonee.`Id` AS cordonee_Id,
+     cordonee.`Societe` AS cordonee_Societe,
+     cordonee.`Adresse` AS cordonee_Adresse,
+     cordonee.`TEL` AS cordonee_TEL,
+     cordonee.`Fax` AS cordonee_Fax,
+     impression_bon.`Premier_date` AS impression_bon_Premier_date,
+     impression_bon.`Premier_Heure` AS impression_bon_Premier_Heure
+FROM
+     `impression_bon` impression_bon,
+     `cordonee` cordonee]]>
+	</queryString>
+	<field name="impression_bon_Id" class="java.lang.Integer"/>
+	<field name="impression_bon_Type" class="java.lang.String"/>
+	<field name="impression_bon_Code_type" class="java.lang.String"/>
+	<field name="impression_bon_Nom_type" class="java.lang.String"/>
+	<field name="impression_bon_Adresse_type" class="java.lang.String"/>
+	<field name="impression_bon_Code_produit" class="java.lang.String"/>
+	<field name="impression_bon_Designation_produit" class="java.lang.String"/>
+	<field name="impression_bon_Lot_produit" class="java.lang.String"/>
+	<field name="impression_bon_Prix_produit" class="java.lang.String"/>
+	<field name="impression_bon_Coefficient_produit" class="java.lang.String"/>
+	<field name="impression_bon_Camion_Immatricule" class="java.lang.String"/>
+	<field name="impression_bon_Camion_type" class="java.lang.String"/>
+	<field name="impression_bon_Camion_tare" class="java.lang.String"/>
+	<field name="impression_bon_Premier_pesage" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_pesage" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_date" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_heure" class="java.lang.String"/>
+	<field name="impression_bon_Masse_nette" class="java.lang.String"/>
+	<field name="impression_bon_Numero" class="java.lang.String"/>
+	<field name="cordonee_Id" class="java.lang.Integer"/>
+	<field name="cordonee_Societe" class="java.lang.String"/>
+	<field name="cordonee_Adresse" class="java.lang.String"/>
+	<field name="cordonee_TEL" class="java.lang.String"/>
+	<field name="cordonee_Fax" class="java.lang.String"/>
+	<field name="impression_bon_Premier_date" class="java.lang.String"/>
+	<field name="impression_bon_Premier_Heure" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="39" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="0" y="-19" width="170" height="7" uuid="c1f90450-5199-4759-8b77-5f3905f01cd8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Score Board" size="5" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Societe}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="0" y="-12" width="170" height="7" uuid="e8dfbf97-d9f3-46f2-867e-2f6f29ee681f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Score Board" size="5" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Adresse}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="19" height="11" forecolor="#000000" uuid="08f20b82-0ac2-4de5-93df-13df60165c26"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TEL:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="19" y="0" width="46" height="11" uuid="61692886-5523-4812-8e84-972cf866f0d6"/>
+				<textElement>
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_TEL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="81" y="1" width="48" height="10" forecolor="#000000" uuid="bacd76da-1fcd-4762-9d4c-3820dccd71dc"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Fax :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="2" y="11" width="55" height="10" forecolor="#000000" uuid="29125853-aec2-4658-834a-bd380149beb1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bon de Pesage N :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="62" y="23" width="85" height="10" uuid="180b7a22-716e-4dca-8366-f3ccceba0f8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Masse_nette}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="80" y="11" width="70" height="12" uuid="d55099bb-1334-4c9e-905b-0b0f597bb628"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Numero}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="150" y="23" width="12" height="10" forecolor="#000000" uuid="77a06b71-5d35-46da-b831-d3211256faa8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="2" y="23" width="42" height="10" forecolor="#000000" uuid="6015a5ad-bf72-4e9d-bd09-a1b694db520f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Poids Net:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="58" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="48" y="37" width="122" height="18" uuid="dc4a99f0-5811-4bb7-bf15-0ddb35a003e4"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Adresse_type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="33" y="18" width="129" height="18" uuid="ec65dd13-1911-4bfc-877e-74a15a867483"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Nom_type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="0" y="0" width="62" height="18" uuid="1c54ab21-5c9d-4de6-a187-589e22658f7b"/>
+				<textElement>
+					<font fontName="Score Board" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="18" width="29" height="18" forecolor="#000000" uuid="e5b3ea19-9b9e-4f77-9cb7-53611d640e25"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nom :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="69" y="0" width="20" height="18" forecolor="#000000" uuid="acee5f2f-3fd5-4216-9664-00a1eb68f7be"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Code :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="114" y="0" width="36" height="18" uuid="9630c076-a0af-44c4-abae-9e6760198e49"/>
+				<textElement>
+					<font fontName="Score Board" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Code_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="37" width="48" height="18" forecolor="#000000" uuid="b0c50bb2-9e92-4452-bba6-35fbdd5ccc83"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Adresse :]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="25" y="20" width="145" height="10" uuid="70d17542-d3dc-41c6-a3fd-1183ae2c92d6"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Lot_produit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="30" width="26" height="10" forecolor="#000000" uuid="16508849-84ba-4b3e-8d38-b1e9b1feefb5"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Prix :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="57" y="40" width="109" height="10" uuid="fbe82208-29a5-4ff9-9e59-818a37ee0c7a"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Coefficient_produit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="40" width="58" height="10" forecolor="#000000" uuid="4e9329be-ea84-43c3-a6e9-8573b2c2b239"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Coefficient :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="25" y="30" width="145" height="10" uuid="c09f85da-6f94-487f-bde1-aea4118f35ac"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Prix_produit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="39" height="10" forecolor="#000000" uuid="5bc2f8fc-90ff-4c05-8d64-0ac357859901"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Produit :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="10" width="58" height="10" forecolor="#000000" uuid="3eb28c28-4137-48d4-82cc-9666f18c3c25"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Designation :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="58" y="10" width="111" height="10" uuid="2cdf0d5b-45bb-4425-b06a-78d835bc8400"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Designation_produit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="61" y="0" width="24" height="10" forecolor="#000000" uuid="c81c68ce-c795-448d-9284-711c70725a2b"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Code :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="20" width="25" height="10" forecolor="#000000" uuid="95704b82-c94a-4059-9eb2-609e4b237ffb"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Lot :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="119" y="0" width="31" height="10" uuid="4d318a33-ec91-4908-80f0-bdf577d84756"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Code_produit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="1" y="50" width="40" height="16" forecolor="#000000" uuid="a768697a-8e39-4092-a37e-bc7baa27819c"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[tare :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="40" y="34" width="130" height="16" uuid="da0ee898-92c8-48be-8bcf-bcf104de4305"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Camion_type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="40" y="50" width="130" height="16" uuid="5dd3ceec-6fd2-4fd7-a71a-993a4578d2cf"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Camion_tare}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="1" y="34" width="40" height="16" forecolor="#000000" uuid="325f7877-87da-432a-b8f2-7085c1a3a6ed"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[type :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="18" width="59" height="16" forecolor="#000000" uuid="a81a3090-0a33-405b-bc72-09a07765cf93"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Immatricule :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="59" y="18" width="111" height="16" uuid="aaa530b2-da63-4fbf-8b9b-068835d85b7c"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Camion_Immatricule}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="1" y="0" width="46" height="18" forecolor="#000000" uuid="2832bb2c-6353-46bb-9029-5231c365ed82"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Camion :]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="34" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="22" y="10" width="147" height="10" uuid="71725ea4-b1e5-41bd-831a-cba294bc9353"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="70" y="0" width="84" height="10" uuid="2b5dd650-8d55-41fd-8d23-fa1ce755c020"/>
+				<textElement textAlignment="Center">
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_pesage}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="154" y="0" width="12" height="10" forecolor="#000000" uuid="79e4c3fb-d6ba-47a3-a27a-fc166d7e10f8"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="10" width="21" height="10" forecolor="#000000" uuid="85dd3615-921b-48ea-ae03-7ea659e36572"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="36" y="20" width="134" height="10" uuid="9f646879-adcb-4c59-996d-d45f993b41fd"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_Heure}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="1" y="20" width="35" height="10" forecolor="#000000" uuid="47ce430f-8e29-480b-b96d-74ee5ec75e98"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Heure :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="0" width="68" height="10" forecolor="#000000" uuid="c8ddc6ff-eb88-4c86-8eac-01a60f5e48d6"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Premier pesage :]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="69" height="10" forecolor="#000000" uuid="6eb83250-fb23-400f-997a-451d928301d3"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Deuxieme pesage :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="10" width="22" height="10" forecolor="#000000" uuid="321b0026-94f8-4c45-b42f-06c779a21ee1"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="36" y="20" width="133" height="10" uuid="f1c2edea-a646-4100-a9c1-181d176285e3"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_heure}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="20" width="36" height="10" forecolor="#000000" uuid="e65bdec1-7b83-4fec-a307-f7d9e43ddd9e"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Heure :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="154" y="0" width="12" height="10" forecolor="#000000" uuid="d1351981-0e24-4af7-bb72-02c9ad04945a"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="22" y="10" width="147" height="10" uuid="dc0f188c-21f5-4333-bc5a-8a2085f1bd22"/>
+				<textElement>
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="70" y="0" width="84" height="10" uuid="a633ed28-22da-4106-aae4-26cbb526c688"/>
+				<textElement textAlignment="Center">
+					<font fontName="Score Board" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_pesage}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="114" y="32" width="52" height="17" forecolor="#000000" uuid="9bd3ef1e-31cd-4634-acda-4036a92411ce"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="2" y="30" width="112" height="19" forecolor="#000000" uuid="29b0610b-9c79-4a96-8b54-f810d99166a5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Score Board" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Merci pour votre visite...]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

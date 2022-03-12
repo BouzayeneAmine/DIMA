@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cbfc1bd8-39b5-46f4-8b04-0c3dc2db7327">
+	<property name="ireport.zoom" value="1.3310000000000237"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT
+     impression_bon.`Id` AS impression_bon_Id,
+     impression_bon.`Type` AS impression_bon_Type,
+     impression_bon.`Code_type` AS impression_bon_Code_type,
+     impression_bon.`Nom_type` AS impression_bon_Nom_type,
+     impression_bon.`Adresse_type` AS impression_bon_Adresse_type,
+     impression_bon.`Code_produit` AS impression_bon_Code_produit,
+     impression_bon.`Designation_produit` AS impression_bon_Designation_produit,
+     impression_bon.`Lot_produit` AS impression_bon_Lot_produit,
+     impression_bon.`Prix_produit` AS impression_bon_Prix_produit,
+     impression_bon.`Coefficient_produit` AS impression_bon_Coefficient_produit,
+     impression_bon.`Camion_Immatricule` AS impression_bon_Camion_Immatricule,
+     impression_bon.`Camion_type` AS impression_bon_Camion_type,
+     impression_bon.`Camion_tare` AS impression_bon_Camion_tare,
+     impression_bon.`Premier_pesage` AS impression_bon_Premier_pesage,
+     impression_bon.`Premier_date` AS impression_bon_Premier_date,
+     impression_bon.`Premier_Heure` AS impression_bon_Premier_Heure,
+     impression_bon.`Deuxieme_pesage` AS impression_bon_Deuxieme_pesage,
+     impression_bon.`Deuxieme_date` AS impression_bon_Deuxieme_date,
+     impression_bon.`Deuxieme_heure` AS impression_bon_Deuxieme_heure,
+     impression_bon.`Masse_nette` AS impression_bon_Masse_nette,
+     impression_bon.`Numero` AS impression_bon_Numero,
+     cordonee.`Id` AS cordonee_Id,
+     cordonee.`Societe` AS cordonee_Societe,
+     cordonee.`Adresse` AS cordonee_Adresse,
+     cordonee.`TEL` AS cordonee_TEL,
+     cordonee.`Fax` AS cordonee_Fax
+FROM
+     `impression_bon` impression_bon,
+     `cordonee` cordonee]]>
+	</queryString>
+	<field name="impression_bon_Id" class="java.lang.Integer"/>
+	<field name="impression_bon_Type" class="java.lang.String"/>
+	<field name="impression_bon_Code_type" class="java.lang.String"/>
+	<field name="impression_bon_Nom_type" class="java.lang.String"/>
+	<field name="impression_bon_Adresse_type" class="java.lang.String"/>
+	<field name="impression_bon_Code_produit" class="java.lang.String"/>
+	<field name="impression_bon_Designation_produit" class="java.lang.String"/>
+	<field name="impression_bon_Lot_produit" class="java.lang.String"/>
+	<field name="impression_bon_Prix_produit" class="java.lang.String"/>
+	<field name="impression_bon_Coefficient_produit" class="java.lang.String"/>
+	<field name="impression_bon_Camion_Immatricule" class="java.lang.String"/>
+	<field name="impression_bon_Camion_type" class="java.lang.String"/>
+	<field name="impression_bon_Camion_tare" class="java.lang.String"/>
+	<field name="impression_bon_Premier_pesage" class="java.lang.String"/>
+	<field name="impression_bon_Premier_date" class="java.lang.String"/>
+	<field name="impression_bon_Premier_Heure" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_pesage" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_date" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_heure" class="java.lang.String"/>
+	<field name="impression_bon_Masse_nette" class="java.lang.String"/>
+	<field name="impression_bon_Numero" class="java.lang.String"/>
+	<field name="cordonee_Id" class="java.lang.Integer"/>
+	<field name="cordonee_Societe" class="java.lang.String"/>
+	<field name="cordonee_Adresse" class="java.lang.String"/>
+	<field name="cordonee_TEL" class="java.lang.String"/>
+	<field name="cordonee_Fax" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="555" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="215" y="429" width="54" height="15" forecolor="#000000" uuid="7531a49a-f3b7-4b54-bba5-69c323070810"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Heure :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="157" y="402" width="140" height="26" uuid="4dcf2593-1c4f-4bc8-a3eb-9975e6133179"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_pesage}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="92" width="108" height="36" forecolor="#000000" uuid="08f2dc6f-7d00-4e88-8c9a-29bff928a86a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Poids Net:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="108" y="91" width="224" height="46" uuid="da4880f2-92bb-472c-b2de-5aae344d7fd0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="29" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Masse_nette}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="12" y="152" width="1" height="341" uuid="4802129a-2278-4937-bd1b-10e90d133a96"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="81" y="493" width="188" height="24" forecolor="#000000" uuid="245e5153-8658-4002-b34e-1597351e0ac1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Merci pour votre visite...]]></text>
+			</staticText>
+			<line>
+				<reportElement x="337" y="460" width="39" height="1" uuid="5a9a0536-84d3-47d9-9327-4503d0b0bb68"/>
+			</line>
+			<line>
+				<reportElement x="376" y="151" width="1" height="342" uuid="ff0d78e1-3a88-4f59-971b-4476a7792e94"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="201" y="137" width="167" height="26" uuid="c652de72-df25-4db8-ad48-713dc61da940"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Code_type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="175" y="447" width="128" height="27" uuid="69e4c4b2-8f66-4a83-8ec4-cea8180b76f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_pesage}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="17" y="376" width="40" height="22" forecolor="#000000" uuid="b4000682-7ac4-463f-ba07-4d679d11ad41"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tare :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="25" y="216" width="70" height="29" forecolor="#000000" uuid="81c7ba71-103c-45cf-9d6f-eae7f730ca6c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Produit :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="75" y="476" width="140" height="14" uuid="98100acd-6b96-41fa-bfbd-ca9228596ed5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="14" y="137" width="130" height="26" uuid="28ceda70-484a-4ac7-9255-9bb446a180a8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="26" y="446" width="149" height="28" forecolor="#000000" uuid="84718b1d-c5e2-4d87-857b-1378a7487bef"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Deuxieme pesage :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="75" y="429" width="140" height="15" uuid="119fa321-2283-488a-9132-b50adcd1efcc"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="326" y="416" width="50" height="1" uuid="308c6065-fc91-4c4a-a0e0-b997f4e82f72"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="13" y="476" width="61" height="14" forecolor="#000000" uuid="858837fd-9a03-466b-921b-d8c6d4798486"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="13" y="428" width="61" height="16" forecolor="#000000" uuid="93ce7ab9-53c9-4113-810e-bf113541a814"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="158" y="216" width="188" height="29" uuid="e243f9a1-d648-413d-88b8-2a4551e50184"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Code_produit}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="13" y="461" width="12" height="1" uuid="5f0708f1-e05a-4314-ac7d-cf64740106d6"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="16" y="302" width="92" height="19" forecolor="#000000" uuid="538ab79f-9cec-43de-87d0-c518a22dd5b6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Coefficient :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="55" y="376" width="310" height="23" uuid="62124210-5485-4e15-8984-2fc83fae6bdc"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Camion_tare}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="303" y="447" width="30" height="27" forecolor="#000000" uuid="acbb212d-aef8-4a41-9418-63f231157979"/>
+				<textElement>
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<line>
+				<reportElement x="346" y="229" width="30" height="1" uuid="663cbf66-25cb-4da2-8307-0dcab2ccaeec"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="68" y="163" width="300" height="26" uuid="69d86ec8-6c97-4346-8cc5-d67f59fb3d18"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Nom_type}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="365" y="336" width="12" height="1" uuid="c3cfa286-2256-4d25-a6e0-09e346026ddd"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="35" y="34" width="163" height="18" uuid="238a5c45-6de4-402c-8b7d-203d15e54ee0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_TEL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="14" y="163" width="54" height="26" forecolor="#000000" uuid="dbcd1e10-629c-4a22-9414-d8e35073b4b6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nom :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="198" y="325" width="166" height="26" uuid="b188c3e1-7166-47fe-9652-6b248e9a646e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Camion_Immatricule}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="16" y="353" width="41" height="23" forecolor="#000000" uuid="4bc115eb-3383-4da5-8f5d-42d61980ed9f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Type :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="368" y="151" width="8" height="1" uuid="9e4c3ead-7184-4d63-bc3f-e390f3c1aa27"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="94" y="189" width="274" height="27" uuid="ea65981a-6c74-4abd-9e19-f61582552567"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Adresse_type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="55" y="264" width="313" height="19" uuid="7827e693-42fe-4980-87a9-20389583a59b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Lot_produit}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="269" y="429" width="95" height="15" uuid="5597388f-acd0-48c0-b5f5-888a410ce33a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_Heure}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="14" y="245" width="104" height="19" forecolor="#000000" uuid="0c2488a2-01c0-48f3-8863-4982403b7668"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Designation :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="215" y="476" width="54" height="14" forecolor="#000000" uuid="37025bb6-eb54-4a18-8a87-41dcc84f324d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Heure :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="15" y="283" width="40" height="19" forecolor="#000000" uuid="7b6a50c5-68cb-4ee4-9838-a634c2037149"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Prix :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="13" y="230" width="12" height="1" uuid="8bb4c760-af5b-4ba0-8ef4-9d770fe9d5ee"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="144" y="137" width="57" height="26" forecolor="#000000" uuid="5f282cf0-cce9-4e1d-8a82-509906b67191"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Code :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="269" y="476" width="95" height="14" uuid="55ec354f-c0c1-446e-ad12-f7919acde9c2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_heure}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="12" y="152" width="1" height="1" uuid="922e38a6-b871-4f66-ba27-4c1b55514a11"/>
+			</line>
+			<line>
+				<reportElement x="13" y="335" width="13" height="1" uuid="1b3b2394-ce66-4da1-92ac-79a691c74b2e"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="-1" y="34" width="36" height="18" forecolor="#000000" uuid="da407009-16f0-418f-85d4-85e14dd8ce12"/>
+				<textElement>
+					<font isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TEL :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="0" y="0" width="381" height="18" uuid="05d732c8-2ccf-40d8-974f-890d8e465a45"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Societe}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="95" y="325" width="103" height="26" forecolor="#000000" uuid="30d81a67-1012-4664-b20b-a44f49e8bb99"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Immatricule :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="234" y="34" width="143" height="18" uuid="34ddc078-f9fd-404c-bfa5-4b71565ffb37"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Fax}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="13" y="492" width="363" height="1" uuid="143a3bb9-4b9c-43ce-b6f6-b54c83d25ad7"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="57" y="353" width="309" height="23" uuid="c932b4be-6141-413c-aecc-e1e41237af59"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Camion_type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="118" y="245" width="250" height="19" uuid="178826d5-75df-44ec-8aa7-513d6bfc48f8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Designation_produit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="26" y="402" width="131" height="26" forecolor="#000000" uuid="b4653374-a24d-4a51-aede-bc3f2b2cd810"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Premier pesage :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="14" y="415" width="12" height="1" uuid="63edf798-9b93-460c-b538-b9422f612fa8"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="297" y="403" width="30" height="25" forecolor="#000000" uuid="4385bad3-da2c-4dcb-a7a2-9b0c4ca416ae"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="332" y="91" width="49" height="46" forecolor="#000000" uuid="0f6fa7cd-283a-438a-9fb6-2e1b45d368ee"/>
+				<textElement verticalAlignment="Middle">
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="55" y="283" width="313" height="19" uuid="d38b194a-18ee-4ee6-b5fc-2e12d73eaded"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Prix_produit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="15" y="264" width="40" height="19" forecolor="#000000" uuid="af1db85c-7fd9-4c73-86ea-0a736318c55e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Lot :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="179" y="52" width="189" height="36" uuid="490a5d6d-a2fb-4161-880a-d5936436f723"/>
+				<textElement verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Numero}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="26" y="325" width="70" height="26" forecolor="#000000" uuid="642c6ed7-05ee-4a57-9960-f841e76a4467"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Camion :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="0" y="17" width="381" height="18" uuid="01021731-8945-4c94-9051-f313b7bc1e8f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Adresse}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="14" y="189" width="80" height="27" forecolor="#000000" uuid="10e7bfb6-6614-4cae-bac2-9e8bf3d80133"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Adresse :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="95" y="216" width="63" height="29" forecolor="#000000" uuid="58196afd-017b-460c-bd3d-6e2dacd866be"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Code :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="198" y="34" width="36" height="18" forecolor="#000000" uuid="97b0ea88-f0a4-41db-ad94-13e417a6a56f"/>
+				<textElement>
+					<font isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Fax :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="6" y="52" width="173" height="36" forecolor="#000000" uuid="5130b178-cdf9-4c20-aeac-07f90307c29c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bon de Pesage N :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="108" y="302" width="260" height="19" uuid="87a5ba74-ad69-4534-8deb-39a5d572f29d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Coefficient_produit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

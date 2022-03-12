@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="37e0e948-cd6f-4c2a-b16f-187ade4111fb">
+	<property name="ireport.zoom" value="1.4641000000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[SELECT
+     mv_fournisseur.`Id` AS mv_fournisseur_Id,
+     mv_fournisseur.`Code_fournisseur` AS mv_fournisseur_Code_fournisseur,
+     mv_fournisseur.`Nom_fournisseur` AS mv_fournisseur_Nom_fournisseur,
+     mv_fournisseur.`Adresse_fournisseur` AS mv_fournisseur_Adresse_fournisseur,
+     mv_fournisseur.`Produit` AS mv_fournisseur_Produit,
+     mv_fournisseur.`Designation_produit` AS mv_fournisseur_Designation_produit,
+     mv_fournisseur.`Immatricule` AS mv_fournisseur_Immatricule,
+     mv_fournisseur.`Date_premier` AS mv_fournisseur_Date_premier,
+     mv_fournisseur.`Premier_pesage` AS mv_fournisseur_Premier_pesage,
+     mv_fournisseur.`Date_deuxieme` AS mv_fournisseur_Date_deuxieme,
+     mv_fournisseur.`Deuxieme_pesage` AS mv_fournisseur_Deuxieme_pesage,
+     mv_fournisseur.`Masse_nette` AS mv_fournisseur_Masse_nette,
+     mv_fournisseur.`Totale_Entrer` AS mv_fournisseur_Totale_Entrer,
+     mv_fournisseur.`Totale_Sortie` AS mv_fournisseur_Totale_Sortie,
+     mv_fournisseur.`Date_debut` AS mv_fournisseur_Date_debut,
+     mv_fournisseur.`Date_fin` AS mv_fournisseur_Date_fin,
+     mv_fournisseur.`Etat` AS mv_fournisseur_Etat
+FROM
+     `mv_fournisseur` mv_fournisseur]]>
+	</queryString>
+	<field name="mv_fournisseur_Id" class="java.lang.Integer"/>
+	<field name="mv_fournisseur_Code_fournisseur" class="java.lang.String"/>
+	<field name="mv_fournisseur_Nom_fournisseur" class="java.lang.String"/>
+	<field name="mv_fournisseur_Adresse_fournisseur" class="java.lang.String"/>
+	<field name="mv_fournisseur_Produit" class="java.lang.String"/>
+	<field name="mv_fournisseur_Designation_produit" class="java.lang.String"/>
+	<field name="mv_fournisseur_Immatricule" class="java.lang.String"/>
+	<field name="mv_fournisseur_Date_premier" class="java.lang.String"/>
+	<field name="mv_fournisseur_Premier_pesage" class="java.lang.String"/>
+	<field name="mv_fournisseur_Date_deuxieme" class="java.lang.String"/>
+	<field name="mv_fournisseur_Deuxieme_pesage" class="java.lang.String"/>
+	<field name="mv_fournisseur_Masse_nette" class="java.lang.String"/>
+	<field name="mv_fournisseur_Totale_Entrer" class="java.lang.String"/>
+	<field name="mv_fournisseur_Totale_Sortie" class="java.lang.String"/>
+	<field name="mv_fournisseur_Date_debut" class="java.lang.String"/>
+	<field name="mv_fournisseur_Date_fin" class="java.lang.String"/>
+	<field name="mv_fournisseur_Etat" class="java.lang.String"/>
+	<background>
+		<band height="575" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="2" width="187" height="51" uuid="83a288b1-71b6-4c39-bb33-1717475850c1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="20" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Relevé Fournisseur]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="301" y="4" width="196" height="25" uuid="dbdf5660-6647-4507-b313-995472b8af4b"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mv_fournisseur_Code_fournisseur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="301" y="29" width="196" height="25" uuid="e7fdb916-e008-41be-ae6b-721adfab82ba"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mv_fournisseur_Nom_fournisseur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="301" y="54" width="196" height="25" uuid="18338cc0-3152-4b2d-a66c-2ded465e3afd"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mv_fournisseur_Adresse_fournisseur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="606" y="28" width="196" height="24" uuid="37276f9a-3fa5-45fb-9e51-5b911e6d36f6"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mv_fournisseur_Designation_produit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="290" y="80" width="165" height="24" uuid="40debcfd-9d83-4dc3-be5a-eb133a10dea1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mv_fournisseur_Totale_Entrer}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="187" y="4" width="103" height="24" uuid="d5426975-bde6-4ee9-9eb0-d1252e579c9e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Code fournisseur :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="28" width="103" height="25" uuid="8227f913-5cec-47f3-bd3a-1d981b5480df"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nom fournisseur :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="53" width="103" height="25" uuid="bc88658f-e467-40b0-9367-c0f023e5a00e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adresse fournisseur:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="80" width="103" height="24" uuid="89e764e4-1ea1-4196-ac60-080a2727f6e5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Totale Entrée :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="79" width="42" height="24" uuid="9c42615f-d3da-45d7-b80e-952d935b4c7c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[KG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="29" width="103" height="25" uuid="a5aea887-d7ee-44e2-b46c-d900927079fb"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Designation Produit :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="53" width="67" height="24" uuid="cae2b2a8-3990-45e8-a619-fc3cad40c42f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Du]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="77" width="67" height="24" uuid="2c3a448b-e32c-4b7b-8e8d-0c1dae1dd6be"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Au]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="67" y="55" width="106" height="23" uuid="e6cab56e-86d3-4c37-8fb5-aec7e1ec9fa3"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mv_fournisseur_Date_debut}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="67" y="78" width="106" height="24" uuid="868cc81a-2130-42c5-b1ad-e0c3e260efea"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mv_fournisseur_Date_fin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="497" y="4" width="103" height="25" uuid="f447a8e1-b849-4625-92ba-fc9bffb74ee2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Code Produit :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="606" y="4" width="196" height="24" uuid="62d48960-f117-4ac9-b9bd-37d2322dc1a6"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mv_fournisseur_Produit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="600" y="78" width="160" height="24" uuid="92b17ceb-73e7-4fc7-8d6c-2af1d90c03ba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mv_fournisseur_Totale_Sortie}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="760" y="77" width="42" height="24" uuid="7fc2bb79-598e-49a7-b98b-c0fdfd590015"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[KG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="78" width="97" height="24" uuid="2ed77d30-d754-4941-9ec1-72552796bcb7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Totale Sortie :]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="5" width="802" height="20" backcolor="#666666" uuid="63fe5e96-e990-4b2b-b618-e17af23cf34e"/>
+				<staticText>
+					<reportElement style="Column header" x="58" y="0" width="127" height="15" uuid="3409146a-98cb-4354-a697-05c4ad3d80b6"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Immatricule]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="185" y="0" width="137" height="15" uuid="a6f44573-6c1d-4d02-9cb0-870f900bc0a2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Date Premier Pesage]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="322" y="0" width="107" height="15" uuid="d9704330-1731-417d-a014-4cb1dff9e578"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Premier Pesage]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="429" y="0" width="114" height="15" uuid="2ed9c302-cec1-468a-a0a9-529de90ee77d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Date deuxieme Pesage]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="543" y="0" width="128" height="15" uuid="d61318db-128e-4946-a956-22eaf3a3a4fe"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Deuxieme Pesage]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="671" y="0" width="131" height="15" uuid="b76feeae-ac4a-4a62-8dcd-113d30b3ce55"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Masse nette]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="0" y="0" width="67" height="15" uuid="b7c9bab4-f6ef-4399-9281-c864a68a53af"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Position]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="1" width="802" height="20" uuid="eb45d393-6087-40e5-8ab7-14fee6fbbb07"/>
+				<textField>
+					<reportElement style="Detail" x="58" y="0" width="127" height="20" uuid="cd71c0ba-cf46-4174-8dda-55be2a0ea621"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{mv_fournisseur_Immatricule}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="185" y="0" width="137" height="20" uuid="e6e60569-d325-4fcb-b47a-cf1a0b70e0f2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{mv_fournisseur_Date_premier}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="322" y="0" width="107" height="20" uuid="12f95179-0d4a-455c-a489-9c1a4c15d5c0"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{mv_fournisseur_Premier_pesage}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="429" y="0" width="114" height="20" uuid="f3025304-3589-4941-ad81-fe66ea3d8039"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{mv_fournisseur_Date_deuxieme}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="671" y="0" width="131" height="20" uuid="317f57aa-2169-4e34-93a7-f820ad584e5b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{mv_fournisseur_Masse_nette}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="0" y="0" width="58" height="20" uuid="1a441069-52a0-4353-9a38-82e31fc6ae31"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{mv_fournisseur_Etat}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement style="Detail" x="543" y="1" width="128" height="20" uuid="c02e73be-804e-4312-bb79-c9d4b0b4c92d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mv_fournisseur_Deuxieme_pesage}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="671" y="0" width="131" height="20" forecolor="#000000" uuid="35b7f94e-9368-4894-91e1-8a4e357b14a3"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="96" y="0" width="267" height="20" uuid="83d28d13-413f-4abb-bf15-73baa83f3f54"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Relevé fournisseur]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="97" y="0" width="705" height="1" uuid="47d5ddb5-acec-4653-a11e-b34bd659abd0"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

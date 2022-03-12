@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="280" pageHeight="430" columnWidth="280" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="8d69d544-745b-4d1a-82ab-92838c60795d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="ireport.zoom" value="2.357947691000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     impression_bon.`Id` AS impression_bon_Id,
+     impression_bon.`Type` AS impression_bon_Type,
+     impression_bon.`Code_type` AS impression_bon_Code_type,
+     impression_bon.`Nom_type` AS impression_bon_Nom_type,
+     impression_bon.`Adresse_type` AS impression_bon_Adresse_type,
+     impression_bon.`Code_produit` AS impression_bon_Code_produit,
+     impression_bon.`Designation_produit` AS impression_bon_Designation_produit,
+     impression_bon.`Lot_produit` AS impression_bon_Lot_produit,
+     impression_bon.`Prix_produit` AS impression_bon_Prix_produit,
+     impression_bon.`Coefficient_produit` AS impression_bon_Coefficient_produit,
+     impression_bon.`Camion_Immatricule` AS impression_bon_Camion_Immatricule,
+     impression_bon.`Camion_type` AS impression_bon_Camion_type,
+     impression_bon.`Camion_tare` AS impression_bon_Camion_tare,
+     impression_bon.`Premier_pesage` AS impression_bon_Premier_pesage,
+     impression_bon.`Deuxieme_pesage` AS impression_bon_Deuxieme_pesage,
+     impression_bon.`Deuxieme_date` AS impression_bon_Deuxieme_date,
+     impression_bon.`Deuxieme_heure` AS impression_bon_Deuxieme_heure,
+     impression_bon.`Masse_nette` AS impression_bon_Masse_nette,
+     impression_bon.`Numero` AS impression_bon_Numero,
+     cordonee.`Id` AS cordonee_Id,
+     cordonee.`Societe` AS cordonee_Societe,
+     cordonee.`Adresse` AS cordonee_Adresse,
+     cordonee.`TEL` AS cordonee_TEL,
+     cordonee.`Fax` AS cordonee_Fax,
+     impression_bon.`Premier_date` AS impression_bon_Premier_date,
+     impression_bon.`Premier_Heure` AS impression_bon_Premier_Heure
+FROM
+     `impression_bon` impression_bon,
+     `cordonee` cordonee]]>
+	</queryString>
+	<field name="impression_bon_Id" class="java.lang.String"/>
+	<field name="impression_bon_Type" class="java.lang.String"/>
+	<field name="impression_bon_Code_type" class="java.lang.String"/>
+	<field name="impression_bon_Nom_type" class="java.lang.String"/>
+	<field name="impression_bon_Adresse_type" class="java.lang.String"/>
+	<field name="impression_bon_Code_produit" class="java.lang.String"/>
+	<field name="impression_bon_Designation_produit" class="java.lang.String"/>
+	<field name="impression_bon_Lot_produit" class="java.lang.String"/>
+	<field name="impression_bon_Prix_produit" class="java.lang.String"/>
+	<field name="impression_bon_Coefficient_produit" class="java.lang.String"/>
+	<field name="impression_bon_Camion_Immatricule" class="java.lang.String"/>
+	<field name="impression_bon_Camion_type" class="java.lang.String"/>
+	<field name="impression_bon_Camion_tare" class="java.lang.String"/>
+	<field name="impression_bon_Premier_pesage" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_pesage" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_date" class="java.lang.String"/>
+	<field name="impression_bon_Deuxieme_heure" class="java.lang.String"/>
+	<field name="impression_bon_Masse_nette" class="java.lang.String"/>
+	<field name="impression_bon_Numero" class="java.lang.String"/>
+	<field name="cordonee_Id" class="java.lang.String"/>
+	<field name="cordonee_Societe" class="java.lang.String"/>
+	<field name="cordonee_Adresse" class="java.lang.String"/>
+	<field name="cordonee_TEL" class="java.lang.String"/>
+	<field name="cordonee_Fax" class="java.lang.String"/>
+	<field name="impression_bon_Premier_date" class="java.lang.String"/>
+	<field name="impression_bon_Premier_Heure" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="13" y="10" width="150" height="14" uuid="ea6f97d1-1bab-49fb-97e6-b0a6873c0358"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Societe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="13" y="24" width="150" height="14" uuid="a58565f9-82de-4896-97f3-10d5672421a3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Adresse}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="382" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="2" width="30" height="20" forecolor="#000000" uuid="52355edd-7579-4249-a088-9604f1463476"/>
+				<textElement>
+					<font size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TEL :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="2" width="110" height="20" uuid="15a4b58d-a63a-41d2-a9ba-28dbe2e6d509"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_TEL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="154" y="2" width="30" height="20" forecolor="#000000" uuid="68a74fc0-7f33-48d5-b541-40280900c0a4"/>
+				<textElement>
+					<font size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Fax :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="184" y="2" width="92" height="20" uuid="beb54f2d-c14d-4334-a848-a08ab18979bc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cordonee_Fax}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="39" y="18" width="130" height="40" forecolor="#000000" uuid="cc7ecd4e-2193-47f7-b36f-1c25328b5be8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bon de Pesage N:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="167" y="29" width="88" height="20" uuid="89c11910-f6ea-4d71-b4c2-eb6d5d2a2ae6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Numero}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="58" width="60" height="20" forecolor="#000000" uuid="4a8c98fc-3b09-40bc-a8d8-aa9f4351ad45"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Poids Net:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="97" y="56" width="120" height="22" uuid="621bd2ac-4724-46a1-9067-b2eed3fec7c2"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Masse_nette}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="215" y="57" width="30" height="20" forecolor="#000000" uuid="1ecec67f-ed68-4132-bb2a-cc418b700f30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="77" width="259" height="1" uuid="d9d73603-9345-43aa-a024-622d074784a7"/>
+			</line>
+			<line>
+				<reportElement x="269" y="78" width="1" height="29" uuid="ed3d33ac-b8ef-4a81-90a9-92a2c37b8402"/>
+			</line>
+			<line>
+				<reportElement x="269" y="97" width="1" height="247" uuid="dae5805b-6052-4db1-be25-77ca101de0cc"/>
+			</line>
+			<line>
+				<reportElement x="11" y="297" width="259" height="1" uuid="7124af3d-663b-43ed-8a51-f2d511c12fc4"/>
+			</line>
+			<line>
+				<reportElement x="11" y="78" width="1" height="29" uuid="4df38ba3-9e06-47cb-a9a6-1d13a243b702"/>
+			</line>
+			<line>
+				<reportElement x="11" y="107" width="1" height="237" uuid="0d960875-7b7c-48ba-bade-26721f564dc9"/>
+			</line>
+			<textField>
+				<reportElement x="17" y="79" width="40" height="16" uuid="95eea163-9c2a-461b-beb9-a6f3a05c9d3c"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="57" y="79" width="28" height="16" forecolor="#000000" uuid="f9b5472e-373c-4f5e-89e1-ff1a55fbe71d"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Code :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="118" y="79" width="99" height="16" uuid="7174b4ca-580c-468d-a473-0631ea0fe389"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Code_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="93" width="50" height="14" forecolor="#000000" uuid="23bba2c1-29a4-4cd0-91fb-5cdafa49cdeb"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="118" y="93" width="101" height="14" uuid="c503a7df-eb59-40cc-bd56-3d97674b86ba"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Nom_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="107" width="40" height="14" forecolor="#000000" uuid="94fce0b7-e99d-4a39-936c-cad200c62c6a"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adresse :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="118" y="107" width="99" height="14" uuid="aba8e94e-9858-46e4-8ae4-6ce41c27a825"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Adresse_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="121" width="68" height="14" forecolor="#000000" uuid="188623f9-2312-4eb2-adcf-a75ef1653d0f"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Produit Code :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="118" y="121" width="99" height="14" uuid="90a2088e-32a3-401d-8b62-79f0042553c6"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Code_produit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="135" width="50" height="14" forecolor="#000000" uuid="0c57ea3a-82f3-4acd-8c8c-c148a6bf6d84"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Designation :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="149" width="50" height="14" forecolor="#000000" uuid="46f959e9-42e1-4c8c-b0f4-15914e6f1954"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lot :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="163" width="50" height="14" forecolor="#000000" uuid="6e8eaebd-64f1-4a80-84a9-6fe5ce4617f1"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prix :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="177" width="50" height="14" forecolor="#000000" uuid="7f1eeb15-af54-4bd1-9a4c-85137fedfe2c"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Coefficient :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="118" y="135" width="99" height="14" uuid="b887e02e-6fdb-4571-9731-861ccf260755"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Designation_produit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="149" width="99" height="14" uuid="fec9f60c-b9f5-4e01-8798-76538621e274"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Lot_produit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="163" width="99" height="14" uuid="11566ccc-34e8-45d2-8919-f7dc840d7961"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Prix_produit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="177" width="99" height="14" uuid="849cb12f-f488-4479-9140-386df774a907"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Coefficient_produit}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="191" width="259" height="1" uuid="0cc8802c-5fa4-429d-b7a1-4a50de003bb4"/>
+			</line>
+			<line>
+				<reportElement x="11" y="249" width="258" height="1" uuid="98b9dcf0-65c2-4cf0-bbd3-a3ae791de68b"/>
+			</line>
+			<staticText>
+				<reportElement x="17" y="193" width="50" height="14" forecolor="#000000" uuid="ac2c33ec-f042-49ec-828d-8981d65a6f12"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Camion :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="207" width="50" height="14" forecolor="#000000" uuid="d87b8482-8c16-45e2-8f14-3bcf53ea1b06"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Immatricule :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="221" width="50" height="14" forecolor="#000000" uuid="7aaf397f-fee2-4e1c-b6c3-65f967ff0a92"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="235" width="50" height="14" forecolor="#000000" uuid="577e7e7a-d0ac-44a5-b776-de96608356a2"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tare :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="117" y="207" width="104" height="14" uuid="da9a03b2-a2ef-4632-bfa2-71c731afb3be"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Camion_Immatricule}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="221" width="103" height="14" uuid="e98e34bb-0b83-4eaa-b65b-dee67197bd8b"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Camion_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="235" width="103" height="14" uuid="caa59b53-0310-4523-adac-7df2240f3e7a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Camion_tare}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="227" y="235" width="30" height="14" forecolor="#000000" uuid="cee44820-4841-4d56-8151-2aef99b26452"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="249" width="79" height="14" forecolor="#000000" uuid="dbe10b29-23f0-426a-8c8c-197a18a4c825"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Premier pesage :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="263" width="62" height="14" forecolor="#000000" uuid="bc46be37-997a-410b-9f82-87d89e6059b1"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="277" width="62" height="14" forecolor="#000000" uuid="ab4d98a0-cb5c-4622-a691-b030e6a002b4"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Heure :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="118" y="250" width="103" height="13" uuid="b4cd3a33-19c0-4b71-a80b-ce9cf5a09ae6"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_pesage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="263" width="103" height="14" uuid="7ddee09a-c2eb-47e5-aff3-b7cee93ee18c"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="277" width="103" height="14" uuid="ae0e9346-c99c-4ea2-aa8d-aca9af3d3742"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Premier_Heure}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="228" y="249" width="29" height="14" forecolor="#000000" uuid="083cfb29-d389-400d-b3d5-7c8c1e16be0c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="344" width="259" height="1" uuid="5db82324-5b74-42d3-979f-1c5e88158355"/>
+			</line>
+			<staticText>
+				<reportElement x="17" y="298" width="79" height="14" forecolor="#000000" uuid="767b289b-fb7c-4556-bb98-caaa40ac4953"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Deuxieme pesage :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="312" width="62" height="14" forecolor="#000000" uuid="7fa7b521-32ab-44eb-afd4-85f3ae75f79d"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="327" width="62" height="14" forecolor="#000000" uuid="7db51c03-c9aa-486f-ba96-98996a76278e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Heure :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="118" y="298" width="104" height="14" uuid="b070d4d8-67b4-4825-895d-a119130384fd"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_pesage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="312" width="104" height="14" uuid="5af0def7-5358-4454-8f49-70da742fed17"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="327" width="104" height="14" uuid="56888ad9-7df7-4a3e-9abe-146567a9f3cb"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{impression_bon_Deuxieme_heure}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="221" y="298" width="30" height="14" forecolor="#000000" uuid="aa2f92e5-3afe-4ca2-b3f4-cec0a8dae6dc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="343" width="148" height="14" forecolor="#000000" uuid="cbcce5d0-2e82-4ed0-93eb-31be42a3af9b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Merci pour votre visite...]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="166" y="343" width="98" height="14" forecolor="#000000" uuid="7400fa92-b46c-43af-915e-978ba8af40fc"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>
